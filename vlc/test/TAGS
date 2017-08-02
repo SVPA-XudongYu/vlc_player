@@ -1,0 +1,293 @@
+
+modules/packetizer/hxxx.c,172
+ #undef NDEBUG22,1074
+static void test_iterators(30,1252
+static void testannexbin(80,2822
+#define runtest(117,3950
+static void test_annexb(125,4423
+int main(211,8524
+
+libvlc/media_list.c,56
+static void test_media_list 26,1272
+int main 128,4231
+
+src/misc/epg.c,170
+ #undef NDEBUG21,1006
+static void assert_current(27,1094
+static void print_order(41,1442
+static void assert_events(51,1721
+#define EPG_ADD(61,2024
+int main(72,2380
+
+modules/keystore/test.c,432
+#undef NDEBUG35,1337
+    const char *psz_module;psz_module47,1534
+    bool b_test_default;48,1562
+    bool b_persistent;49,1587
+} keystore_args[keystore_args50,1610
+values_reinit(62,1908
+ks_find(69,2069
+ks_remove(98,3070
+ks_store(104,3220
+test_module(114,3585
+#define VALUES_INSERT(117,3707
+#define VALUES_REINIT(118,3778
+#define KS_FIND(119,3829
+#define KS_REMOVE(122,3930
+#define KS_STORE(125,4022
+main(298,8637
+
+src/input/stream.c,941
+#define RAND_FILE_SIZE 36,1353
+#define HTTP_URL 38,1401
+#define HTTP_MD5 39,1470
+struct reader42,1530
+    const char *psz_name;psz_name44,1546
+        FILE *f;f46,1584
+        stream_t *s;s47,1601
+    } u;48,1622
+    void *p_data;p_data49,1631
+    void        (*pf_close)pf_close51,1650
+    uint64_t    (*pf_getsize)pf_getsize52,1698
+    ssize_t     (*pf_read)pf_read53,1748
+    ssize_t     (*pf_peek)pf_peek54,1811
+    uint64_t    (*pf_tell)pf_tell55,1884
+    int         (*pf_seek)pf_seek56,1931
+libc_getsize(61,2025
+libc_read(73,2235
+libc_peek(79,2372
+libc_tell(98,2834
+libc_seek(106,2972
+libc_close(112,3107
+libc_open(120,3254
+stream_getsize(144,3841
+stream_read(153,4009
+stream_peek(159,4154
+stream_tell(165,4312
+stream_seek(171,4412
+stream_close(177,4542
+stream_open(185,4712
+read_at(224,5686
+test(287,7606
+#define READ_AT(289,7688
+#define PEEK_AT(291,7796
+fill_rand(348,9357
+main(366,9756
+
+libvlc/media_list_player.c,831
+struct check_items_order_data 39,1590
+    bool done_playing;40,1622
+    unsigned count;41,1645
+    unsigned index;42,1665
+    void * items[items43,1685
+static inline void check_data_init(46,1711
+static inline void queue_expected_item(53,1866
+static inline void wait_queued_items(60,2050
+static inline void wait_playing(67,2263
+static inline void wait_stopped(73,2411
+static inline void stop_and_wait(79,2558
+static void check_items_order_callback(85,2694
+static void test_media_list_player_items_queue(110,3507
+static void test_media_list_player_previous(175,5537
+static void test_media_list_player_next(234,6826
+static void test_media_list_player_pause_stop(293,8094
+static void test_media_list_player_play_item_at_index(333,9010
+static void test_media_list_player_playback_options 371,9944
+int main 517,13832
+
+src/misc/variables.c,611
+static const char *psz_var_name[psz_var_name29,1227
+#define VAR_COUNT 32,1329
+static vlc_value_t var_value[var_value33,1374
+static void test_integer(35,1416
+static void test_booleans(59,2274
+static void test_floats(83,3080
+static void test_fracts(101,3645
+static void test_strings(169,6165
+static void test_address(203,7286
+static int callback(227,7954
+static void test_callbacks(250,8489
+static void test_limits(281,9479
+static void test_choices(324,10968
+static void test_change(353,12002
+static void test_creation_and_type(389,13313
+static void test_variables(446,15757
+int main(486,16649
+
+src/misc/keystore.c,701
+#undef NDEBUG36,1359
+struct cred40,1395
+    const char *psz_user;psz_user42,1409
+    const char *psz_pwd;psz_pwd43,1435
+static const struct testcase46,1464
+    bool        b_found;48,1495
+    const char *psz_url;psz_url49,1520
+    const char *psz_realm;psz_realm50,1545
+    const char *psz_authtype;psz_authtype51,1572
+    struct cred result;52,1602
+    struct cred opt;53,1626
+    struct cred dialog;54,1647
+    bool        b_dialog_store;55,1671
+} testcases[testcases56,1703
+#define HTTP(58,1721
+#define SMB(59,1777
+#define SFTP(60,1820
+#define WIPE_MEMORY_KEYSTORE 61,1865
+display_login_cb(204,6252
+cancel_cb(224,6988
+test(231,7102
+create_libvlc(287,8953
+main(302,9388
+
+libvlc/media_player.c,305
+static void wait_playing(26,1274
+static void wait_paused(39,1642
+static void test_audio_video(53,2114
+static void test_role(83,3209
+static void test_media_player_set_media(96,3543
+static void test_media_player_play_stop(124,4189
+static void test_media_player_pause_stop(153,4842
+int main 194,5758
+
+libvlc/equalizer.c,54
+static void test_equalizer 10,101
+int main 160,4849
+
+src/crypto/update.c,499
+int main(28,1125
+static const uint8_t key_longid[key_longid39,1296
+static const uint8_t public_key[public_key44,1404
+static const uint8_t key_longid2[key_longid276,3315
+static const uint8_t public_key2[public_key281,3446
+static const char status[status149,7942
+static const uint8_t status_sign2[status_sign2157,8139
+static const uint8_t status_sign[status_sign178,9196
+static void parse_sig(200,10201
+static void check(221,10959
+static void print_key(255,11998
+int main(270,12537
+
+src/interface/dialog.c,418
+#undef NDEBUG35,1339
+#define TITLE 38,1374
+struct cb_answer47,1539
+    bool b_dismiss;49,1558
+    const char *psz_username;psz_username50,1578
+    int i_action;51,1608
+display_error_cb(57,1644
+display_login_cb(64,1833
+display_question_cb(80,2426
+display_progress_cb(97,3108
+static void cancel_cb(110,3611
+static void update_progress_cb(116,3725
+set_answer(125,3991
+test_dialogs(137,4264
+main(282,10169
+
+src/input/stream_fifo.c,157
+#undef NDEBUG25,1114
+static libvlc_instance_t *vlc;vlc38,1352
+static vlc_object_t *parent;parent39,1383
+static stream_t *s;s40,1412
+int main(42,1433
+
+libvlc/meta.c,49
+static void test_meta 29,1359
+int main 61,2077
+
+libvlc/media.c,709
+static void media_parse_ended(36,1472
+static void print_media(43,1626
+static void test_media_preparsed(92,3429
+static void input_item_preparse_timeout(130,4762
+static void test_input_metadata_timeout(139,5043
+#define TEST_SUBITEMS_COUNT 178,6324
+    const char *file;file181,6370
+    libvlc_media_type_t type;182,6392
+} test_media_subitems_list[test_media_subitems_list183,6422
+static void subitem_parse_ended(193,6748
+static void subitem_added(200,6904
+#define FILE_SEPARATOR 203,6992
+#define FILE_SEPARATOR 205,7028
+#undef FILE_SEPARATOR229,7706
+static void test_media_subitems_media(232,7731
+static void test_media_subitems(278,9230
+    #define NB_LOCATIONS 290,9612
+int main(328,10967
+
+libvlc/core.c,185
+static void test_core 28,1287
+static void test_moduledescriptionlist 42,1542
+static void test_audiovideofilterlists 56,2035
+static void test_audio_output 71,2429
+int main 100,3298
+
+src/config/chain.c,904
+    const char *psz_string;psz_string34,1290
+    const char *psz_escaped;psz_escaped35,1318
+}escape_sample_t;escape_sample_t36,1347
+static const escape_sample_t escape_samples[escape_samples38,1366
+static void test_config_StringEscape(52,1809
+static void test_config_StringUnEscape(62,2092
+    const char *psz_name;psz_name76,2424
+    const char *psz_value;psz_value77,2450
+}pair_t;pair_t78,2477
+    const char *psz_string;psz_string82,2504
+    const char *psz_module;psz_module83,2532
+    const char *psz_next;psz_next84,2560
+    pair_t      config[config85,2586
+}chain_sample_t;chain_sample_t86,2613
+static const chain_sample_t chain_samples[chain_samples88,2631
+static void test_config_ChainCreate(114,3730
+static const char *ppsz_string[ppsz_string141,4634
+static void check_config_equality(150,4817
+static void test_config_ChainDuplicate(163,5178
+int main(182,5676
+
+src/misc/bits.c,78
+ #undef NDEBUG23,1105
+static uint8_t *skip1(skip128,1170
+int main(40,1395
+
+libvlc/renderer_discoverer.c,141
+item_event(26,1126
+renderer_discoverer_item_added(34,1407
+renderer_discoverer_item_deleted(41,1593
+test_discoverer(48,1785
+main(82,2807
+
+modules/misc/tls.c,505
+#undef NDEBUG25,1121
+static int tlspair(45,1479
+dialog_display_question_cb(51,1591
+static void dialog_cancel_cb(66,2094
+static libvlc_instance_t *vlc;vlc72,2210
+static vlc_object_t *obj;obj73,2241
+static vlc_tls_creds_t *server_creds;server_creds74,2267
+static vlc_tls_creds_t *client_creds;client_creds75,2305
+static void *tls_echo(tls_echo77,2344
+static int securepair(114,3137
+static const char certpath[certpath143,3960
+static const char *const alpn[alpn144,4026
+int main(146,4085
+
+libvlc/slaves.c,368
+#define SLAVES_DIR 26,1178
+#define MAIN_MEDIA_PATH 27,1222
+finished_event(30,1282
+media_parse_sync(38,1429
+path_to_mrl(57,1926
+test_expected_slaves(66,2167
+mediaplayer_play_sync(109,3662
+test_media_has_slaves_from_player(134,4523
+test_media_has_slaves_from_parent(154,5192
+main 203,6757
+    #define EXPECTED_SLAVES_COUNT 221,7294
+    #define ARGC 231,7797
+
+libvlc/media_discoverer.c,110
+ml_item_event(26,1123
+ml_item_added(37,1428
+ml_item_deleted(44,1561
+test_discoverer(51,1698
+main(98,3114

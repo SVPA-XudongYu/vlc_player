@@ -1,0 +1,2149 @@
+
+CompatibilityFixes.h,328
+#define OSX_LION 28,1245
+#define OSX_MOUNTAIN_LION 29,1328
+#define OSX_MAVERICKS 30,1418
+#define OSX_YOSEMITE 31,1504
+#define OSX_EL_CAPITAN 32,1589
+#define OSX_SIERRA 33,1676
+typedef NS_OPTIONS(NSUInteger, NSStatusItemBehavior)38,1780
+@interface NSStatusItem(IntroducedInSierra)NSStatusItem(IntroducedInSierra)44,1948
+
+misc.h,1067
+@interface NSSound (VLCAdditions)NSSound(VLCAdditions)36,1727
+@interface NSAnimation (VLCAdditions)NSAnimation(VLCAdditions)47,2125
+@interface NSScreen (VLCAdditions)NSScreen(VLCAdditions)58,2433
+@interface VLCDropDisabledImageView 80,3097
+@interface VLCDragDropView 88,3333
+@interface MPSlider 102,3673
+@interface VLCProgressView 110,3887
+@interface TimeLineSlider 121,4150
+@interface VLCVolumeSliderCommon 134,4496
+@interface VolumeSliderCell 145,4703
+@interface ITSlider 152,4924
+@interface VLCTimeField 162,5320
+@interface VLCMainWindowSplitView 173,5656
+@interface VLCThreePartImageView 180,5905
+@interface PositionFormatter 192,6291
+@interface NSView (EnableSubviews)NSView(EnableSubviews)210,6834
+    NSByteCountFormatterCountStyleFile 221,7340
+    NSByteCountFormatterCountStyleMemory 223,7567
+    NSByteCountFormatterCountStyleDecimal 225,7752
+    NSByteCountFormatterCountStyleBinary 226,7834
+typedef NSInteger NSByteCountFormatterCountStyle;228,7919
+@interface VLCByteCountFormatter 231,7977
+@interface VLCOpenTextField 239,8197
+
+VLCOpenWindowController.h,44
+@interface VLCOpenWindowController 29,1381
+
+VLCApplication.h,35
+@interface VLCApplication 33,1573
+
+VLCControlsBarCommon.h,101
+@class VLCFSPanel;28,1293
+@class VLCResizeControl;29,1312
+@interface VLCControlsBarCommon 38,1625
+
+VLCConvertAndSaveWindowController.h,211
+@class VLCDropDisabledImageView;26,1207
+@class VLCDragDropView;27,1240
+@class VLCPopupPanelController;28,1264
+@class VLCTextfieldPanelController;29,1296
+@interface VLCConvertAndSaveWindowController 31,1333
+
+VLCRendererDialog.h,38
+@interface VLCRendererDialog 29,1271
+
+misc.m,3777
+NSString *const VLCOpenTextFieldWasClicked 35,1511
+@implementation NSSound (VLCAdditions)46,2077
++ (float)systemVolumeForChannel:48,2117
++ (bool)setSystemVolume:(float)f_volume forChannel:setSystemVolume:forChannel:74,3069
++ (void)increaseSystemVolume103,4291
++ (void)decreaseSystemVolume114,4784
+@implementation NSAnimation 133,5513
++ (void)load137,5635
+- (void)dealloc143,5807
+- (void)setUserInfo:148,5910
+- (void *)userInfo153,6052
+@implementation NSScreen 165,6391
++ (void)load171,6519
++ (NSScreen *)screenWithDisplayID:186,7057
+- (BOOL)hasMenuBar198,7384
+- (BOOL)hasDock206,7548
+- (BOOL)isScreen:221,8043
+- (CGDirectDisplayID)displayID226,8137
+- (void)blackoutOtherScreens231,8274
++ (void)unblackoutScreens268,9775
+- (void)setFullscreenPresentationOptions279,10123
+- (void)setNonFullscreenPresentationOptions289,10516
+@implementation VLCDropDisabledImageView305,11103
+- (void)awakeFromNib307,11145
+@interface VLCDragDropView(318,11391
+@implementation VLCDragDropView324,11460
+- (id)initWithFrame:326,11493
+- (void)enablePlaylistItems337,11671
+- (BOOL)mouseDownCanMoveWindow342,11824
+- (void)dealloc347,11876
+- (void)awakeFromNib352,11932
+- (NSDragOperation)draggingEntered:357,12042
+- (void)draggingEnded:369,12358
+- (void)draggingExited:375,12477
+- (BOOL)prepareForDragOperation:381,12597
+- (BOOL)performDragOperation:386,12678
+- (void)concludeDragOperation:399,13083
+- (void)drawRect:404,13178
+void _drawKnobInRect(424,13684
+void _drawFrameInRect(440,14741
+- (void)drawRect:449,15375
+@implementation VLCProgressView : NSView487,16492
+- (void)scrollWheel:489,16534
+- (BOOL)acceptsFirstResponder520,17372
+@interface TimeLineSlider(531,17607
+@implementation TimeLineSlider539,17708
+- (void)awakeFromNib541,17740
+- (CGFloat)knobPosition554,18094
+- (void)drawKnobInRect:561,18259
+- (void)drawRect:569,18573
+@implementation VLCVolumeSliderCommon : NSSlider591,19321
+- (void)scrollWheel:593,19371
+- (void)drawFullVolumeMarker623,20159
+- (CGFloat)fullVolumePos645,20794
+- (void)drawFullVolBezierPath:654,21074
+@implementation VolumeSliderCell663,21331
+- (BOOL)continueTracking:(NSPoint)lastPoint at:(NSPoint)currentPoint inView:continueTracking:at:inView:665,21365
+@interface ITSlider(683,21994
+@implementation ITSlider690,22067
+- (void)awakeFromNib692,22093
+- (void)drawKnobInRect:709,22479
+- (void)drawRect:717,22794
+@interface VLCTimeField(740,23568
+@implementation VLCTimeField750,23737
++ (void)initialize751,23766
+- (void)setRemainingIdentifier:762,24174
+- (void)setAlignment:768,24368
+- (void)setStringValue:774,24498
+- (void)mouseDown:791,25292
+- (BOOL)timeRemaining807,25863
+@implementation VLCMainWindowSplitView : NSSplitView821,26313
+- (NSColor *)dividerColor824,26818
+- (CGFloat)dividerThickness831,27158
+@interface VLCThreePartImageView(841,27407
+@implementation VLCThreePartImageView849,27527
+- (void)setImagesLeft:(NSImage *)left middle: (NSImage *)middle right:setImagesLeft:middle:right:851,27566
+- (void)drawRect:858,27730
+@interface PositionFormatter(866,27908
+@implementation PositionFormatter872,27993
+- (id)init874,28028
+- (NSString*)stringForObjectValue:884,28295
+- (BOOL)getObjectValue:(id*)obj forString:(NSString*)string errorDescription:getObjectValue:forString:errorDescription:894,28503
+- (BOOL)isPartialStringValid:(NSString*)partialString newEditingString:(NSString**)newString errorDescription:isPartialStringValid:newEditingString:errorDescription:900,28645
+@implementation NSView 911,28963
+- (void)enableSubviews:913,29004
+@implementation VLCByteCountFormatter940,29865
++ (NSString *)stringFromByteCount:(long long)byteCount countStyle:stringFromByteCount:countStyle:942,29904
+@implementation VLCOpenTextField1004,31782
+- (void)mouseDown:1006,31816
+
+VLCHelpWindowController.h,44
+@interface VLCHelpWindowController 27,1300
+
+VLCStringUtility.h,140
+#define _NS(30,1383
+#define _ANS(34,1654
+#define B64DecNSStr(36,1752
+#define B64EncAndFree(37,1824
+@interface VLCStringUtility 57,2439
+
+VLCPLItem.h,30
+@interface VLCPLItem 26,1148
+
+VLCOpenWindowController.m,4029
+struct display_info_t48,1912
+    CGRect rect;50,1936
+    CGDirectDisplayID id;51,1953
+    VLCOutput *_output;VLCOpenWindowController(_output)56,2022
+    BOOL b_outputNibLoaded;VLCOpenWindowController(b_outputNibLoaded)57,2046
+    NSArray *_avvideoDevices;VLCOpenWindowController(_avvideoDevices)58,2074
+    NSArray *_avaudioDevices;VLCOpenWindowController(_avaudioDevices)59,2104
+    NSString *_avCurrentDeviceUID;VLCOpenWindowController(_avCurrentDeviceUID)60,2134
+    NSString *_avCurrentAudioDeviceUID;VLCOpenWindowController(_avCurrentAudioDeviceUID)61,2169
+    BOOL b_autoplay;VLCOpenWindowController(b_autoplay)63,2210
+    BOOL b_nodvdmenus;VLCOpenWindowController(b_nodvdmenus)64,2231
+    NSView *_currentOpticalMediaView;VLCOpenWindowController(_currentOpticalMediaView)65,2254
+    NSImageView *_currentOpticalMediaIconView;VLCOpenWindowController(_currentOpticalMediaIconView)66,2292
+    NSMutableArray *_allMediaDevices;VLCOpenWindowController(_allMediaDevices)67,2339
+    NSArray *_opticalDevices;VLCOpenWindowController(_opticalDevices)68,2377
+    NSMutableArray *_specialMediaFolders;VLCOpenWindowController(_specialMediaFolders)69,2407
+    NSString *_filePath;VLCOpenWindowController(_filePath)70,2449
+    NSView *_currentCaptureView;VLCOpenWindowController(_currentCaptureView)71,2474
+    NSString *_fileSlavePath;VLCOpenWindowController(_fileSlavePath)72,2507
+    NSString *_subPath;VLCOpenWindowController(_subPath)73,2537
+    NSString *_MRL;VLCOpenWindowController(_MRL)74,2561
+    NSMutableArray *_displayInfos;VLCOpenWindowController(_displayInfos)75,2581
+    VLCEyeTVController *_eyeTVController;VLCOpenWindowController(_eyeTVController)76,2616
+@property VLCOpenWindowController(@property)79,2661
+- (id)init88,2788
+- (void)dealloc96,2873
+- (void)windowDidLoad104,3026
+- (void)setMRL:312,15588
+- (NSString *)MRL325,15908
+- (void)setSubPanel330,15948
+- (void)openTarget:395,18966
+- (IBAction)screenChanged:506,25037
+- (IBAction)qtkChanged:522,25645
+- (IBAction)qtkAudioChanged:530,25970
+- (IBAction)qtkToggleUIElements:540,26429
+- (void)tabView:(NSTabView *)o_tv didSelectTabViewItem:tabView:didSelectTabViewItem:553,26784
+- (IBAction)expandMRLfieldAction:567,27285
+- (void)openFileGeneric598,28438
+- (void)openDisc604,28530
+- (void)openNet614,28695
+- (void)openCapture620,28778
+- (void)openFile626,28869
+- (IBAction)outputSettings:659,30118
+- (void)openFilePathChanged:679,30606
+- (IBAction)openFileBrowse:714,31980
+- (IBAction)openFileStreamChanged:729,32538
+- (IBAction)inputSlaveAction:734,32625
+- (IBAction)fileTimeCustomization:756,33501
+- (void)showOpticalMediaView:(NSView *)theView withIcon:showOpticalMediaView:withIcon:768,33848
+- (void)showOpticalAtPath:796,35438
+- (NSDictionary *)scanPath:839,38474
+- (void)scanDevicesWithPaths:866,39470
+- (void)scanSpecialPath:882,39982
+- (void)scanOpticalMedia:895,40342
+- (void)updateMediaSelector:900,40582
+- (IBAction)discSelectorChanged:935,41825
+- (IBAction)openSpecialMediaFolder:940,41962
+- (IBAction)dvdreadOptionChanged:962,42875
+- (IBAction)vcdOptionChanged:989,44253
+- (void)textFieldWasClicked:1007,45101
+- (IBAction)openNetModeChanged:1020,45558
+- (IBAction)openNetStepperChanged:1034,46014
+- (void)openNetInfoChanged:1054,46847
+- (IBAction)openNetUDPButtonAction:1095,48236
+- (void)showCaptureView:1148,50128
+- (IBAction)openCaptureModeChanged:1161,50614
+- (void)screenFPSfieldChanged:1241,54488
+- (IBAction)eyetvSwitchChannel:1249,54778
+- (IBAction)eyetvLaunch:1267,55668
+- (IBAction)eyetvGetPlugin:1272,55744
+- (void)eyetvChanged:1277,55893
+- (void)setEyeTVUnconnected1299,56851
+- (void)setupChannelInfo1309,57275
+- (IBAction)subsChanged:1348,58851
+- (IBAction)subSettings:1363,59418
+- (IBAction)subCloseSheet:1372,59623
+- (IBAction)subFileBrowse:1379,59768
+- (IBAction)subOverride:1402,60779
+- (IBAction)panelCancel:1414,61107
+- (IBAction)panelOk:1419,61181
+- (void)updateQTKVideoDevices1427,61311
+- (void)updateQTKAudioDevices1433,61538
+
+VLCMainMenu.h,82
+@interface VLCMainMenu 28,1221
+@interface VLCAutoGeneratedMenuContent 300,14323
+
+VLCApplication.m,27
+- (void)terminate:43,2144
+
+VLCConvertAndSaveWindowController.m,2005
+#define MPEGTS 37,1520
+#define WEBM 38,1537
+#define OGG 39,1552
+#define MP4 40,1566
+#define MPEGPS 41,1580
+#define MJPEG 42,1597
+#define WAV 43,1613
+#define FLV 44,1627
+#define MPEG1 45,1641
+#define MKV 46,1657
+#define RAW 47,1671
+#define AVI 48,1686
+#define ASF 49,1701
+    NSArray *_videoCodecs;VLCConvertAndSaveWindowController(_videoCodecs)54,1803
+    NSArray *_audioCodecs;VLCConvertAndSaveWindowController(_audioCodecs)55,1830
+    NSArray *_subsCodecs;VLCConvertAndSaveWindowController(_subsCodecs)56,1857
+    BOOL b_streaming;VLCConvertAndSaveWindowController(b_streaming)57,1883
+- (void)VLCConvertAndSaveWindowController(void)60,1908
++ (void)initialize76,2385
+- (id)init124,5372
+- (void)windowDidLoad134,5627
+- (IBAction)finalizePanel:264,12628
+- (IBAction)openMedia:309,14598
+- (IBAction)switchProfile:326,15219
+- (IBAction)deleteProfileAction:334,15503
+- (IBAction)iWantAFile:366,16774
+- (IBAction)iWantAStream:381,17475
+- (IBAction)cancelDestination:396,18187
+- (IBAction)browseFileDestination:409,18617
+- (IBAction)customizeProfile:434,19833
+- (IBAction)closeCustomizationSheet:439,20000
+- (IBAction)videoSettingsChanged:450,20208
+- (IBAction)audioSettingsChanged:457,20527
+- (IBAction)subSettingsChanged:464,20846
+- (IBAction)newProfileAction:471,21080
+- (IBAction)showStreamPanel:509,22528
+- (IBAction)closeStreamPanel:514,22691
+- (IBAction)streamTypeToggle:557,24725
+- (IBAction)streamAnnouncementToggle:579,25492
+- (IBAction)sdpFileLocationSelector:590,25949
+- (BOOL)performDragOperation:605,26511
+- (void)updateDropView657,28571
+- (void)updateOKButton681,29598
+- (void)resetCustomizationSheetBasedOnProfile:689,29770
+- (void)selectCellByEncapsulationFormat:771,33632
+- (NSString *)currentEncapsulationFormatAsFileExtension:809,35416
+- (NSString *)composedOptions877,36992
+- (void)updateCurrentProfile973,41916
+- (void)storeProfilesOnDisk1024,44316
+- (void)recreateProfilePopup1032,44580
+- (IBAction)customizeSubsCheckbox:1043,45012
+
+VLCControlsBarCommon.m,672
+    NSImage * _pauseImage;VLCControlsBarCommon(_pauseImage)42,1762
+    NSImage * _pressedPauseImage;VLCControlsBarCommon(_pressedPauseImage)43,1789
+    NSImage * _playImage;VLCControlsBarCommon(_playImage)44,1823
+    NSImage * _pressedPlayImage;VLCControlsBarCommon(_pressedPlayImage)45,1849
+    NSTimeInterval last_fwd_event;VLCControlsBarCommon(last_fwd_event)47,1883
+    NSTimeInterval last_bwd_event;VLCControlsBarCommon(last_bwd_event)48,1918
+    BOOL just_triggered_next;VLCControlsBarCommon(just_triggered_next)49,1953
+    BOOL just_triggered_previous;VLCControlsBarCommon(just_triggered_previous)50,1983
+- (void)VLCControlsBarCommon(void)56,2063
+
+VLCRendererDialog.m,454
+    IBOutlet NSTableView *tableView;VLCRendererDialog(tableView)34,1336
+    IBOutlet NSArrayController *arrayController;VLCRendererDialog(arrayController)35,1373
+    NSMutableArray<VLCRendererDiscovery*> *renderer_discoveries;VLCRendererDialog(renderer_discoveries)37,1423
+    intf_thread_t          *p_intf;VLCRendererDialog(p_intf)39,1489
+    vlc_renderer_discovery_t *p_rd;VLCRendererDialog(p_rd)40,1525
+- (id)VLCRendererDialog(id)46,1604
+
+VLCHelpWindowController.m,202
+- (id)init35,1422
+- (void)windowDidLoad46,1580
+- (void)showHelp54,1811
+- (IBAction)helpGoHome:60,1887
+- (void)webView:(WebView *)sender didFinishLoadForFrame:webView:didFinishLoadForFrame:66,2087
+
+VLCStringUtility.m,1213
+NSString *const kVLCMediaAudioCD 37,1562
+NSString *const kVLCMediaDVD 38,1609
+NSString *const kVLCMediaVCD 39,1648
+NSString *const kVLCMediaSVCD 40,1687
+NSString *const kVLCMediaBD 41,1728
+NSString *const kVLCMediaVideoTSFolder 42,1770
+NSString *const kVLCMediaBDMVFolder 43,1824
+NSString *const kVLCMediaUnknown 44,1871
++ (VLCStringUtility *)sharedInstance52,2000
+- (NSString *)localizedString:67,2284
+- (NSString *)wrapString:(NSString *)o_in_string toWidth:wrapString:toWidth:85,2655
+- (NSString *)getCurrentTimeAsString:(input_thread_t *)p_input negative:getCurrentTimeAsString:negative:123,4546
+- (NSString *)stringForTime:140,5118
+static 164,5932
+    unichar i_nskey;166,5948
+    unsigned int i_vlckey;167,5969
+} nskeys_to_vlckeys[nskeys_to_vlckeys168,5996
+unsigned int CocoaKeyToVLC(203,7140
+NSString *toNSStr(toNSStr217,7502
+- (NSString *)OSXStringKeyToString:226,7808
+- (unsigned int)VLCModifiersToCocoa:267,10841
+- (NSString *)VLCKeyToString:285,11454
+- (NSString *)b64Decode:376,16982
+- (NSString *)b64EncodeAndFree:388,17281
+- (NSString *) getBSDNodeFromMountPath:401,17600
+- (NSString *)getVolumeTypeFromMountPath:436,18677
+NSImage *imageFromRes(imageFromRes533,22107
+
+VLCPLItem.m,216
+- (void)dealloc45,1495
+- (NSUInteger)hash52,1657
+- (BOOL)isEqual:57,1721
+- (BOOL)isLeaf66,1917
+- (void)clear71,1972
+- (void)addChild:(VLCPLItem *)item atPos:addChild:atPos:76,2025
+- (void)deleteChild:83,2156
+
+VLCMainMenu.m,1067
+    VLCAboutWindowController *_aboutWindowController;VLCMainMenu(_aboutWindowController)58,2067
+    VLCHelpWindowController  *_helpWindowController;VLCMainMenu(_helpWindowController)59,2121
+    VLCAddonsWindowController *_addonsController;VLCMainMenu(_addonsController)60,2174
+    VLCRendererDialog *_rendererDialog;VLCMainMenu(_rendererDialog)61,2224
+    NSMenu *_playlistTableColumnsContextMenu;VLCMainMenu(_playlistTableColumnsContextMenu)63,2265
+    __strong VLCTimeSelectionPanelController *_timeSelectionPanel;VLCMainMenu(_timeSelectionPanel)65,2312
+- (void)VLCMainMenu(void)74,2448
+@implementation VLCMainMenu (NSMenuValidation)1543,53041
+- (BOOL)validateMenuItem:1545,53089
+@interface VLCAutoGeneratedMenuContent 1662,57492
+@implementation VLCAutoGeneratedMenuContent1670,57632
+                  andValue:(vlc_value_t)val ofType:initWithVariableName:ofObject:andValue:ofType:1673,57755
+- (void)dealloc1689,58128
+- (const char *)name1698,58312
+- (vlc_value_t)value1703,58359
+- (vlc_object_t *)vlcObject1708,58403
+- (int)type1713,58476
+
+AppleRemote.h,1047
+enum AppleRemoteEventIdentifier62,2936
+    kRemoteButtonVolume_Plus 64,2970
+    kRemoteButtonVolume_Minus 65,3013
+    kRemoteButtonMenu 66,3056
+    kRemoteButtonPlay 67,3099
+    kRemoteButtonRight 68,3142
+    kRemoteButtonLeft 69,3185
+    kRemoteButtonRight_Hold 70,3228
+    kRemoteButtonLeft_Hold 71,3271
+    kRemoteButtonMenu_Hold 72,3314
+    kRemoteButtonPlay_Sleep 73,3357
+    kRemoteControl_Switched 74,3401
+    kRemoteButtonVolume_Plus_Hold 75,3445
+    kRemoteButtonVolume_Minus_Hold 76,3489
+    k2009RemoteButtonPlay77,3533
+    k2009RemoteButtonFullscreen80,3571
+typedef enum AppleRemoteEventIdentifier AppleRemoteEventIdentifier;83,3614
+@interface AppleRemote 89,3862
+@interface AppleRemote (Singleton)AppleRemote(Singleton)150,6637
+@interface NSObject(NSAppleRemoteDelegate)NSObject(NSAppleRemoteDelegate)157,6779
+@interface AppleRemote (PrivateMethods)AppleRemote(PrivateMethods)163,6969
+@interface AppleRemote (IOKitMethods)AppleRemote(IOKitMethods)172,7289
+@interface AppleRemoteApplicationDelegate 182,7741
+
+VLCTrackSynchronizationWindowController.h,60
+@interface VLCTrackSynchronizationWindowController 27,1270
+
+VLCPopupPanelController.h,119
+@interface VLCPopupPanelController 26,1197
+typedef void(^PopupPanelCompletionBlock)PopupPanelCompletionBlock45,1980
+
+AppleRemote.m,2135
+const char* AppleRemoteDeviceName 60,2907
+const int REMOTE_SWITCH_COOKIE=61,2964
+const NSTimeInterval DEFAULT_MAXIMUM_CLICK_TIME_DIFFERENCE=62,2999
+const NSTimeInterval HOLD_RECOGNITION_TIME_INTERVAL=63,3064
+- (id)init69,3177
+- (void) dealloc 101,5495
+- (int) remoteId 105,5548
+- (BOOL) remoteAvailable 109,5591
+- (BOOL) listeningToRemote 119,5799
+- (void) setListeningToRemote:123,5912
+- (void) setDelegate:136,6519
+- (id) delegate 141,6705
+- (BOOL) clickCountingEnabled 145,6747
+- (void) setClickCountingEnabled:148,6828
+- (BOOL) listeningOnAppActivate 156,7196
+- (void) setListeningOnAppActivate:160,7373
+- (IBAction) startListening:174,8095
+- (IBAction) stopListening:200,8588
+@implementation AppleRemote 235,9372
++ (AppleRemote*) sharedRemote 239,9454
++ (id)allocWithZone:247,9644
+- (id)copyWithZone:255,9836
+@implementation AppleRemote 261,9898
+- (void) setRemoteId:263,9944
+- (IOHIDQueueInterface**) queue 267,10005
+- (IOHIDDeviceInterface**) hidDeviceInterface 271,10060
+- (NSDictionary*) cookieToButtonMapping 275,10142
+- (NSString*) validCookieSubstring:279,10222
+- (void) sendSimulatedPlusMinusEvent:290,10619
+- (void) sendRemoteButtonEvent: (AppleRemoteEventIdentifier) event pressedDown:sendRemoteButtonEvent:pressedDown:303,11160
+- (void) executeClickCountEvent:355,13644
+- (void) handleEventWithCookieString: (NSString*) cookieString sumOfValues:handleEventWithCookieString:sumOfValues:378,14604
+static void QueueCallbackFunction(417,16700
+@implementation AppleRemote 446,17810
+- (IOHIDDeviceInterface**) createInterfaceForDevice:448,17854
+- (io_object_t) findAppleRemoteDevice 483,19310
+- (BOOL) initializeCookies 506,20099
+- (BOOL) openDevice 566,22567
+@implementation AppleRemoteApplicationDelegate608,24338
+- (id) initWithApplicationDelegate:610,24386
+- (id) applicationDelegate 616,24528
+- (void)applicationWillBecomeActive:620,24592
+- (void)applicationDidBecomeActive:625,24837
+- (void)applicationWillResignActive:632,25140
+- (void)applicationDidResignActive:639,25445
+- (NSMethodSignature *)methodSignatureForSelector:645,25688
+- (void)forwardInvocation:653,26007
+
+VLCExtensionsManager.h,85
+@class VLCExtensionsDialogProvider;35,1328
+@interface VLCExtensionsManager 37,1365
+
+VLCVoutWindowController.h,146
+@class VLCControlsBarCommon;30,1348
+@class VLCVideoWindowCommon;31,1377
+@class VLCVoutView;32,1406
+@interface VLCVoutWindowController 34,1427
+
+VLCTrackSynchronizationWindowController.m,580
+#define SUBSDELAY_CFG_MODE 31,1403
+#define SUBSDELAY_CFG_FACTOR 32,1467
+#define SUBSDELAY_MODE_ABSOLUTE 33,1533
+#define SUBSDELAY_MODE_RELATIVE_SOURCE_DELAY 34,1582
+#define SUBSDELAY_MODE_RELATIVE_SOURCE_CONTENT 35,1631
+- (id)init39,1738
+- (void)windowDidLoad46,1828
+- (void)updateCocoaWindowLevel:89,3887
+- (IBAction)toggleWindow:95,4073
+- (IBAction)resetValues:107,4386
+- (void)updateValues129,5083
+- (IBAction)avValueChanged:144,5722
+- (IBAction)svAdvanceValueChanged:159,6168
+- (IBAction)svSpeedValueChanged:174,6643
+- (IBAction)svDurationValueChanged:189,7084
+
+VLCPopupPanelController.m,141
+    PopupPanelCompletionBlock _completionBlock;VLCPopupPanelController(_completionBlock)28,1248
+- (id)VLCPopupPanelController(id)34,1345
+
+prefs.h,61
+@class VLCTreeMainItem;25,1212
+@interface VLCPrefs 30,1418
+
+helpers.h,250
+static inline input_thread_t *getInput(getInput29,1313
+static inline vout_thread_t *getVout(getVout37,1476
+static inline vout_thread_t *getVoutForActiveWindow(getVoutForActiveWindow47,1709
+static inline audio_output_t *getAout(getAout65,2127
+
+VLCExtensionsManager.m,482
+#define MENU_MAP(32,1346
+#define MENU_GET_ACTION(33,1420
+#define MENU_GET_EXTENSION(34,1481
+    extensions_manager_t *p_extensions_manager;VLCExtensionsManager(p_extensions_manager)38,1585
+    VLCExtensionsDialogProvider *_extensionDialogProvider;VLCExtensionsManager(_extensionDialogProvider)39,1633
+    NSMutableDictionary *p_extDict;VLCExtensionsManager(p_extDict)41,1693
+    BOOL b_failed;VLCExtensionsManager(b_failed)43,1730
+- (id)VLCExtensionsManager(id)49,1849
+
+VLCVoutWindowController.m,729
+static atomic_bool b_intf_starting 41,1695
+int WindowOpen(45,1823
+static int WindowControl(95,3701
+void WindowClose(183,7240
+    NSMutableDictionary *o_vout_dict;VLCVoutWindowController(o_vout_dict)199,7730
+    VLCKeyboardBacklightControl *o_keyboard_backlight;VLCVoutWindowController(o_keyboard_backlight)200,7768
+    NSPoint top_left_point;VLCVoutWindowController(top_left_point)202,7824
+    NSUInteger i_statusLevelWindowCounter;VLCVoutWindowController(i_statusLevelWindowCounter)205,7930
+    NSInteger i_currentWindowLevel;VLCVoutWindowController(i_currentWindowLevel)206,7973
+    BOOL b_mainwindow_has_video;VLCVoutWindowController(b_mainwindow_has_video)208,8010
+- (id)VLCVoutWindowController(id)214,8092
+
+VLCPlaylistInfo.h,65
+@interface VLCInfo 30,1419
+@interface VLCInfoTreeItem 114,5958
+
+VLCMainWindow.h,383
+@class VLCDetachedVideoWindow;38,1575
+@class VLCMainWindowControlsBar;39,1606
+@class VLCVoutView;40,1639
+@class PXSourceList;41,1659
+    psUserEvent,44,1696
+    psUserMenuEvent,45,1713
+    psVideoStartedOrStoppedEvent,46,1734
+    psPlaylistItemChangedEvent47,1768
+} VLCPlaylistStateEvent;48,1799
+@interface VLCMainWindow 50,1825
+@interface VLCDetachedVideoWindow 129,5155
+
+VLCInputManager.h,60
+@class VLCMain;30,1253
+@interface VLCInputManager 32,1270
+
+VLCUIWidgets.h,258
+@class VLCDialogGridView;28,1305
+@interface VLCDialogButton 30,1332
+@interface VLCDialogPopUpButton 34,1426
+@interface VLCDialogTextField 38,1530
+@interface VLCDialogWindow 42,1630
+@interface VLCDialogList 48,1762
+@interface VLCDialogGridView 53,1941
+
+prefs.m,4486
+#define LEFTMARGIN 66,2645
+#define RIGHTMARGIN 67,2668
+@interface VLCFlippedView 71,2731
+- (BOOL)isFlipped76,2804
+@property 90,3000
+- (VLCTreeItem *)childAtIndex:initWithName:numberOfChildren:95,3122
+- (NSMutableArray *)children;initWithName:numberOfChildren:name98,3193
+- (NSMutableArray *)options;initWithName:numberOfChildren:name99,3223
+- (void)showView;initWithName:numberOfChildren:name100,3252
+- (void)applyChanges;initWithName:numberOfChildren:name101,3270
+- (void)resetView;initWithName:numberOfChildren:name102,3292
++ (VLCTreeSubCategoryItem *)subCategoryTreeItemWithSubCategory:initWithName:numberOfChildren:name:int:111,3412
++ (VLCTreePluginItem *)pluginTreeItemWithPlugin:initWithName:numberOfChildren:name:int:initWithSubCategory:subCategory:module_config_t:122,3699
+- (unsigned int)configSize;initWithName:numberOfChildren:name:int:initWithSubCategory:subCategory:module_config_t:initWithPlugin:configItems126,3843
++ (VLCTreeCategoryItem *)categoryTreeItemWithCategory:initWithName:numberOfChildren:name:int:initWithSubCategory:subCategory:module_config_t:initWithPlugin:configItems:int:134,3962
+- (VLCTreeSubCategoryItem *)itemRepresentingSubCategory:initWithName:numberOfChildren:name:int:initWithSubCategory:subCategory:module_config_t:initWithPlugin:configItems:int:initWithCategory:category:138,4087
+- (id)initWithConfigItem:initWithName:numberOfChildren:name:int:initWithSubCategory:subCategory:module_config_t:initWithPlugin:configItems:int:initWithCategory:category:@end:module_config_t:146,4270
+@interface VLCPrefs(initWithName:numberOfChildren:name:int:initWithSubCategory:subCategory:module_config_t:initWithPlugin:configItems:int:initWithCategory:category:@end:module_config_t:configItem:itemRepresentingCategory:@end160,4686
+    self initWithName:numberOfChildren:name:int:initWithSubCategory:subCategory:module_config_t:initWithPlugin:configItems:int:initWithCategory:category:@end:module_config_t:configItem:itemRepresentingCategory:@end172,4857
+- (void)setTitle:initWithName:numberOfChildren:name:int:initWithSubCategory:subCategory:module_config_t:initWithPlugin:configItems:int:initWithCategory:category:@end:module_config_t:configItem:itemRepresentingCategory:@end:setTitle:200,5725
+- (void)showPrefsWithLevel:205,5826
+- (IBAction)savePrefs:213,6028
+- (IBAction)closePrefs:222,6274
+- (IBAction)showSimplePrefs:227,6347
+- (IBAction)resetPrefs:233,6494
+- (void)loadConfigTree238,6555
+- (void)outlineViewSelectionIsChanging:242,6583
+- (void)outlineViewSelectionDidChange:247,6729
+@implementation VLCPrefs 257,7006
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:outlineView:numberOfChildrenOfItem:259,7052
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:outlineView:isItemExpandable:264,7230
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:outlineView:child:ofItem:269,7397
+    objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:outlineView:objectValueForTableColumn:byItem:275,7633
+- (id)initWithName:@implementation:286,7853
+- (VLCTreeItem *)childAtIndex:@implementation:self:295,7979
+- (int)numberOfChildren@implementation:self:return:numberOfChildren300,8085
+- (NSString *)name305,8150
+- (void)showView310,8192
+- (void)applyChanges374,10224
+- (void)resetView386,10514
+- (NSMutableArray *)children402,10926
+- (NSMutableArray *)options409,11053
+- (VLCTreeCategoryItem *)itemRepresentingCategory:@implementation:420,11229
+    for (int i = 0; i < childrenCount; i+@implementation:NSUInteger423,11351
+- (bool)isSubCategoryGeneral:431,11584
+- (NSMutableArray *)children447,12081
++ (VLCTreeCategoryItem *)categoryTreeItemWithCategory:@implementation:526,15399
+- (id)initWithCategory:@implementation:if:initWithCategory:532,15588
+- (VLCTreeSubCategoryItem *)itemRepresentingSubCategory:542,15854
+- (int)category554,16305
+- (id)initWithSubCategory:@implementation:562,16407
++ (VLCTreeSubCategoryItem *)subCategoryTreeItemWithSubCategory:@implementation:NSString:572,16691
+- (int)subCategory@implementation:NSString:if:subCategory579,16909
+- (id)initWithPlugin:@implementation:588,17013
+    NSString * name = _NS(module_get_name(plugin,@implementation:NSString590,17055
++ (VLCTreePluginItem *)pluginTreeItemWithPlugin:599,17345
+- (void)dealloc604,17474
+- (module_config_t *)configItems609,17533
+- (unsigned int)configSize614,17596
+- (id)initWithConfigItem:@implementation:624,17706
+
+VLCPlaylistInfo.m,854
+    VLCInfoTreeItem *rootItem;VLCInfo(rootItem)33,1404
+    input_item_t *p_item;VLCInfo(p_item)35,1436
+    BOOL b_stats;VLCInfo(b_stats)37,1463
+- (id)VLCInfo(id)43,1514
+#define SET(193,6535
+#undef SET208,6912
+#define SET(226,7576
+#undef SET244,8152
+    #define utf8(363,12384
+@implementation VLCInfo (NSTableDataSource)396,13592
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:outlineView:numberOfChildrenOfItem:398,13637
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:outlineView:isItemExpandable:403,13806
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:outlineView:child:ofItem:407,13926
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:outlineView:objectValueForTableColumn:byItem:412,14126
+
+VLCDocumentController.h,42
+@interface VLCDocumentController 26,1182
+
+VLCMainWindow.m,6092
+@interface VLCMainWindow() <PXSourceListDataSource, PXSourceListDelegate,VLCMainWindow(PXSourceListDelegate)53,1969
+@interface VLCMainWindow() <PXSourceListDataSource, PXSourceListDelegate, NSOutlineViewDataSource,VLCMainWindow(NSOutlineViewDataSource)53,1969
+@interface VLCMainWindow() <PXSourceListDataSource, PXSourceListDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate,VLCMainWindow(NSOutlineViewDelegate)53,1969
+@interface VLCMainWindow() <PXSourceListDataSource, PXSourceListDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate, NSWindowDelegate,VLCMainWindow(NSWindowDelegate)53,1969
+@interface VLCMainWindow() <PXSourceListDataSource, PXSourceListDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate, NSWindowDelegate, NSAnimationDelegate,VLCMainWindow(NSAnimationDelegate)53,1969
+    BOOL videoPlaybackEnabled;VLCMainWindow(videoPlaybackEnabled)55,2153
+    BOOL dropzoneActive;VLCMainWindow(dropzoneActive)56,2184
+    BOOL splitViewRemoved;VLCMainWindow(splitViewRemoved)57,2209
+    BOOL minimizedView;VLCMainWindow(minimizedView)58,2236
+    BOOL b_video_playback_enabled;VLCMainWindow(b_video_playback_enabled)60,2261
+    BOOL b_dropzone_active;VLCMainWindow(b_dropzone_active)61,2296
+    BOOL b_splitview_removed;VLCMainWindow(b_splitview_removed)62,2324
+    BOOL b_minimized_view;VLCMainWindow(b_minimized_view)63,2354
+    CGFloat f_lastSplitViewHeight;VLCMainWindow(f_lastSplitViewHeight)65,2382
+    CGFloat f_lastLeftSplitViewWidth;VLCMainWindow(f_lastLeftSplitViewWidth)66,2417
+    NSMutableArray *o_sidebaritems;VLCMainWindow(o_sidebaritems)68,2456
+    BOOL b_podcastView_displayed;VLCMainWindow(b_podcastView_displayed)72,2576
+    VLCColorView * o_color_backdrop;VLCMainWindow(o_color_backdrop)74,2611
+    NSRect frameBeforePlayback;VLCMainWindow(frameBeforePlayback)76,2649
+- (void)VLCMainWindow(void)78,2683
+static const float f_min_window_height 85,2843
+- (BOOL)isEvent:(NSEvent *)o_event forKey:isEvent:forKey:92,2966
+- (BOOL)performKeyEquivalent:114,3956
+- (void)dealloc138,5001
+- (void)awakeFromNib143,5087
+- (void)reloadSidebar324,13528
+- (void)resizePlaylistAfterCollapse431,19117
+- (void)makeSplitViewVisible458,20132
+- (void)makeSplitViewHidden485,21044
+- (void)changePlaylistState:504,21651
+- (IBAction)dropzoneButtonAction:568,24292
+- (void)windowResizedOrMoved:576,24459
+- (void)applicationWillTerminate:581,24580
+- (void)someWindowWillClose:588,24808
+- (void)someWindowWillMiniaturize:599,25190
+- (void)showDropZone613,25750
+- (void)hideDropZone621,26006
+- (void)hideSplitView:628,26141
+- (void)showSplitView:652,27190
+- (void)updateTimeSlider676,28145
+- (void)updateName688,28477
+- (void)updateWindow748,30539
+- (void)setPause782,31535
+- (void)setPlay792,31775
+- (void)updateVolumeSlider802,32011
+- (void)videoplayWillBeStarted811,32247
+- (void)setVideoplayEnabled817,32353
+- (void)windowWillEnterFullScreen:863,34209
+- (void)windowWillExitFullScreen:876,34621
+- (void)showFullscreenController890,35030
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(CGFloat)proposedMax ofSubviewAt:splitView:constrainMaxCoordinate:ofSubviewAt:905,35528
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:splitView:constrainMinCoordinate:ofSubviewAt:913,35744
+- (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:splitView:canCollapseSubview:921,35960
+- (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:splitView:shouldAdjustSizeOfSubview:926,36092
+- (void)mainSplitViewDidResizeSubviews:931,36232
+- (void)toggleLeftSubSplitView938,36520
+- (void)_updatePlaylistTitle950,36952
+- (NSString *)_playbackDurationOfNode:964,37520
+- (IBAction)searchItem:991,38281
+- (IBAction)highlightSearchField:996,38411
+- (NSUInteger)sourceList:(PXSourceList*)sourceList numberOfChildrenOfItem:sourceList:numberOfChildrenOfItem:1004,38629
+- (id)sourceList:(PXSourceList*)aSourceList child:(NSUInteger)index ofItem:sourceList:child:ofItem:1014,38910
+- (id)sourceList:(PXSourceList*)aSourceList objectValueForItem:sourceList:objectValueForItem:1024,39220
+- (void)sourceList:(PXSourceList*)aSourceList setObjectValue:(id)object forItem:sourceList:setObjectValue:forItem:1029,39322
+- (BOOL)sourceList:(PXSourceList*)aSourceList isItemExpandable:sourceList:isItemExpandable:1034,39444
+- (BOOL)sourceList:(PXSourceList*)aSourceList itemHasBadge:sourceList:itemHasBadge:1040,39553
+- (NSInteger)sourceList:(PXSourceList*)aSourceList badgeValueForItem:sourceList:badgeValueForItem:1049,39790
+- (BOOL)sourceList:(PXSourceList*)aSourceList itemHasIcon:sourceList:itemHasIcon:1074,40440
+- (NSImage*)sourceList:(PXSourceList*)aSourceList iconForItem:sourceList:iconForItem:1080,40540
+- (NSMenu*)sourceList:(PXSourceList*)aSourceList menuForEvent:(NSEvent*)theEvent item:sourceList:menuForEvent:item:1085,40640
+- (IBAction)sdmenuhandler:1107,41615
+- (BOOL)sourceList:(PXSourceList*)aSourceList isGroupAlwaysExpanded:sourceList:isGroupAlwaysExpanded:1124,42316
+- (void)sourceListSelectionDidChange:1132,42492
+- (NSDragOperation)sourceList:(PXSourceList *)aSourceList validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:sourceList:validateDrop:proposedItem:proposedChildIndex:1192,44686
+- (BOOL)sourceList:(PXSourceList *)aSourceList acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:sourceList:acceptDrop:item:childIndex:1202,45244
+- (id)sourceList:(PXSourceList *)aSourceList persistentObjectForItem:sourceList:persistentObjectForItem:1242,46677
+- (id)sourceList:(PXSourceList *)aSourceList itemForPersistentObject:sourceList:itemForPersistentObject:1247,46790
+- (IBAction)addPodcast:1269,47446
+- (IBAction)addPodcastWindowAction:1274,47608
+- (IBAction)removePodcast:1290,48322
+- (IBAction)removePodcastWindowAction:1301,48793
+- (void)showPodcastControls1325,49830
+- (void)hidePodcastControls1344,50662
+@interface VLCDetachedVideoWindow 1361,51238
+@implementation VLCDetachedVideoWindow1367,51322
+- (void)awakeFromNib1369,51362
+
+VLCInputManager.m,764
+static int InputThreadChanged(41,1529
+static int InputEvent(53,1935
+    __weak VLCMain *o_main;VLCInputManager(o_main)138,5798
+    input_thread_t *p_current_input;VLCInputManager(p_current_input)140,5827
+    dispatch_queue_t informInputChangedQueue;VLCInputManager(informInputChangedQueue)141,5864
+    IOPMAssertionID systemSleepAssertionID;VLCInputManager(systemSleepAssertionID)144,5938
+    IOPMAssertionID userActivityAssertionID;VLCInputManager(userActivityAssertionID)145,5982
+    BOOL b_has_itunes_paused;VLCInputManager(b_has_itunes_paused)148,6072
+    BOOL b_has_spotify_paused;VLCInputManager(b_has_spotify_paused)149,6102
+    NSTimer *o_itunes_play_timer;VLCInputManager(o_itunes_play_timer)150,6133
+- (id)VLCInputManager(id)156,6208
+
+VLCAudioEffectsWindowController.h,136
+@class VLCPopupPanelController;27,1265
+@class VLCTextfieldPanelController;28,1297
+@interface VLCAudioEffectsWindowController 30,1334
+
+VLCKeyboardBacklightControl.h,48
+@interface VLCKeyboardBacklightControl 26,1173
+
+prefs_widgets.h,625
+static NSMenu *o_keys_menu o_keys_menu25,1217
+@interface VLCConfigControl 27,1252
+@interface StringConfigControl 58,2060
+@interface StringListConfigControl 65,2208
+@interface FileConfigControl 72,2360
+@interface ModuleConfigControl 81,2546
+@interface IntegerConfigControl 88,2694
+@interface IntegerListConfigControl 97,2883
+@interface RangedIntegerConfigControl 104,3036
+@interface BoolConfigControl 113,3230
+@interface FloatConfigControl 120,3376
+@interface RangedFloatConfigControl 129,3563
+@interface KeyConfigControl 138,3755
+@interface ModuleListConfigControl 145,3900
+@interface SectionControl 152,4052
+
+VLCUIWidgets.m,1186
+@implementation VLCDialogList50,1498
+- (NSInteger)numberOfRowsInTableView:52,1529
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:tableView:objectValueForTableColumn:row:57,1635
+@interface VLCDialogGridView(63,1845
+@implementation VLCDialogGridView70,1958
+- (NSUInteger)numViews72,1993
+- (id)init77,2055
+- (void)recomputeCount88,2229
+- (void)recomputeWindowSize102,2606
+- (NSSize)objectSizeToFit:116,3203
+- (CGFloat)marginX125,3425
+- (CGFloat)marginY129,3463
+- (CGFloat)constrainedHeightOfRow:134,3501
+- (CGFloat)remainingRowsHeight154,4157
+- (CGFloat)heightOfRow:175,4771
+- (CGFloat)topOfRow:185,5035
+- (CGFloat)constrainedWidthOfColumn:194,5258
+- (CGFloat)remainingColumnWidth214,5915
+- (CGFloat)widthOfColumn:234,6518
+- (CGFloat)leftOfColumn:243,6719
+- (void)relayout252,6940
+- (NSMutableDictionary *)objectForView:294,8462
+                                                       colSpan:addSubview:atRow:column:rowSpan:colSpan:306,8841
+              colSpan:updateSubview:atRow:column:rowSpan:colSpan:336,10044
+- (void)removeSubview:350,10368
+- (void)setFrame:364,10665
+- (NSSize)flexSize:370,10758
+
+VLCHUDCheckboxCell.h,39
+@interface VLCHUDCheckboxCell 31,1468
+
+VLCDocumentController.m,63
++ (void)load28,1197
+- (IBAction)clearRecentDocuments:33,1273
+
+VLCAudioEffectsWindowController.m,1872
+    NSInteger i_old_profile_index;VLCAudioEffectsWindowController(i_old_profile_index)42,1600
+- (void)VLCAudioEffectsWindowController(void)44,1637
++ (void)initialize54,1854
+- (id)init89,3896
+- (void)windowDidLoad102,4185
+- (void)setAudioFilter: (char *)psz_name on:setAudioFilter:on:156,6607
+- (void)resetProfileSelector171,7022
+- (void)updateCocoaWindowLevel:196,7985
+- (IBAction)toggleWindow:202,8171
+- (NSString *)generateProfileString212,8456
+- (void)saveCurrentProfile241,9956
+- (IBAction)profileSelectorAction:259,10614
+- (void)addAudioEffectsProfile:362,15889
+- (void)removeAudioEffectsProfile:415,18362
+static bool GetEqualizerStatus(static452,20090
+- (void)updatePresetSelector480,20699
+- (void)equalizerUpdated524,22473
+- (id)sliderByIndex:540,22978
+- (void)setBandSliderValuesForPreset:557,23541
+- (NSString *)generatePresetString566,23939
+- (void)setValue:(float)value forSlider:setValue:forSlider:581,24553
+- (IBAction)equalizerEnable:589,24715
+- (IBAction)equalizerBandSliderUpdated:595,24869
+- (IBAction)equalizerChangePreset:608,25242
+- (IBAction)equalizerPreAmpSliderUpdated:634,26482
+- (IBAction)equalizerTwoPass:648,26840
+- (IBAction)addPresetAction:662,27181
+- (IBAction)deletePresetAction:706,29405
+- (void)resetCompressor743,31261
+- (IBAction)resetCompressorValues:774,33389
+- (IBAction)compressorEnable:799,34480
+- (IBAction)compressorSliderUpdated:805,34636
+- (void)resetSpatializer848,36730
+#define setSlider(863,37198
+#undef setSlider873,37842
+- (IBAction)resetSpatializerValues:876,37862
+- (IBAction)spatializerEnable:897,38625
+- (IBAction)spatializerSliderUpdated:903,38784
+- (void)resetAudioFilters938,40381
+- (IBAction)filterEnableHeadPhoneVirt:961,41280
+- (IBAction)filterEnableVolumeNorm:966,41392
+- (IBAction)filterVolumeNormSliderUpdated:973,41610
+- (IBAction)filterEnableKaraoke:985,41942
+
+VLCKeyboardBacklightControl.m,480
+    kGetSensorReadingID 28,1213
+    kGetLEDBrightnessID 29,1276
+    kSetLEDBrightnessID 30,1337
+    kSetLEDFadeID 31,1403
+    io_connect_t dataPort;35,1518
+static float lastBrightnessLevel;38,1548
+- (id)init 40,1583
+- (void)dealloc 46,1699
+- (io_connect_t)getDataPort 51,1772
+- (void)setBrightness:66,2184
+- (float)getBrightness 85,2813
+- (void)lightsUp 109,3523
+- (void)lightsDown 129,4013
+- (void)switchLightsAsync:147,4396
+- (void)switchLightsInstantly:155,4657
+
+prefs_widgets.m,3879
+#define CONFIG_ITEM_STRING_LIST 43,1679
+#define CONFIG_ITEM_RANGED_INTEGER 44,1737
+#define LEFTMARGIN 46,1800
+#define RIGHTMARGIN 47,1823
+#define PREFS_WRAP 48,1846
+#define OFFSET_RIGHT 49,1869
+#define OFFSET_BETWEEN 50,1893
+#define UPWARDS_WHITE_ARROW 52,1919
+#define OPTION_KEY 53,1978
+#define UP_ARROWHEAD 54,2037
+#define PLACE_OF_INTEREST_SIGN 55,2096
+#define POPULATE_A_KEY(57,2156
+#define ADD_LABEL(239,16214
+#define ADD_TEXTFIELD(257,17465
+#define ADD_SECURETEXTFIELD(271,18404
+#define ADD_COMBO(285,19343
+#define ADD_RIGHT_BUTTON(303,20594
+#define ADD_POPUP(323,22001
+#define ADD_STEPPER(337,22940
+#define ADD_SLIDER(356,24269
+#define ADD_CHECKBOX(371,25286
+    const char *psz_name;VLCConfigControl(psz_name)390,26491
+- (id)VLCConfigControl(id)396,26559
+    NSTextField     *o_textfield;StringConfigControl(o_textfield)911,43233
+- (id)StringConfigControl(id)916,43311
+    NSPopUpButton      *o_popup;StringListConfigControl(o_popup)998,46056
+- (id)StringListConfigControl(id)1003,46137
+    NSTextField     *o_textfield;FileConfigControl(o_textfield)1100,48971
+    NSButton        *o_button;FileConfigControl(o_button)1101,49005
+    BOOL            b_directory;FileConfigControl(b_directory)1102,49036
+- (id)FileConfigControl(id)1107,49111
+    NSPopUpButton   *o_popup;ModuleConfigControl(o_popup)1201,52189
+- (id)ModuleConfigControl(id)1206,52263
+    NSTextField     *o_textfield;IntegerConfigControl(o_textfield)1335,56590
+    NSStepper       *o_stepper;IntegerConfigControl(o_stepper)1336,56624
+- (id)IntegerConfigControl(id)1341,56701
+    NSPopUpButton      *o_popup;IntegerListConfigControl(o_popup)1427,59417
+- (id)IntegerListConfigControl(id)1433,59500
+    NSSlider        *o_slider;RangedIntegerConfigControl(o_slider)1518,62164
+    NSTextField     *o_textfield;RangedIntegerConfigControl(o_textfield)1519,62195
+    NSTextField     *o_textfield_min;RangedIntegerConfigControl(o_textfield_min)1520,62229
+    NSTextField     *o_textfield_max;RangedIntegerConfigControl(o_textfield_max)1521,62267
+- (id)RangedIntegerConfigControl(id)1526,62356
+    NSTextField     *o_textfield;FloatConfigControl(o_textfield)1633,66163
+    NSStepper       *o_stepper;FloatConfigControl(o_stepper)1634,66197
+- (id)FloatConfigControl(id)1639,66272
+    NSSlider        *o_slider;RangedFloatConfigControl(o_slider)1725,69064
+    NSTextField     *o_textfield;RangedFloatConfigControl(o_textfield)1726,69095
+    NSTextField     *o_textfield_min;RangedFloatConfigControl(o_textfield_min)1727,69129
+    NSTextField     *o_textfield_max;RangedFloatConfigControl(o_textfield_max)1728,69167
+- (id)RangedFloatConfigControl(id)1733,69254
+    NSButton        *o_checkbox;BoolConfigControl(o_checkbox)1839,73088
+- (id)BoolConfigControl(id)1845,73164
+    NSPopUpButton   *o_popup;KeyConfigControl(o_popup)1890,74378
+- (id)KeyConfigControl(id)1895,74449
+    NSTextField     *o_textfield;ModuleListConfigControl(o_textfield)1972,76943
+    NSTableView     *o_tableview;ModuleListConfigControl(o_tableview)1973,76977
+    NSMutableArray  *o_modulearray;ModuleListConfigControl(o_modulearray)1974,77011
+- (id)ModuleListConfigControl(id)1979,77095
+#define addLuaIntf(2037,79545
+#undef addLuaIntf2047,80016
+@implementation ModuleListConfigControl (NSTableDataSource)2187,85300
+     toPasteboard:tableView:writeRows:toPasteboard:2190,85424
+       proposedDropOperation:tableView:validateDrop:proposedRow:proposedDropOperation:2207,86027
+- (NSInteger)numberOfRowsInTableView:2275,88204
+objectValueForTableColumn:(NSTableColumn *)aTableColumn row:tableView:objectValueForTableColumn:row:2281,88348
+   forTableColumn:(NSTableColumn *)aTableColumn row:tableView:setObjectValue:forTableColumn:row:2292,88797
+@implementation SectionControl2299,89023
+          withView:initWithItem:withView:2302,89100
+
+VLCHUDRadiobuttonCell.h,42
+@interface VLCHUDRadiobuttonCell 26,1218
+
+VLCHUDCheckboxCell.m,144
+- (instancetype) initWithCoder:28,1255
+- (void) drawImage:(NSImage *)image withFrame:(NSRect)frame inView:drawImage:withFrame:inView:42,2251
+
+VLCMain.h,923
+static NSString * VLCInputChangedNotification 53,1965
+static NSString * VLCConfigurationChangedNotification 54,2045
+static NSString * VLCMediaKeySupportSettingChangedNotification 55,2141
+@class AppleRemote;60,2436
+@class VLCInfo;61,2456
+@class VLCMainMenu;62,2472
+@class VLCPlaylist;63,2492
+@class VLCInputManager;64,2512
+@class VLCResumeDialogController;65,2536
+@class VLCSimplePrefs;66,2570
+@class VLCPrefs;67,2593
+@class VLCCoreDialogProvider;68,2610
+@class VLCBookmarksWindowController;69,2640
+@class VLCOpenWindowController;70,2677
+@class VLCDebugMessageWindowController;71,2709
+@class VLCTrackSynchronizationWindowController;72,2749
+@class VLCAudioEffectsWindowController;73,2797
+@class VLCVideoEffectsWindowController;74,2837
+@class VLCConvertAndSaveWindowController;75,2877
+@class VLCExtensionsManager;76,2919
+@class VLCInfo;77,2948
+@class VLCStatusBarIcon;78,2964
+@interface VLCMain 80,2990
+
+VLCHUDRadiobuttonCell.m,260
+- (instancetype) initWithCoder:28,1267
+- (void) drawImage:(NSImage *)image withFrame:(NSRect)frame inView:drawImage:withFrame:inView:43,2314
+- (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:drawTitle:withFrame:inView:95,4117
+
+iTunes.h,8142
+@class iTunesPrintSettings,26,1146
+@class iTunesPrintSettings, iTunesApplication,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow,26,1146
+@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;26,1146
+enum iTunesEKnd 28,1568
+	iTunesEKndTrackListing 29,1586
+	iTunesEKndAlbumListing 30,1670
+	iTunesEKndCdInsert 31,1751
+typedef enum iTunesEKnd iTunesEKnd;33,1839
+enum iTunesEnum 35,1876
+	iTunesEnumStandard 36,1894
+	iTunesEnumDetailed 37,1965
+typedef enum iTunesEnum iTunesEnum;39,2048
+enum iTunesEPlS 41,2085
+	iTunesEPlSStopped 42,2103
+	iTunesEPlSPlaying 43,2132
+	iTunesEPlSPaused 44,2161
+	iTunesEPlSFastForwarding 45,2189
+	iTunesEPlSRewinding 46,2225
+typedef enum iTunesEPlS iTunesEPlS;48,2258
+enum iTunesERpt 50,2295
+	iTunesERptOff 51,2313
+	iTunesERptOne 52,2338
+	iTunesERptAll 53,2363
+typedef enum iTunesERpt iTunesERpt;55,2390
+enum iTunesEVSz 57,2427
+	iTunesEVSzSmall 58,2445
+	iTunesEVSzMedium 59,2472
+	iTunesEVSzLarge 60,2500
+typedef enum iTunesEVSz iTunesEVSz;62,2529
+enum iTunesESrc 64,2566
+	iTunesESrcLibrary 65,2584
+	iTunesESrcIPod 66,2613
+	iTunesESrcAudioCD 67,2639
+	iTunesESrcMP3CD 68,2668
+	iTunesESrcRadioTuner 69,2695
+	iTunesESrcSharedLibrary 70,2727
+	iTunesESrcUnknown 71,2762
+typedef enum iTunesESrc iTunesESrc;73,2793
+enum iTunesESrA 75,2830
+	iTunesESrAAlbums 76,2848
+	iTunesESrAAll 77,2894
+	iTunesESrAArtists 78,2941
+	iTunesESrAComposers 79,2989
+	iTunesESrADisplayed 80,3041
+	iTunesESrASongs 81,3098
+typedef enum iTunesESrA iTunesESrA;83,3149
+enum iTunesESpK 85,3186
+	iTunesESpKNone 86,3204
+	iTunesESpKBooks 87,3230
+	iTunesESpKFolder 88,3257
+	iTunesESpKGenius 89,3285
+	iTunesESpKITunesU 90,3313
+	iTunesESpKLibrary 91,3342
+	iTunesESpKMovies 92,3371
+	iTunesESpKMusic 93,3399
+	iTunesESpKPodcasts 94,3426
+	iTunesESpKPurchasedMusic 95,3456
+	iTunesESpKTVShows 96,3492
+typedef enum iTunesESpK iTunesESpK;98,3523
+enum iTunesEVdK 100,3560
+	iTunesEVdKNone 101,3578
+	iTunesEVdKMovie 102,3644
+	iTunesEVdKMusicVideo 103,3689
+	iTunesEVdKTVShow 104,3745
+typedef enum iTunesEVdK iTunesEVdK;106,3795
+enum iTunesERtK 108,3832
+	iTunesERtKUser 109,3850
+	iTunesERtKComputed 110,3904
+typedef enum iTunesERtK iTunesERtK;112,3965
+@interface iTunesPrintSettings 120,4030
+@interface iTunesApplication 151,5640
+@interface iTunesItem 208,9280
+@interface iTunesArtwork 228,10352
+@interface iTunesEncoder 241,10937
+@interface iTunesEQPreset 249,11106
+@interface iTunesPlaylist 269,12280
+@interface iTunesAudioCDPlaylist 289,13369
+@interface iTunesLibraryPlaylist 305,13983
+@interface iTunesRadioTunerPlaylist 315,14170
+@interface iTunesSource 323,14316
+@interface iTunesTrack 341,14901
+@interface iTunesAudioCDTrack 408,19751
+@interface iTunesFileTrack 416,19959
+@interface iTunesSharedTrack 425,20241
+@interface iTunesURLTrack 431,20333
+@interface iTunesUserPlaylist 440,20533
+@interface iTunesFolderPlaylist 453,20847
+@interface iTunesVisual 459,20928
+@interface iTunesWindow 465,20987
+@interface iTunesBrowserWindow 481,21651
+@interface iTunesEQWindow 491,21957
+@interface iTunesPlaylistWindow 499,22111
+
+VLCMain.m,2049
+static intf_thread_t *p_interface_thread;p_interface_thread81,2951
+intf_thread_t *getIntf(getIntf83,2994
+int OpenIntf 88,3055
+void CloseIntf 106,3605
+static int ShowController(125,4250
+    intf_thread_t *p_intf;VLCMain(p_intf)157,5145
+    BOOL launched;VLCMain(launched)158,5172
+    int items_at_launch;VLCMain(items_at_launch)159,5191
+    BOOL b_active_videoplayback;VLCMain(b_active_videoplayback)161,5217
+    NSWindowController *_mainWindowController;VLCMain(_mainWindowController)163,5251
+    VLCMainMenu *_mainmenu;VLCMain(_mainmenu)164,5298
+    VLCPrefs *_prefs;VLCMain(_prefs)165,5326
+    VLCSimplePrefs *_sprefs;VLCMain(_sprefs)166,5348
+    VLCOpenWindowController *_open;VLCMain(_open)167,5377
+    VLCCoreDialogProvider *_coredialogs;VLCMain(_coredialogs)168,5413
+    VLCBookmarksWindowController *_bookmarks;VLCMain(_bookmarks)169,5454
+    VLCCoreInteraction *_coreinteraction;VLCMain(_coreinteraction)170,5500
+    VLCResumeDialogController *_resume_dialog;VLCMain(_resume_dialog)171,5542
+    VLCInputManager *_input_manager;VLCMain(_input_manager)172,5589
+    VLCPlaylist *_playlist;VLCMain(_playlist)173,5626
+    VLCDebugMessageWindowController *_messagePanelController;VLCMain(_messagePanelController)174,5654
+    VLCStatusBarIcon *_statusBarIcon;VLCMain(_statusBarIcon)175,5716
+    VLCTrackSynchronizationWindowController *_trackSyncPanel;VLCMain(_trackSyncPanel)176,5754
+    VLCAudioEffectsWindowController *_audioEffectsPanel;VLCMain(_audioEffectsPanel)177,5816
+    VLCVideoEffectsWindowController *_videoEffectsPanel;VLCMain(_videoEffectsPanel)178,5873
+    VLCConvertAndSaveWindowController *_convertAndSaveWindow;VLCMain(_convertAndSaveWindow)179,5930
+    VLCExtensionsManager *_extensionsManager;VLCMain(_extensionsManager)180,5992
+    VLCInfo *_currentMediaInfoPanel;VLCMain(_currentMediaInfoPanel)181,6038
+    bool b_intf_terminating;VLCMain(b_intf_terminating)183,6076
+static VLCMain *sharedInstance VLCMain(sharedInstance)196,6435
++ (VLCMain VLCMain(VLCMain)198,6474
+
+VLCMain+OldPrefs.h,56
+@interface VLCMain (OldPrefs)VLCMain(OldPrefs)26,1162
+
+VLCVideoEffectsWindowController.h,136
+@class VLCPopupPanelController;26,1210
+@class VLCTextfieldPanelController;27,1242
+@interface VLCVideoEffectsWindowController 29,1279
+
+VLCDebugMessageWindowController.h,52
+@interface VLCDebugMessageWindowController 28,1337
+
+VLCTextfieldPanelController.h,131
+@interface VLCTextfieldPanelController 26,1201
+typedef void(^TextfieldPanelCompletionBlock)TextfieldPanelCompletionBlock44,1931
+
+VLCRendererDiscovery.h,48
+@protocol VLCRendererDiscoveryDelegate101,3093
+
+VLCResumeDialogController.h,179
+enum ResumeResult 29,1271
+    RESUME_RESTART,30,1291
+    RESUME_NOW31,1311
+typedef void(^CompletionBlock)CompletionBlock34,1330
+@interface VLCResumeDialogController 36,1382
+
+VLCMain+OldPrefs.m,216
+static NSString * kVLCPreferencesVersion 33,1402
+static const int kCurrentPreferencesVersion 34,1471
++ (void)initialize36,1521
+- (void)resetAndReinitializeUserDefaults44,1831
+- (void)removeOldPreferences56,2370
+
+VLCMainWindowControlsBar.h,105
+@class VLCFSPanel;29,1317
+@class VLCResizeControl;30,1336
+@interface VLCMainWindowControlsBar 38,1636
+
+VLCVideoEffectsWindowController.m,151
+    NSInteger i_old_profile_index;VLCVideoEffectsWindowController(i_old_profile_index)33,1435
++ (void)VLCVideoEffectsWindowController(void)42,1571
+
+VLCDebugMessageWindowController.m,660
+    NSMutableArray * _messageArray;VLCDebugMessageWindowController(_messageArray)40,1899
+- (void)VLCDebugMessageWindowController(void)42,1937
+- (id)init90,3740
+- (void)dealloc99,3927
+- (void)windowDidLoad104,4001
+- (void)showWindow:116,4368
+- (IBAction)updateMessagesPanel:124,4554
+- (void)windowDidBecomeKey:129,4719
+- (void)windowWillClose:135,4881
+- (IBAction)saveDebugLog:142,5081
+- (IBAction)clearLog:164,6149
+- (NSInteger)numberOfRowsInTableView:177,6467
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:tableView:objectValueForTableColumn:row:182,6569
+- (void)appendMessage:187,6747
+
+VLCTextfieldPanelController.m,153
+    TextfieldPanelCompletionBlock _completionBlock;VLCTextfieldPanelController(_completionBlock)28,1260
+- (id)VLCTextfieldPanelController(id)36,1367
+
+VLCRendererDiscovery.m,478
+    intf_thread_t               *p_intf;VLCRendererDiscovery(p_intf)33,1337
+    vlc_renderer_discovery_t    *p_rd;VLCRendererDiscovery(p_rd)34,1378
+- (void)VLCRendererDiscovery(void)37,1420
+- (instancetype)initWithName:(const char*)name andLongname:initWithName:andLongname:49,1769
+- (void)dealloc74,2512
+- (bool)startDiscovery82,2642
+- (void)stopDiscovery97,3064
+- (void)attachEventHandlers106,3223
+- (void)detachEventHandler113,3528
+- (void)handleEvent:120,3832
+
+PXSourceListDelegate.h,178
+@class PXSourceList;11,174
+@protocol PXSourceListDelegate <NSObject>NSObject13,196
+@interface NSObject (PXSourceListNotifications)NSObject(PXSourceListNotifications)38,1264
+
+BWQuincyManager.h,1294
+typedef enum CrashAlertType 32,1274
+  CrashAlertTypeSend 33,1304
+  CrashAlertTypeFeedback 34,1330
+} CrashAlertType;35,1360
+typedef enum CrashReportStatus 37,1379
+  CrashReportStatusFailureVersionDiscontinued 39,1502
+  CrashReportStatusFailureXMLSenderVersionNotAllowed 42,1675
+  CrashReportStatusFailureXMLVersionNotAllowed 45,1849
+  CrashReportStatusFailureSQLAddSymbolicateTodo 48,1972
+  CrashReportStatusFailureSQLAddCrashlog 51,2081
+  CrashReportStatusFailureSQLAddVersion 54,2187
+  CrashReportStatusFailureSQLCheckVersionExists 57,2312
+  CrashReportStatusFailureSQLAddPattern 60,2475
+  CrashReportStatusFailureSQLCheckBugfixStatus 63,2601
+  CrashReportStatusFailureSQLUpdatePatternOccurances 66,2732
+  CrashReportStatusFailureSQLFindKnownPatterns 69,2892
+  CrashReportStatusFailureSQLSearchAppName 72,3013
+  CrashReportStatusFailureInvalidPostData 75,3112
+  CrashReportStatusFailureInvalidIncomingData 78,3242
+  CrashReportStatusFailureDatabaseNotAvailable 81,3405
+  CrashReportStatusUnknown 83,3459
+  CrashReportStatusAssigned 85,3492
+  CrashReportStatusSubmitted 87,3526
+  CrashReportStatusAvailable 89,3561
+} CrashReportStatus;90,3595
+@class BWQuincyUI;93,3618
+@protocol BWQuincyManagerDelegate <NSObject>NSObject95,3638
+@interface BWQuincyManager 113,4230
+
+VLCResumeDialogController.m,219
+    int currentResumeTimeout;VLCResumeDialogController(currentResumeTimeout)32,1331
+    CompletionBlock completionBlock;VLCResumeDialogController(completionBlock)33,1361
+- (id)VLCResumeDialogController(id)39,1449
+
+VLCMainWindowControlsBar.m,2320
+    NSImage * _repeatImage;VLCMainWindowControlsBar(_repeatImage)42,1780
+    NSImage * _pressedRepeatImage;VLCMainWindowControlsBar(_pressedRepeatImage)43,1808
+    NSImage * _repeatAllImage;VLCMainWindowControlsBar(_repeatAllImage)44,1843
+    NSImage * _pressedRepeatAllImage;VLCMainWindowControlsBar(_pressedRepeatAllImage)45,1874
+    NSImage * _repeatOneImage;VLCMainWindowControlsBar(_repeatOneImage)46,1912
+    NSImage * _pressedRepeatOneImage;VLCMainWindowControlsBar(_pressedRepeatOneImage)47,1943
+    NSImage * _shuffleImage;VLCMainWindowControlsBar(_shuffleImage)48,1981
+    NSImage * _pressedShuffleImage;VLCMainWindowControlsBar(_pressedShuffleImage)49,2010
+    NSImage * _shuffleOnImage;VLCMainWindowControlsBar(_shuffleOnImage)50,2046
+    NSImage * _pressedShuffleOnImage;VLCMainWindowControlsBar(_pressedShuffleOnImage)51,2077
+    NSButton * _previousButton;VLCMainWindowControlsBar(_previousButton)53,2116
+    NSButton * _nextButton;VLCMainWindowControlsBar(_nextButton)54,2148
+    BOOL b_show_jump_buttons;VLCMainWindowControlsBar(b_show_jump_buttons)56,2177
+    BOOL b_show_playmode_buttons;VLCMainWindowControlsBar(b_show_playmode_buttons)57,2207
+- (void)VLCMainWindowControlsBar(void)60,2244
+- (void)awakeFromNib69,2455
+#define moveItem(186,10083
+#undef moveItem196,10401
+- (void)toggleEffectsButton221,11033
+- (void)addEffectsButton:229,11214
+#define moveItem(240,11437
+#undef moveItem260,11983
+- (void)removeEffectsButton:283,12777
+#define moveItem(290,12908
+#undef moveItem309,13453
+- (void)toggleJumpButtons332,14275
+- (void)addJumpButtons:342,14500
+#define moveItem(389,16925
+#undef moveItem407,17409
+- (void)removeJumpButtons:444,19216
+#define moveItem(469,19941
+#undef moveItem487,20425
+- (void)togglePlaymodeButtons514,21592
+- (void)addPlaymodeButtons:524,21837
+- (void)removePlaymodeButtons:557,23020
+- (IBAction)stop:587,24115
+- (IBAction)prev:593,24239
+- (IBAction)next:598,24324
+- (void)setRepeatOne603,24405
+- (void)setRepeatAll609,24549
+- (void)setRepeatOff615,24693
+- (IBAction)repeat:621,24831
+- (void)setShuffle646,25650
+- (IBAction)shuffle:661,26080
+- (IBAction)togglePlaylist:667,26190
+- (IBAction)volumeAction:672,26311
+- (IBAction)effects:682,26652
+- (void)updateVolumeSlider690,26800
+- (void)updateControls708,27335
+
+VLCRendererItem.h,36
+@interface VLCRendererItem 34,1422
+
+PXSourceList.h,45
+@interface PXSourceList:PXSourceList14,238
+
+BWQuincyManager.m,802
+#define SDK_NAME 34,1324
+#define SDK_VERSION 35,1351
+    NSString *_customAppVersion;BWQuincyManager(_customAppVersion)39,1413
+@interface BWQuincyManager(BWQuincyManager(BWQuincyManager)44,1455
++ (BWQuincyManager *)sharedQuincyManager 57,1720
+- (id) init 67,1925
+- (void)dealloc 83,2209
+- (void) searchCrashLogFile:90,2319
+- (void)setSubmissionURL:115,3644
+- (void)setAppIdentifier:123,3876
+- (void)storeLastCrashDate:131,4085
+- (NSDate *)loadLastCrashDate 136,4287
+- (void)storeAppVersion:141,4466
+- (NSString *)loadAppVersion 146,4670
+- (BOOL) hasPendingCrashReport 154,4884
+- (void) returnToMainApplication 202,7328
+- (void) startManager 207,7517
+- (NSString*) modelVersion 234,8480
+- (void) cancelReport 264,9069
+             description:sendReportCrash:description:270,9180
+
+VLCAddonsWindowController.h,46
+@interface VLCAddonsWindowController 24,1145
+
+VLCRendererItem.m,274
+- (instancetype)initWithRendererItem:32,1326
+- (void)dealloc44,1647
+- (NSString*)name49,1714
+- (NSString*)iconURI57,1883
+- (int)capabilityFlags65,2056
+- (bool)isSoutEqualTo:(const char*)sout asOutput:isSoutEqualTo:asOutput:70,2135
+- (void)setSoutForPlaylist:83,2490
+
+PXSourceList.m,5296
+#define MIN_BADGE_WIDTH 16,313
+#define BADGE_HEIGHT 17,412
+#define BADGE_MARGIN 18,504
+#define ROW_RIGHT_MARGIN 19,606
+#define ICON_SPACING 20,733
+#define DISCLOSURE_TRIANGLE_SPACE 21,831
+#define BADGE_BACKGROUND_COLOR 24,968
+#define BADGE_HIDDEN_BACKGROUND_COLOR 25,1100
+#define BADGE_SELECTED_TEXT_COLOR 26,1195
+#define BADGE_SELECTED_UNFOCUSED_TEXT_COLOR 27,1277
+#define BADGE_SELECTED_HIDDEN_TEXT_COLOR 28,1409
+#define BADGE_FONT 29,1508
+NSString * const PXSLSelectionIsChangingNotification 32,1620
+NSString * const PXSLSelectionDidChangeNotification 33,1711
+NSString * const PXSLItemWillExpandNotification 34,1800
+NSString * const PXSLItemDidExpandNotification 35,1881
+NSString * const PXSLItemWillCollapseNotification 36,1960
+NSString * const PXSLItemDidCollapseNotification 37,2045
+NSString * const PXSLDeleteKeyPressedOnRowsNotification 38,2128
+- (NSSize)PXSourceList(NSSize)43,2269
+@dynamic dataSource;52,2538
+@dynamic delegate;53,2559
+- (id)initWithCoder:57,2615
+- (void)dealloc72,3037
+- (void)setDelegate:81,3241
+- (void)setDataSource:98,4514
+- (void)setIconSize:106,4706
+- (void)reloadData122,5139
+- (NSUInteger)numberOfGroups180,7286
+- (BOOL)isGroupItem:189,7521
+- (BOOL)isGroupAlwaysExpanded:196,7648
+- (BOOL)itemHasBadge:210,8070
+- (NSInteger)badgeValueForItem:219,8288
+- (void)selectRowIndexes:(NSIndexSet*)indexes byExtendingSelection:selectRowIndexes:byExtendingSelection:236,8694
+- (NSRect)frameOfOutlineCellAtRow:272,9899
+- (NSRect)frameOfCellAtColumn:(NSInteger)column row:frameOfCellAtColumn:row:283,10194
+- (NSSize)sizeOfBadgeAtRow:328,12105
+- (void)drawRow:(NSInteger)rowIndex clipRect:drawRow:clipRect:354,12914
+- (void)drawBadgeForRow:(NSInteger)rowIndex inRect:drawBadgeForRow:inRect:405,15277
+- (void)keyDown:484,18581
+- (NSMenu *)menuForEvent:539,20478
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:outlineView:numberOfChildrenOfItem:564,21180
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:outlineView:child:ofItem:574,21462
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:outlineView:isItemExpandable:584,21742
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:outlineView:objectValueForTableColumn:byItem:594,22008
+- (void)outlineView:(NSOutlineView *)outlineView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn byItem:outlineView:setObjectValue:forTableColumn:byItem:604,22320
+- (id)outlineView:(NSOutlineView *)outlineView itemForPersistentObject:outlineView:itemForPersistentObject:612,22636
+- (id)outlineView:(NSOutlineView *)outlineView persistentObjectForItem:outlineView:persistentObjectForItem:621,22931
+- (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:outlineView:writeItems:toPasteboard:630,23222
+- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:outlineView:validateDrop:proposedItem:proposedChildIndex:639,23561
+- (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:outlineView:acceptDrop:item:childIndex:648,23998
+- (NSArray *)outlineView:(NSOutlineView *)outlineView namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedItems:outlineView:namesOfPromisedFilesDroppedAtDestination:forDraggedItems:656,24352
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldExpandItem:outlineView:shouldExpandItem:669,24860
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldCollapseItem:outlineView:shouldCollapseItem:678,25128
+- (NSCell *)outlineView:(NSOutlineView *)outlineView dataCellForTableColumn:(NSTableColumn *)tableColumn item:outlineView:dataCellForTableColumn:item:695,25588
+- (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:outlineView:willDisplayCell:forTableColumn:item:707,26032
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:outlineView:shouldSelectItem:714,26352
+- (NSIndexSet *)outlineView:(NSOutlineView *)outlineView selectionIndexesForProposedSelection:outlineView:selectionIndexesForProposedSelection:730,26780
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:outlineView:shouldEditTableColumn:item:749,27723
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldTrackCell:(NSCell *)cell forTableColumn:(NSTableColumn *)tableColumn item:outlineView:shouldTrackCell:forTableColumn:item:763,28114
+- (CGFloat)outlineView:(NSOutlineView *)outlineView heightOfRowByItem:outlineView:heightOfRowByItem:772,28463
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:outlineView:isGroupItem:781,28750
+- (void)outlineViewSelectionIsChanging:790,28940
+- (void)outlineViewSelectionDidChange:796,29129
+- (void)outlineViewItemWillExpand:801,29315
+- (void)outlineViewItemDidExpand:806,29526
+- (void)outlineViewItemWillCollapse:811,29735
+- (void)outlineViewItemDidCollapse:816,29950
+- (void)registerDelegateToReceiveNotification:(NSString*)notification withSelector:registerDelegateToReceiveNotification:withSelector:821,30163
+
+VLCScrollingClipView.h,41
+@interface VLCScrollingClipView 26,1205
+
+VLCAddonsWindowController.m,1388
+    addons_manager_t *_manager;VLCAddonsWindowController(_manager)33,1390
+    NSMutableArray *_addons;VLCAddonsWindowController(_addons)34,1422
+    NSArray *_displayedAddons;VLCAddonsWindowController(_displayedAddons)35,1451
+    BOOL _shouldRefreshSideBarOnAddonChange;VLCAddonsWindowController(_shouldRefreshSideBarOnAddonChange)36,1482
+- (void)VLCAddonsWindowController(void)39,1530
+- (id)init63,2511
+- (void)dealloc74,2727
+- (void)windowDidLoad82,2835
+- (IBAction)switchType:132,5074
+- (IBAction)toggleLocalCheckbox:137,5144
+- (IBAction)downloadCatalog:142,5223
+- (IBAction)installSelection:149,5383
+- (IBAction)uninstallSelection:161,5767
+- (void)updateInstallButton:173,6152
+- (NSInteger)numberOfRowsInTableView:187,6558
+- (void)tableViewSelectionDidChange:192,6663
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:tableView:objectValueForTableColumn:row:219,8087
+- (void)addAddon:232,8575
+- (void)discoveryEnded240,8828
+- (void)addonChanged:246,8921
+- (void)_refactorDataModel257,9242
+- (void)_findNewAddons290,10436
+- (void)_findDesignatedAddon:297,10568
+- (void)_findInstalled302,10673
+- (void)_installAddonWithID:(NSData *)o_data type:_installAddonWithID:type:310,10890
+- (void)_removeAddonWithID:(NSData *)o_data type:_removeAddonWithID:type:321,11172
+- (NSString *)_getAddonType:332,11452
+
+VLCScrollingClipView.m,240
+    NSTimer *scrollTimer;scrollTimer27,1253
+    NSTimeInterval startInterval;28,1279
+- (void)startScrolling 31,1316
+- (void)stopScrolling 42,1765
+- (void)resetScrolling 50,1915
+- (void)scrollWheel:58,2107
+- (void)scrollTick:64,2259
+
+SPMediaKeyTap.h,165
+#define SPSystemDefinedEventMediaKeys 18,1300
+@interface SPMediaKeyTap 20,1341
+@interface NSObject (SPMediaKeyTapDelegate)NSObject(SPMediaKeyTapDelegate)41,1964
+
+VLCHUDTextFieldCell.h,40
+@interface VLCHUDTextFieldCell 26,1214
+
+VLCBookmarksWindowController.h,49
+@interface VLCBookmarksWindowController 28,1255
+
+applescript.h,162
+@interface VLGetURLScriptCommand 29,1389
+@interface VLControlScriptCommand 35,1641
+@interface NSApplication(ScriptSupport)NSApplication(ScriptSupport)41,1915
+
+VLCVoutView.h,32
+@interface VLCVoutView 34,1662
+
+VLCExtensionsDialogProvider.h,48
+@interface VLCExtensionsDialogProvider 38,1637
+
+VLCHUDSliderCell.h,37
+@interface VLCHUDSliderCell 33,1454
+
+SPMediaKeyTap.m,546
+-(BOOL)SPMediaKeyTap(BOOL)17,1280
+static SPMediaKeyTap *singleton singleton23,1471
++(BOOL)usesGlobalMediaKeyTap117,4506
+static CGEventRef tapEventCallback2(static203,7340
+static CGEventRef tapEventCallback(240,8629
+-(void)handleAndReleaseMediaKeyEvent:248,8863
+NSString *kMediaKeyUsingBundleIdentifiersDefaultsKey kMediaKeyUsingBundleIdentifiersDefaultsKey261,9192
+NSString *kIgnoreMediaKeysDefaultsKey kIgnoreMediaKeysDefaultsKey262,9282
+static pascal OSStatus appSwitched 314,11107
+static pascal OSStatus appTerminated 326,11422
+
+BWQuincyUI.h,63
+@class BWQuincyManager;32,1274
+@interface BWQuincyUI 34,1299
+
+VLCHUDTextFieldCell.m,352
+    BOOL myCustomDrawsBackground;27,1260
+    BOOL myCustomDrawsBorder;28,1294
+- (instancetype) initWithCoder:31,1327
+- (instancetype) initTextCell:41,1486
+- (instancetype) initImageCell:51,1648
+- (void)setupSelf61,1807
+- (NSText *)setUpFieldEditorAttributes:94,2896
+- (void)drawWithFrame:(NSRect)cellFrame inView:drawWithFrame:inView:107,3228
+
+VLCBookmarksWindowController.m,131
+    input_thread_t *p_old_input;VLCBookmarksWindowController(p_old_input)42,1855
+- (id)VLCBookmarksWindowController(id)52,2117
+
+applescript.m,660
+- (id)performDefaultImplementation 39,1759
+@implementation VLControlScriptCommand65,2673
+- (id)performDefaultImplementation 67,2713
+@implementation NSApplication(155,6565
+- (BOOL)scriptFullscreenMode 157,6611
+- (void)setScriptFullscreenMode:166,6842
+- (BOOL) muted 178,7181
+- (BOOL) playing 182,7256
+- (int) audioVolume 198,7637
+- (void) setAudioVolume:202,7721
+- (int) audioDesync 206,7841
+- (void) setAudioDesync:219,8107
+- (int) currentTime 228,8347
+- (void) setCurrentTime:241,8650
+- (int) durationOfCurrentItem 254,9005
+- (NSString*) pathOfCurrentItem 258,9120
+- (NSString*) nameOfCurrentItem 262,9239
+- (BOOL)playbackShowsMenu 266,9352
+
+VLCVoutView.m,493
+    NSTimer *p_scrollTimer;VLCVoutView(p_scrollTimer)50,2113
+    NSInteger i_lastScrollWheelDirection;VLCVoutView(i_lastScrollWheelDirection)51,2141
+    CGFloat f_cumulatedXScrollValue;VLCVoutView(f_cumulatedXScrollValue)53,2184
+    CGFloat f_cumulatedYScrollValue;VLCVoutView(f_cumulatedYScrollValue)54,2221
+    CGFloat f_cumulated_magnification;VLCVoutView(f_cumulated_magnification)56,2259
+    vout_thread_t *p_vout;VLCVoutView(p_vout)58,2299
+- (void)VLCVoutView(void)67,2412
+
+VLCPlaylist.h,32
+@interface VLCPlaylist 30,1372
+
+VLCExtensionsDialogProvider.m,808
+static NSView *createControlFromWidget(createControlFromWidget44,1866
+static void updateControlFromWidget(148,6522
+static void extensionDialogCallback(248,11022
+- (id)init264,11424
+- (void)dealloc274,11649
+- (void)performEventWithObject:(NSValue *)objectValue ofType:performEventWithObject:ofType:279,11735
+- (void)triggerClick:293,12182
+- (void)syncTextField:307,12634
+- (void)tableViewSelectionDidChange:320,13067
+- (void)popUpSelectionChanged:333,13561
+- (NSSize)windowWillResize:(NSWindow *)sender toSize:windowWillResize:toSize:344,13929
+- (BOOL)windowShouldClose:358,14427
+- (void)updateWidgets:368,14700
+- (VLCDialogWindow *)createExtensionDialog:419,16472
+- (int)destroyExtensionDialog:455,17804
+- (VLCDialogWindow *)updateExtensionDialog:476,18286
+- (void)manageDialog:529,19942
+
+VLCHUDSliderCell.m,223
+- (instancetype)initWithCoder:28,1247
+NSAffineTransform* RotationTransform(47,2460
+- (void) drawKnob:56,2777
+- (void)drawBarInside:(NSRect)fullRect flipped:drawBarInside:flipped:143,6436
+- (void)drawTickMarks180,7737
+
+BWQuincyUI.m,979
+#define CRASHREPORTSENDER_MAX_CONSOLE_SIZE 35,1344
+@interface BWQuincyUI(private)BWQuincyUI(private)37,1394
+const CGFloat kCommentsHeight 42,1490
+const CGFloat kDetailsHeight 43,1527
+- (id)initWithManager:(BWQuincyManager *)quincyManager crashFile:(NSString *)crashFile companyName:(NSString *)companyName applicationName:initWithManager:crashFile:companyName:applicationName:47,1592
+- (void)awakeFromNib72,2384
+- (void) endCrashReporter 88,3041
+- (IBAction) showComments:93,3089
+- (IBAction) showDetails:118,3835
+- (IBAction) hideDetails:132,4199
+- (IBAction) cancelReport:145,4561
+- (void) _sendReportAfterDelay 152,4685
+- (IBAction) submitReport:159,4954
+- (void) askCrashReportDetails 171,5213
+- (BOOL)showComments 214,7245
+- (void)setShowComments:219,7295
+- (BOOL)showDetails 224,7361
+- (void)setShowDetails:229,7409
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:control:textView:doCommandBySelector:235,7507
+
+Spotify.h,185
+OSType const kSpotifyPlayerStateStopped 25,1141
+OSType const kSpotifyPlayerStatePlaying 26,1191
+OSType const kSpotifyPlayerStatePaused 27,1241
+@interface SpotifyApplication 29,1292
+
+VLCPlaylist.m,2831
+@interface NSOutlineView (UndocumentedSortImages)NSOutlineView(UndocumentedSortImages)63,2669
+    NSImage *_descendingSortingImage;VLCPlaylist(_descendingSortingImage)70,2846
+    NSImage *_ascendingSortingImage;VLCPlaylist(_ascendingSortingImage)71,2884
+    BOOL b_selected_item_met;VLCPlaylist(b_selected_item_met)73,2922
+    BOOL b_isSortDescending;VLCPlaylist(b_isSortDescending)74,2952
+    NSTableColumn *_sortTableColumn;VLCPlaylist(_sortTableColumn)75,2981
+    BOOL b_playlistmenu_nib_loaded;VLCPlaylist(b_playlistmenu_nib_loaded)77,3019
+    VLCPLModel *_model;VLCPlaylist(_model)79,3056
+    NSDictionary *_translationsForPlaylistTableColumns;VLCPlaylist(_translationsForPlaylistTableColumns)83,3133
+    NSArray *_menuOrderOfPlaylistTableColumns;VLCPlaylist(_menuOrderOfPlaylistTableColumns)84,3189
+- (void)VLCPlaylist(void)87,3239
+- (id)init92,3300
++ (void)initialize128,5519
+- (VLCPLModel *)model144,6394
+- (void)reloadStyles149,6440
+- (void)awakeFromNib168,6970
+- (void)setOutlineView:174,7075
+- (void)setPlaylistHeaderView:195,7818
+- (void)applicationWillTerminate:222,8912
+- (void)initStrings228,9166
+- (void)playlistUpdated243,9915
+- (void)playbackModeUpdated248,9975
+- (BOOL)isSelectionEmpty254,10043
+- (void)currentlyPlayingItemChanged259,10118
+- (IBAction)playItem:294,11116
+- (IBAction)revealItemInFinder:316,11793
+- (IBAction)preparseItem:337,12483
+- (IBAction)downloadCoverArt:365,13338
+- (IBAction)selectAll:389,14057
+- (IBAction)showInfoPanel:394,14130
+- (IBAction)addFilesToPlaylist:399,14248
+- (IBAction)deleteItem:404,14343
+- (IBAction)sortNodeByName:409,14415
+- (IBAction)sortNodeByAuthor:414,14491
+- (void)sortNode:419,14570
+- (void)togglePlaylistColumnTable:446,15401
+- (BOOL)setPlaylistColumnTableState:(NSInteger)i_state forColumn:setPlaylistColumnTableState:forColumn:456,15682
+- (BOOL)validateMenuItem:500,17304
+- (void)setupPlaylistTableColumnsForMenu:532,18404
+- (void)saveTableColumns552,19212
+- (input_item_t *)createItem:569,19906
+- (NSArray *)createItemsFromExternalPasteboard:630,22986
+- (void)addPlaylistItems:654,23784
+- (void)addPlaylistItems:(NSArray*)array tryAsSubtitle:addPlaylistItems:tryAsSubtitle:668,24219
+- (void)addPlaylistItems:(NSArray*)array withParentItemId:(int)i_plItemId atPos:(int)i_position startPlayback:addPlaylistItems:withParentItemId:atPos:startPlayback:690,24857
+- (IBAction)recursiveExpandNode:729,26070
+- (NSMenu *)menuForEvent:753,26969
+- (void)outlineView:(NSOutlineView *)outlineView didClickTableColumn:outlineView:didClickTableColumn:784,28150
+               item:outlineView:willDisplayCell:forTableColumn:item:826,29546
+- (NSArray *)draggedItems861,30685
+- (BOOL)isValidResumeItem:866,30756
+- (void)continuePlaybackWhereYouLeftOff:890,31264
+- (void)storePlaybackPositionForItem:946,33065
+
+VLCMainWindowTitleView.h,662
+@class VLCCustomWindowCloseButton;31,1397
+@class VLCCustomWindowMinimizeButton;32,1432
+@class VLCCustomWindowZoomButton;33,1470
+@class VLCCustomWindowFullscreenButton;34,1504
+@class VLCWindowTitleTextField;35,1544
+@interface VLCMainWindowTitleView 37,1577
+@interface VLCWindowButtonCell 58,2438
+@interface VLCResizeControl 62,2491
+@interface VLCColorView 66,2540
+@interface VLCCustomWindowButtonPrototype 70,2580
+@interface VLCCustomWindowCloseButton 78,2875
+@interface VLCCustomWindowMinimizeButton 83,2954
+@interface VLCCustomWindowZoomButton 88,3036
+@interface VLCCustomWindowFullscreenButton 92,3113
+@interface VLCWindowTitleTextField 96,3196
+
+VLCEyeTvController.h,39
+@interface VLCEyeTVController 27,1216
+
+VLCAboutWindowController.h,45
+@interface VLCAboutWindowController 27,1237
+
+VLCHUDButtonCell.h,37
+@interface VLCHUDButtonCell 31,1397
+
+VLCMainWindowTitleView.m,3032
+    NSImage *_redImage;VLCMainWindowTitleView(_redImage)41,1836
+    NSImage *_redHoverImage;VLCMainWindowTitleView(_redHoverImage)42,1860
+    NSImage *_redOnClickImage;VLCMainWindowTitleView(_redOnClickImage)43,1889
+    NSImage * _yellowImage;VLCMainWindowTitleView(_yellowImage)44,1920
+    NSImage * _yellowHoverImage;VLCMainWindowTitleView(_yellowHoverImage)45,1948
+    NSImage * _yellowOnClickImage;VLCMainWindowTitleView(_yellowOnClickImage)46,1981
+    NSImage * _greenImage;VLCMainWindowTitleView(_greenImage)47,2016
+    NSImage * _greenHoverImage;VLCMainWindowTitleView(_greenHoverImage)48,2043
+    NSImage * _greenOnClickImage;VLCMainWindowTitleView(_greenOnClickImage)49,2075
+    NSImage * _fullscreenImage;VLCMainWindowTitleView(_fullscreenImage)51,2143
+    NSImage * _fullscreenHoverImage;VLCMainWindowTitleView(_fullscreenHoverImage)52,2175
+    NSImage * _fullscreenOnClickImage;VLCMainWindowTitleView(_fullscreenOnClickImage)53,2212
+    NSImage * _oldFullscreenImage;VLCMainWindowTitleView(_oldFullscreenImage)55,2287
+    NSImage * _oldFullscreenHoverImage;VLCMainWindowTitleView(_oldFullscreenHoverImage)56,2322
+    NSImage * _oldFullscreenOnClickImage;VLCMainWindowTitleView(_oldFullscreenOnClickImage)57,2362
+    NSShadow * _windowTitleShadow;VLCMainWindowTitleView(_windowTitleShadow)59,2405
+    NSDictionary * _windowTitleAttributesDictionary;VLCMainWindowTitleView(_windowTitleAttributesDictionary)60,2440
+    BOOL b_nativeFullscreenMode;VLCMainWindowTitleView(b_nativeFullscreenMode)62,2494
+    BOOL b_alt_pressed;VLCMainWindowTitleView(b_alt_pressed)65,2585
+    BOOL b_mouse_over;VLCMainWindowTitleView(b_mouse_over)66,2609
+- (id)VLCMainWindowTitleView(id)72,2680
+- (void)mouseEntered:320,11028
+- (void)mouseExited:328,11304
+- (NSArray*)accessibilityAttributeNames 337,11603
+- (id)accessibilityAttributeValue:343,12037
+- (BOOL)accessibilityIsAttributeSettable:354,12588
+@implementation VLCResizeControl375,13506
+- (void)mouseDown:377,13540
+@implementation VLCColorView432,15382
+- (void)drawRect:434,15412
+@implementation VLCCustomWindowButtonPrototype445,15731
++ (Class)cellClass 446,15778
+- (NSArray*)extendedAccessibilityAttributeNames:450,15842
+- (id)extendedAccessibilityAttributeValue:454,16198
+- (NSNumber*)extendedAccessibilityIsAttributeSettable:458,16290
+- (void)accessibilityPerformAction:462,16549
+@implementation VLCCustomWindowCloseButton472,16830
+- (id)extendedAccessibilityAttributeValue:473,16873
+@implementation VLCCustomWindowMinimizeButton480,17082
+- (id)extendedAccessibilityAttributeValue:481,17128
+@implementation VLCCustomWindowZoomButton488,17340
+- (id)extendedAccessibilityAttributeValue:489,17382
+@implementation VLCCustomWindowFullscreenButton496,17590
+- (id)extendedAccessibilityAttributeValue:497,17638
+@interface VLCWindowTitleTextField(503,17851
+@implementation VLCWindowTitleTextField509,17924
+- (void)showRightClickMenuWithEvent:511,17965
+- (IBAction)revealInFinder:594,21751
+- (void)rightMouseDown:632,23032
+
+VLCOutput.h,30
+@interface VLCOutput 29,1346
+
+VLCEyeTvController.m,238
+- (id)init34,1458
+- (void)dealloc47,2004
+- (void)globalNotificationReceived:52,2100
+- (void)launchEyeTV67,2633
+- (int)channel81,3158
+- (int)switchChannelUp:96,3745
+- (void)setChannel:129,4882
+- (NSEnumerator *)allChannels173,6669
+
+VLCPlaylistView.h,36
+@interface VLCPlaylistView 27,1256
+
+VLCAboutWindowController.m,139
+#define PLATFORM 41,1680
+    NSString *o_authors;VLCAboutWindowController(o_authors)45,1753
+- (id)VLCAboutWindowController(id)51,1828
+
+VLCHUDButtonCell.m,290
+- (instancetype) initWithCoder:28,1247
+- (void) drawBezelWithFrame:(NSRect)frame inView:drawBezelWithFrame:inView:46,2632
+- (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:drawTitle:withFrame:inView:60,3068
+- (void) drawRoundRectButtonBezelInRect:77,3844
+
+VLCOutput.m,146
+    NSString *_transcode;VLCOutput(_transcode)34,1447
+    NSArray *_soutMRL;VLCOutput(_soutMRL)35,1473
+- (NSArray VLCOutput(NSArray)41,1531
+
+Windows.h,222
+@class VLCVoutView;33,1473
+@interface VLCWindow 35,1494
+static const float f_min_video_height 60,2213
+@class VLCControlsBarCommon;62,2260
+@class VLCMainWindowTitleView;63,2289
+@interface VLCVideoWindowCommon 71,2580
+
+VLCCoreInteraction.h,39
+@interface VLCCoreInteraction 26,1194
+
+VLCStatusBarIcon.h,37
+@interface VLCStatusBarIcon 26,1177
+
+PXSourceListDataSource.h,88
+@class PXSourceList;11,176
+@protocol PXSourceListDataSource <NSObject>NSObject13,198
+
+VLCPlaylistView.m,171
+- (NSMenu *)menuForEvent:32,1394
+- (void)keyDown:37,1507
+- (BOOL)acceptsFirstResponder63,2148
+- (BOOL)becomeFirstResponder68,2199
+- (BOOL)resignFirstResponder74,2281
+
+VLCCoreDialogProvider.h,42
+@interface VLCCoreDialogProvider 33,1500
+
+Windows.m,3327
+    BOOL b_canBecomeKeyWindow;VLCWindow(b_canBecomeKeyWindow)40,1633
+    BOOL b_isset_canBecomeKeyWindow;VLCWindow(b_isset_canBecomeKeyWindow)41,1664
+    BOOL b_canBecomeMainWindow;VLCWindow(b_canBecomeMainWindow)42,1701
+    BOOL b_isset_canBecomeMainWindow;VLCWindow(b_isset_canBecomeMainWindow)43,1733
+    NSViewAnimation *o_current_animation;VLCWindow(o_current_animation)44,1771
+- (id)VLCWindow(id)55,1945
+    VLCVideoWindowCommon *o_current_video_window;VLCVideoWindowCommon(o_current_video_window)284,8988
+    VLCWindow       * o_fullscreen_window;VLCVideoWindowCommon(o_fullscreen_window)285,9038
+    NSViewAnimation * o_fullscreen_anim1;VLCVideoWindowCommon(o_fullscreen_anim1)286,9081
+    NSViewAnimation * o_fullscreen_anim2;VLCVideoWindowCommon(o_fullscreen_anim2)287,9123
+    NSView          * o_temp_view;VLCVideoWindowCommon(o_temp_view)288,9165
+    NSInteger i_originalLevel;VLCVideoWindowCommon(i_originalLevel)290,9201
+    BOOL b_video_view_was_hidden;VLCVideoWindowCommon(b_video_view_was_hidden)292,9233
+    NSTimer *t_hide_mouse_timer;VLCVideoWindowCommon(t_hide_mouse_timer)294,9268
+    NSRect frameBeforeLionFullscreen;VLCVideoWindowCommon(frameBeforeLionFullscreen)296,9302
+- (void)VLCVideoWindowCommon(void)299,9343
+                  backing:(NSBackingStoreType)backingType defer:initWithContentRect:styleMask:backing:defer:310,9587
+- (void)awakeFromNib331,10256
+- (void)setTitle:345,10751
+- (BOOL)validateMenuItem:359,11025
+- (BOOL)windowShouldClose:369,11337
+- (void)performClose:374,11395
+- (void)performMiniaturize:384,11667
+- (void)performZoom:392,11849
+- (void)zoom:400,12016
+- (NSRect) customConstrainFrameRect: (NSRect)frameRect toScreen:customConstrainFrameRect:toScreen:417,12640
+#define DIST 455,14005
+- (void) customZoom:467,14550
+- (void)setWindowLevel:502,15830
+- (NSRect)getWindowRectForProposedVideoViewSize:514,16184
+- (void)resizeWindow556,17915
+- (void)setNativeVideoSize:567,18302
+- (NSSize)windowWillResize:(NSWindow *)window toSize:windowWillResize:toSize:575,18519
+- (void)windowWillMiniaturize:602,19733
+- (void)windowDidDeminiaturize:610,20004
+- (void)hideMouseCursor:619,20234
+- (void)recreateHideMouseTimer624,20326
+- (void)mouseMoved:638,20894
+- (void)flagsChanged:658,21453
+- (void)becomeKeyWindow669,21737
+- (void)resignKeyWindow680,22087
+-(NSArray*)customWindowsToEnterFullScreenForWindow:687,22218
+- (NSArray*)customWindowsToExitFullScreenForWindow:696,22391
+- (void)window:window startCustomAnimationToEnterFullScreenWithDuration:window:startCustomAnimationToEnterFullScreenWithDuration:705,22563
+    } completionHandler:nil]nil715,23001
+- (void)window:window startCustomAnimationToExitFullScreenWithDuration:window:startCustomAnimationToExitFullScreenWithDuration:718,23034
+    } completionHandler:nil]nil726,23500
+- (void)windowWillEnterFullScreen:729,23533
+- (void)windowDidEnterFullScreen:775,25021
+- (void)windowWillExitFullScreen:799,25893
+- (void)windowDidExitFullScreen:847,27446
+- (void)enterFullscreenWithAnimation:858,27732
+- (void)hasBecomeFullscreen1009,34031
+- (void)leaveFullscreenWithAnimation:1028,34659
+- (void)hasEndedFullscreen1127,38224
+- (void)animationDidEnd:1155,39234
+- (NSArray *)accessibilityAttributeNames1175,39895
+- (id)accessibilityAttributeValue:1196,40713
+
+SPInvocationGrabbing.h,122
+@interface SPInvocationGrabber 14,1195
+@interface NSObject (SPInvocationGrabbing)NSObject(SPInvocationGrabbing)30,1702
+
+simple_prefs.h,122
+@interface VLCSimplePrefs 28,1223
+@interface VLCHotkeyChangeWindow 247,13004
+@interface VLCSimplePrefsWindow 251,13055
+
+VLCCoreInteraction.m,954
+static int BossCallback(44,1626
+    int i_currentPlaybackRate;VLCCoreInteraction(i_currentPlaybackRate)59,2049
+    mtime_t timeA,VLCCoreInteraction(timeA)60,2080
+    mtime_t timeA, timeB;VLCCoreInteraction(timeB)60,2080
+    float f_maxVolume;VLCCoreInteraction(f_maxVolume)62,2107
+    BOOL b_mediaKeySupport;VLCCoreInteraction(b_mediaKeySupport)65,2159
+    BOOL b_mediakeyJustJumped;VLCCoreInteraction(b_mediakeyJustJumped)66,2187
+    SPMediaKeyTap *_mediaKeyController;VLCCoreInteraction(_mediaKeyController)67,2218
+    BOOL b_mediaKeyTrapEnabled;VLCCoreInteraction(b_mediaKeyTrapEnabled)68,2258
+    AppleRemote *_remote;VLCCoreInteraction(_remote)70,2291
+    BOOL b_remote_button_hold;VLCCoreInteraction(b_remote_button_hold)71,2317
+    NSArray *_usedHotkeys;VLCCoreInteraction(_usedHotkeys)73,2437
++ (VLCCoreInteraction VLCCoreInteraction(VLCCoreInteraction)81,2539
+    #define fixpref(682,16794
+    #undef fixpref703,17827
+
+VLCStatusBarIcon.m,1453
+    NSMenuItem *_vlcStatusBarMenuItem;VLCStatusBarIcon(_vlcStatusBarMenuItem)41,1451
+    IBOutlet NSTextField *titleField;VLCStatusBarIcon(titleField)44,1532
+    IBOutlet NSTextField *artistField;VLCStatusBarIcon(artistField)45,1570
+    IBOutlet NSTextField *albumField;VLCStatusBarIcon(albumField)46,1609
+    IBOutlet NSTextField *progressField;VLCStatusBarIcon(progressField)47,1647
+    IBOutlet NSTextField *separatorField;VLCStatusBarIcon(separatorField)48,1688
+    IBOutlet NSTextField *totalField;VLCStatusBarIcon(totalField)49,1730
+    IBOutlet NSImageView *coverImageView;VLCStatusBarIcon(coverImageView)50,1768
+    IBOutlet NSButton *backwardsButton;VLCStatusBarIcon(backwardsButton)53,1849
+    IBOutlet NSButton *playPauseButton;VLCStatusBarIcon(playPauseButton)54,1889
+    IBOutlet NSButton *forwardButton;VLCStatusBarIcon(forwardButton)55,1929
+    IBOutlet NSButton *randButton;VLCStatusBarIcon(randButton)56,1967
+    IBOutlet NSMenuItem *pathActionItem;VLCStatusBarIcon(pathActionItem)59,2036
+    IBOutlet NSMenuItem *showMainWindowItem;VLCStatusBarIcon(showMainWindowItem)60,2077
+    IBOutlet NSMenuItem *quitItem;VLCStatusBarIcon(quitItem)61,2122
+    BOOL isStopped;VLCStatusBarIcon(isStopped)63,2158
+    BOOL showTimeElapsed;VLCStatusBarIcon(showTimeElapsed)64,2178
+    NSString *_currentPlaybackUrl;VLCStatusBarIcon(_currentPlaybackUrl)65,2204
+- (instancetype)VLCStatusBarIcon(instancetype)78,2360
+
+VLCCoreDialogProvider.m,671
+- (void)VLCCoreDialogProvider(void)34,1441
+static void displayErrorCallback(47,1708
+static void displayLoginCallback(60,2271
+static void displayQuestionCallback(79,3254
+static void displayProgressCallback(102,4517
+static void cancelCallback(123,5632
+static void updateProgressCallback(131,5793
+- (instancetype)init148,6545
+- (void)dealloc174,7189
+-(void)awakeFromNib182,7367
+- (void)displayError:195,7836
+- (void)displayLoginDialog:206,8264
+- (IBAction)authenticationDialogAction:231,9326
+- (void)displayQuestion:239,9519
+- (void)displayProgressDialog:276,10725
+- (void)updateDisplayedProgressDialog:304,11536
+- (IBAction)progressDialogAction:313,11783
+
+VLCTimeSelectionPanelController.h,137
+@interface VLCTimeSelectionPanelController 24,1173
+typedef void(^TimeSelectionCompletionHandler)TimeSelectionCompletionHandler43,1906
+
+VLCPLModel.h,566
+#define VLCPLItemPasteboadType 28,1168
+#define STATUS_COLUMN 31,1263
+#define TRACKNUM_COLUMN 32,1295
+#define TITLE_COLUMN 33,1334
+#define ARTIST_COLUMN 34,1363
+#define DURATION_COLUMN 35,1395
+#define GENRE_COLUMN 36,1431
+#define ALBUM_COLUMN 37,1461
+#define DESCRIPTION_COLUMN 38,1491
+#define DATE_COLUMN 39,1533
+#define LANGUAGE_COLUMN 40,1561
+#define URI_COLUMN 41,1597
+#define FILESIZE_COLUMN 42,1623
+    ROOT_TYPE_PLAYLIST,45,1676
+    ROOT_TYPE_MEDIALIBRARY,46,1700
+    ROOT_TYPE_OTHER47,1728
+} PLRootType;48,1748
+@interface VLCPLModel 50,1763
+
+VLCAddonListItem.h,37
+@interface VLCAddonListItem 28,1244
+
+SPInvocationGrabbing.m,209
+@property (readwrite, retain, nonatomic)SPInvocationGrabber(nonatomic)17,1282
+- (void)forwardInvocation:57,1944
+- (NSMethodSignature *)methodSignatureForSelector:68,2383
+@implementation NSObject 109,3354
+
+simple_prefs.m,2318
+static const char *const ppsz_language[ppsz_language46,1653
+static const char *const ppsz_language_text[ppsz_language_text111,2330
+static NSString* VLCSPrefsToolbarIdentifier 175,3589
+static NSString* VLCIntfSettingToolbarIdentifier 176,3681
+static NSString* VLCAudioSettingToolbarIdentifier 177,3766
+static NSString* VLCVideoSettingToolbarIdentifier 178,3853
+static NSString* VLCOSDSettingToolbarIdentifier 179,3940
+static NSString* VLCInputSettingToolbarIdentifier 180,4029
+static NSString* VLCHotkeysSettingToolbarIdentifier 181,4116
+    BOOL _audioSettingChanged;VLCSimplePrefs(_audioSettingChanged)185,4276
+    BOOL _intfSettingChanged;VLCSimplePrefs(_intfSettingChanged)186,4307
+    BOOL _videoSettingChanged;VLCSimplePrefs(_videoSettingChanged)187,4337
+    BOOL _osdSettingChanged;VLCSimplePrefs(_osdSettingChanged)188,4368
+    BOOL _inputSettingChanged;VLCSimplePrefs(_inputSettingChanged)189,4397
+    BOOL _hotkeyChanged;VLCSimplePrefs(_hotkeyChanged)190,4428
+    id _currentlyShownCategoryView;VLCSimplePrefs(_currentlyShownCategoryView)191,4453
+    NSOpenPanel *_selectFolderPanel;VLCSimplePrefs(_selectFolderPanel)193,4490
+    NSArray *_hotkeyDescriptions;VLCSimplePrefs(_hotkeyDescriptions)194,4527
+    NSArray *_hotkeyNames;VLCSimplePrefs(_hotkeyNames)195,4561
+    NSArray *_hotkeysNonUseableKeys;VLCSimplePrefs(_hotkeysNonUseableKeys)196,4588
+    NSMutableArray *_hotkeySettings;VLCSimplePrefs(_hotkeySettings)197,4625
+    NSString *_keyInTransition;VLCSimplePrefs(_keyInTransition)198,4662
+    intf_thread_t *p_intf;VLCSimplePrefs(p_intf)200,4695
+- (id)VLCSimplePrefs(id)208,4791
+#define CreateToolbarItem(251,6505
+#define config_GetLabel(439,16548
+    #define TestCaC(731,28165
+    #undef TestCaC749,28819
+#define SaveIntList(910,34860
+#define SaveStringList(912,34931
+#define SaveModuleList(913,35007
+#define getString(915,35074
+        #define CaC(1038,41242
+        #undef CaC1048,41789
+#define fillUrlHandlerPopup(1365,53369
+#undef fillUrlHandlerPopup1390,54736
+- (BOOL)acceptsFirstResponder1531,61634
+- (BOOL)becomeFirstResponder1536,61685
+- (BOOL)resignFirstResponder1541,61735
+- (BOOL)performKeyEquivalent:1547,61861
+@implementation VLCSimplePrefsWindow1634,65207
+- (BOOL)acceptsFirstResponder1636,65245
+- (void)changeFont:1641,65296
+
+VLCFSPanel.h,232
+@class VLCWindow;26,1293
+@interface VLCFSPanel 28,1312
+@class VLCProgressView;66,2254
+@class VLCFSVolumeSlider;67,2278
+@interface VLCFSPanelView 69,2305
+@interface VLCFSTimeSlider 87,2784
+@interface VLCFSVolumeSlider 94,2904
+
+SideBarItem.h,31
+@interface SideBarItem 31,882
+
+VLCTimeSelectionPanelController.m,166
+    TimeSelectionCompletionHandler _completionHandler;VLCTimeSelectionPanelController(_completionHandler)29,1287
+- (id)VLCTimeSelectionPanelController(id)38,1432
+
+VLCPLModel.m,1589
+static int VLCPLItemUpdated(44,1528
+static int VLCPLItemAppended(55,1903
+static int VLCPLItemRemoved(68,2472
+static int PlaybackModeUpdated(80,2916
+static int VolumeUpdated(91,3303
+    playlist_t *p_playlist;VLCPLModel(p_playlist)107,3693
+    __weak NSOutlineView *_outlineView;VLCPLModel(_outlineView)108,3721
+    NSUInteger _retainedRowSelection;VLCPLModel(_retainedRowSelection)110,3762
+- (id)VLCPLModel(id)119,3880
+@implementation VLCPLModel(NSOutlineViewDataSource)470,14524
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:outlineView:numberOfChildrenOfItem:472,14577
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:outlineView:isItemExpandable:477,14743
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:outlineView:child:ofItem:482,14877
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:outlineView:objectValueForTableColumn:byItem:488,15056
+- (BOOL)isItem: (VLCPLItem *)p_item inNode:isItem:inNode:585,18449
+- (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:outlineView:writeItems:toPasteboard:598,18683
+- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:outlineView:validateDrop:proposedItem:proposedChildIndex:610,19132
+- (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id <NSDraggingInfo>)info item:(id)targetItem childIndex:outlineView:acceptDrop:item:childIndex:642,20281
+
+VLCAddonListItem.m,110
+    addon_entry_t *p_addon_entry;VLCAddonListItem(p_addon_entry)29,1284
+- (id)VLCAddonListItem(id)35,1360
+
+macosx.m,2264
+#define VLC_MODULE_LICENSE 34,1534
+#define VDEV_TEXT 51,2199
+#define VDEV_LONGTEXT 52,2236
+#define OPAQUENESS_TEXT 56,2480
+#define OPAQUENESS_LONGTEXT 57,2521
+#define BLACK_TEXT 60,2690
+#define BLACK_LONGTEXT 61,2743
+#define FSPANEL_TEXT 64,2876
+#define FSPANEL_LONGTEXT 65,2930
+#define AUTOPLAY_OSX_TEST 68,3063
+#define AUTOPLAY_OSX_LONGTEXT 69,3122
+#define RECENT_ITEMS_TEXT 72,3259
+#define RECENT_ITEMS_LONGTEXT 73,3309
+#define USE_APPLE_REMOTE_TEXT 76,3470
+#define USE_APPLE_REMOTE_LONGTEXT 77,3545
+#define USE_APPLE_REMOTE_VOLUME_TEXT 79,3652
+#define USE_APPLE_REMOTE_VOLUME_LONGTEXT 80,3739
+#define DISPLAY_STATUS_ICONMENU_TEXT 82,3923
+#define DISPLAY_STATUS_ICONMENU_LONGTEXT 83,3995
+#define USE_APPLE_REMOTE_PREVNEXT_TEXT 85,4152
+#define USE_APPLE_REMOTE_PREVNEXT_LONGTEXT 86,4242
+#define USE_MEDIAKEYS_TEXT 88,4433
+#define USE_MEDIAKEYS_LONGTEXT 89,4499
+#define INTERFACE_STYLE_TEXT 92,4658
+#define INTERFACE_STYLE_LONGTEXT 93,4727
+#define NATIVE_FULLSCREEN_MODE_ON_LION_TEXT 95,4878
+#define NATIVE_FULLSCREEN_MODE_ON_LION_LONGTEXT 96,4959
+#define KEEPSIZE_TEXT 98,5165
+#define KEEPSIZE_LONGTEXT 99,5235
+#define PAUSE_MINIMIZED_TEXT 104,5462
+#define PAUSE_MINIMIZED_LONGTEXT 105,5537
+#define ICONCHANGE_TEXT 108,5675
+#define ICONCHANGE_LONGTEXT 109,5734
+#define LOCK_ASPECT_RATIO_TEXT 111,5843
+#define DIM_KEYBOARD_PLAYBACK_TEXT 113,5899
+#define DIM_KEYBOARD_PLAYBACK_LONGTEXT 114,5990
+#define JUMPBUTTONS_TEXT 116,6190
+#define JUMPBUTTONS_LONGTEXT 117,6250
+#define PLAYMODEBUTTONS_TEXT 119,6342
+#define PLAYMODEBUTTONS_LONGTEXT 120,6407
+#define EFFECTSBUTTON_TEXT 122,6504
+#define EFFECTSBUTTON_LONGTEXT 123,6563
+#define SIDEBAR_TEXT 125,6652
+#define SIDEBAR_LONGTEXT 126,6692
+#define ITUNES_TEXT 128,6782
+#define ITUNES_LONGTEXT 129,6839
+#define LARGE_LISTFONT_TEXT 131,6933
+static const int itunes_list[itunes_list133,6998
+static const char *const itunes_list_text[itunes_list_text135,7048
+#define CONTINUE_PLAYBACK_TEXT 139,7192
+#define CONTINUE_PLAYBACK_LONGTEXT 140,7266
+static const int continue_playback_list[continue_playback_list142,7428
+static const char *const continue_playback_list_text[continue_playback_list_text144,7485
+#define VOLUME_MAX_TEXT 148,7589
+vlc_module_begin(151,7646
+
+VLCFSPanel.m,2568
+    NSTimer *fadeTimer,VLCFSPanel(fadeTimer)38,1639
+    NSTimer *fadeTimer,*hideAgainTimer;VLCFSPanel(hideAgainTimer)38,1639
+    NSPoint mouseClic;VLCFSPanel(mouseClic)39,1679
+    BOOL b_fadeQueued;VLCFSPanel(b_fadeQueued)40,1702
+    BOOL b_keptVisible;VLCFSPanel(b_keptVisible)41,1725
+    BOOL b_alreadyCounting;VLCFSPanel(b_alreadyCounting)42,1749
+    int i_timeToKeepVisibleInSec;VLCFSPanel(i_timeToKeepVisibleInSec)43,1777
+    BOOL b_nonActive;VLCFSPanel(b_nonActive)45,1812
+    BOOL b_displayed;VLCFSPanel(b_displayed)46,1834
+    BOOL b_voutWasUpdated;VLCFSPanel(b_voutWasUpdated)47,1856
+    int i_device;VLCFSPanel(i_device)48,1883
+    VLCWindow *o_vout_window;VLCFSPanel(o_vout_window)50,1902
+- (void)VLCFSPanel(void)53,1935
+                    defer:initWithContentRect:styleMask:backing:defer:64,2437
+- (BOOL)canBecomeKeyWindow113,4303
+- (BOOL)mouseDownCanMoveWindow118,4350
+-(void)dealloc123,4402
+-(void)center134,4587
+- (void)setPlay157,5355
+- (void)setPause162,5410
+- (void)setStreamTitle:167,5467
+- (void)updatePositionAndTime172,5565
+- (void)setSeekable:177,5648
+- (void)setVolumeLevel:182,5741
+- (void)setNonActive:187,5845
+- (void)setActive:201,6093
+- (void)focus:209,6269
+- (void)unfocus:232,7003
+- (void)mouseExited:260,7849
+- (void)hideMouse267,8100
+- (void)fadeIn272,8169
+- (void)fadeOut296,9025
+- (void)autoHide310,9536
+- (void)keepVisible:331,10357
+- (NSTimer *)fadeTimer347,10865
+- (void)setFadeTimer:352,10915
+- (void)mouseDown:358,11007
+- (void)mouseDragged:363,11095
+- (void)setVoutWasUpdated:371,11275
+@interface VLCFSPanelView(388,11826
+#define addButton(405,12366
+#define addTextfield(423,13885
+@implementation VLCFSPanelViewaddTextfield403,12334
+- (id)initWithFrame:435,14855
+- (void)setPlay518,19363
+- (void)setPause524,19500
+- (void)setStreamTitle:530,19641
+- (void)updatePositionAndTime535,19738
+- (void)setSeekable:584,21308
+- (void)setVolumeLevel:591,21468
+- (IBAction)play:596,21568
+- (IBAction)forward:601,21656
+- (IBAction)backward:610,21981
+- (IBAction)prev:619,22308
+- (IBAction)next:624,22393
+- (IBAction)toggleFullscreen:629,22474
+- (IBAction)fsTimeSliderUpdate:634,22579
+- (IBAction)fsVolumeSliderUpdate:648,22960
+#define addImage(653,23081
+- (void)drawRect:663,23910
+@implementation VLCFSTimeSlider681,24524
+- (void)drawKnobInRect:682,24556
+- (void)drawRect:695,25053
+@implementation VLCFSVolumeSlider714,25697
+- (id)initWithFrame:716,25732
+- (void)drawKnobInRect:726,25906
+- (void)drawRect:739,26406
+- (void)drawFullVolBezierPath:755,26902
+
+SideBarItem.m,295
+- (id)init21,369
++ (id)itemWithTitle:(NSString*)aTitle identifier:itemWithTitle:identifier:32,545
++ (id)itemWithTitle:(NSString*)aTitle identifier:(NSString*)anIdentifier icon:itemWithTitle:identifier:icon:40,735
+- (BOOL)hasBadge55,1047
+- (BOOL)hasChildren60,1097
+- (BOOL)hasIcon65,1154

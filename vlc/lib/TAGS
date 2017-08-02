@@ -1,0 +1,1168 @@
+
+event.c,888
+typedef struct libvlc_event_listener_t74,2118
+    libvlc_event_type_t event_type;76,2159
+    void *              p_user_data;77,2195
+    libvlc_callback_t   pf_callback;78,2232
+} libvlc_event_listener_t;79,2269
+typedef struct libvlc_event_manager_t81,2297
+    void * p_obj;83,2337
+    vlc_array_t listeners;84,2355
+    vlc_mutex_t lock;85,2382
+} libvlc_event_sender_t;86,2404
+libvlc_event_manager_new(98,2730
+void libvlc_event_manager_release(120,3331
+void libvlc_event_send(136,3838
+#define DEF(158,4439
+    int type;162,4495
+    const char name[name163,4509
+} event_name_t;164,4534
+static const event_name_t event_list[event_list166,4551
+#undef DEF236,6537
+static const char unknown_event_name[unknown_event_name238,6549
+static int evcmp(240,6608
+const char * libvlc_event_type_name(245,6720
+int libvlc_event_attach(260,7219
+void libvlc_event_detach(282,7961
+
+video.c,3198
+static vout_thread_t **GetVouts(GetVouts48,1741
+static vout_thread_t *GetVout GetVout67,2154
+void libvlc_set_fullscreen(93,2816
+int libvlc_get_fullscreen(109,3308
+void libvlc_toggle_fullscreen(114,3415
+void libvlc_video_set_key_input(131,3868
+void libvlc_video_set_mouse_input(136,3998
+libvlc_video_take_snapshot(142,4131
+int libvlc_video_get_size(169,5296
+int libvlc_video_get_height(192,5919
+int libvlc_video_get_width(201,6107
+int libvlc_video_get_cursor(210,6293
+unsigned libvlc_media_player_has_vout(222,6623
+float libvlc_video_get_scale(232,6875
+void libvlc_video_set_scale(240,7067
+char *libvlc_video_get_aspect_ratio(libvlc_video_get_aspect_ratio261,7718
+void libvlc_video_set_aspect_ratio(266,7847
+int libvlc_video_get_spu(285,8363
+int libvlc_video_get_spu_count(300,8719
+        libvlc_video_get_spu_description(314,9082
+int libvlc_video_set_spu(319,9218
+int libvlc_video_set_subtitle_file(346,9951
+int64_t libvlc_video_get_spu_delay(361,10378
+int libvlc_video_set_spu_delay(379,10769
+        libvlc_video_get_title_description(400,11251
+        libvlc_video_get_chapter_description(406,11417
+char *libvlc_video_get_crop_geometry libvlc_video_get_crop_geometry414,11724
+void libvlc_video_set_crop_geometry(419,11845
+int libvlc_video_get_teletext(440,12359
+void libvlc_video_set_teletext(445,12471
+void libvlc_toggle_teletext(472,13214
+int libvlc_video_get_track_count(503,14090
+        libvlc_video_get_track_description(518,14465
+int libvlc_video_get_track(523,14605
+int libvlc_video_set_track(535,14901
+void libvlc_video_set_deinterlace(567,15972
+static bool find_sub_source_by_name(610,17232
+} opt_t;634,17835
+set_int(637,17857
+get_int(668,18745
+set_float(691,19346
+get_float(706,19696
+set_string(721,20040
+get_string(736,20418
+marq_option_bynumber(751,20777
+    enum { num_opts 766,21310
+    enum { num_opts = sizeof(766,21310
+    enum { num_opts = sizeof(optlist)766,21310
+    enum { num_opts = sizeof(optlist) / sizeof(766,21310
+    enum { num_opts = sizeof(optlist) / sizeof(*optlist)optlist766,21310
+int libvlc_video_get_marquee_int(777,21735
+char * libvlc_video_get_marquee_string(786,22141
+void libvlc_video_set_marquee_int(795,22571
+void libvlc_video_set_marquee_string(804,22975
+logo_option_bynumber(814,23219
+    enum { num_vlogo_opts 828,23716
+    enum { num_vlogo_opts = sizeof(828,23716
+    enum { num_vlogo_opts = sizeof(vlogo_optlist)828,23716
+    enum { num_vlogo_opts = sizeof(vlogo_optlist) / sizeof(828,23716
+    enum { num_vlogo_opts = sizeof(vlogo_optlist) / sizeof(*vlogo_optlist)vlogo_optlist828,23716
+void libvlc_video_set_logo_string(836,23951
+void libvlc_video_set_logo_int(843,24168
+int libvlc_video_get_logo_int(850,24362
+adjust_option_bynumber(861,24594
+    enum { num_opts 872,24920
+    enum { num_opts = sizeof(872,24920
+    enum { num_opts = sizeof(optlist)872,24920
+    enum { num_opts = sizeof(optlist) / sizeof(872,24920
+    enum { num_opts = sizeof(optlist) / sizeof(*optlist)optlist872,24920
+void libvlc_video_set_adjust_int(881,25128
+int libvlc_video_get_adjust_int(888,25330
+void libvlc_video_set_adjust_float(895,25519
+float libvlc_video_get_adjust_float(902,25729
+
+../include/vlc/deprecated.h,413
+#define LIBVLC_DEPRECATED_H 26,1257
+typedef struct libvlc_log_iterator_t libvlc_log_iterator_t;338,9902
+typedef struct libvlc_log_message_t340,9963
+    int         i_severity;342,10001
+    const char *psz_type;psz_type343,10066
+    const char *psz_name;psz_name344,10114
+    const char *psz_header;psz_header345,10162
+    const char *psz_message;psz_message346,10214
+} libvlc_log_message_t;347,10258
+
+media_list.c,1100
+typedef enum EventPlaceInTime 42,1564
+    EventWillHappen,43,1596
+    EventDidHappen44,1617
+} EventPlaceInTime;45,1636
+notify_item_addition(59,1950
+notify_item_deletion(90,2972
+void libvlc_media_list_internal_end_reached(116,3771
+bool mlist_is_writable(130,4221
+libvlc_media_list_new(151,4761
+void libvlc_media_list_release(190,5834
+void libvlc_media_list_retain(226,6925
+libvlc_media_list_add_file_content(238,7309
+void libvlc_media_list_set_media(274,8315
+libvlc_media_list_media(300,9210
+int libvlc_media_list_count(318,9773
+int libvlc_media_list_add_media(328,10126
+void libvlc_media_list_internal_add_media(338,10412
+int libvlc_media_list_insert_media(355,11127
+void libvlc_media_list_internal_insert_media(366,11476
+int libvlc_media_list_remove_index(382,12149
+int libvlc_media_list_internal_remove_index(391,12427
+libvlc_media_list_item_at_index(418,13295
+int libvlc_media_list_index_of_item(440,14002
+int libvlc_media_list_is_readonly(455,14581
+void libvlc_media_list_lock(466,14972
+void libvlc_media_list_unlock(477,15329
+libvlc_media_list_event_manager(489,15750
+
+media.c,2329
+static const vlc_meta_type_t libvlc_to_vlc_meta[libvlc_to_vlc_meta48,1703
+static const libvlc_meta_t vlc_to_libvlc_meta[vlc_to_libvlc_meta78,3104
+static libvlc_media_list_t *media_get_subitems(media_get_subitems109,4557
+static void input_item_subitem_added(132,5399
+static void input_item_subitemtree_added(165,6587
+static void input_item_meta_changed(183,7236
+static void input_item_duration_changed(201,7914
+static void send_parsed_changed(216,8395
+static void input_item_preparse_ended(264,9914
+static void install_input_item_observer(293,10930
+static void uninstall_input_item_observer(320,12128
+libvlc_media_t * libvlc_media_new_from_input_item(349,13405
+libvlc_media_t *libvlc_media_new_location(libvlc_media_new_location400,14803
+libvlc_media_t *libvlc_media_new_path(libvlc_media_new_path422,15369
+libvlc_media_t *libvlc_media_new_fd(libvlc_media_new_fd437,15769
+libvlc_media_t *libvlc_media_new_callbacks(libvlc_media_new_callbacks445,15976
+libvlc_media_t * libvlc_media_new_as_node(468,17093
+void libvlc_media_add_option(503,18215
+void libvlc_media_add_option_flag(513,18676
+void libvlc_media_release(523,19113
+void libvlc_media_retain(563,20224
+libvlc_media_duplicate(573,20530
+libvlc_media_get_mrl(583,20899
+char *libvlc_media_get_meta(libvlc_media_get_meta593,21207
+void libvlc_media_set_meta(617,22016
+int libvlc_media_save_meta(623,22222
+libvlc_media_get_state(636,22706
+libvlc_media_set_state(647,23011
+libvlc_media_subitems(666,23566
+int libvlc_media_get_stats(677,23972
+libvlc_media_event_manager(713,25440
+libvlc_media_get_duration(724,25753
+static int media_parse(740,26080
+libvlc_media_parse(795,28035
+libvlc_media_parse_async(804,28339
+libvlc_media_parse_with_options(813,28659
+libvlc_media_parse_stop(821,28927
+libvlc_media_is_parsed(830,29253
+libvlc_media_get_parsed_status(841,29485
+libvlc_media_set_user_data(857,30086
+libvlc_media_get_user_data(869,30591
+libvlc_media_get_tracks_info(879,30912
+libvlc_media_tracks_get(934,32459
+libvlc_media_get_codec_description(1019,35465
+void libvlc_media_tracks_release(1039,36260
+libvlc_media_type_t libvlc_media_get_type(1069,37180
+int libvlc_media_slaves_add(1098,37927
+void libvlc_media_slaves_clear(1149,39454
+unsigned int libvlc_media_slaves_get(1161,39859
+void libvlc_media_slaves_release(1234,42250
+
+../include/vlc/libvlc_media_library.h,114
+#define VLC_LIBVLC_MEDIA_LIBRARY_H 27,1330
+typedef struct libvlc_media_library_t libvlc_media_library_t;40,1542
+
+../include/vlc/libvlc_version.h,264
+# define LIBVLC_VERSION_H 33,1464
+# define LIBVLC_VERSION_MAJOR 36,1528
+# define LIBVLC_VERSION_MINOR 39,1601
+# define LIBVLC_VERSION_REVISION 42,1662
+# define LIBVLC_VERSION_EXTRA 44,1700
+# define LIBVLC_VERSION(47,1798
+# define LIBVLC_VERSION_INT 51,1968
+
+libvlc_internal.h,890
+#define _LIBVLC_INTERNAL_H 26,1293
+typedef void (*libvlc_vlm_release_func_t)libvlc_vlm_release_func_t56,2405
+typedef struct libvlc_vlm_t62,2665
+    vlm_t                  *p_vlm;p_vlm64,2695
+    libvlc_event_manager_t *p_event_manager;p_event_manager65,2730
+    libvlc_vlm_release_func_t pf_release;66,2775
+} libvlc_vlm_t;67,2817
+struct libvlc_instance_t69,2834
+    libvlc_int_t *p_libvlc_int;p_libvlc_int71,2861
+    libvlc_vlm_t  libvlc_vlm;72,2893
+    unsigned      ref_count;73,2923
+    vlc_mutex_t   instance_lock;74,2952
+    struct libvlc_callback_entry_list_t *p_callback_list;p_callback_list75,2985
+        void (*cb)cb78,3060
+        void *data;data79,3139
+    } log;80,3159
+        libvlc_dialog_cbs cbs;83,3187
+        void *data;data84,3218
+    } dialog;85,3238
+static inline libvlc_time_t from_mtime(107,3787
+static inline mtime_t to_mtime(112,3882
+
+../include/vlc/libvlc_vlm.h,30
+#define LIBVLC_VLM_H 26,1259
+
+error.c,502
+static const char oom[oom29,1177
+static vlc_threadvar_t context;31,1282
+static char *get_error get_error33,1315
+static void free_msg 38,1390
+static void free_error 44,1468
+static vlc_mutex_t lock 49,1532
+static uintptr_t refs 50,1576
+void libvlc_threads_init 52,1604
+void libvlc_threads_deinit 60,1771
+const char *libvlc_errmsg libvlc_errmsg79,2263
+void libvlc_clearerr 89,2535
+const char *libvlc_vprinterr libvlc_vprinterr100,2783
+const char *libvlc_printerr libvlc_printerr118,3188
+
+renderer_discoverer.c,836
+struct libvlc_renderer_discoverer_t35,1310
+    vlc_renderer_discovery_t *p_rd;p_rd37,1348
+    libvlc_event_manager_t *p_event_manager;p_event_manager38,1384
+    int                     i_items;40,1430
+    vlc_renderer_item_t **  pp_items;41,1467
+libvlc_renderer_item_to_vlc(49,1731
+renderer_discovery_item_added(55,1864
+renderer_discovery_item_removed(74,2450
+libvlc_renderer_item_name(96,3148
+libvlc_renderer_item_type(102,3301
+libvlc_renderer_item_icon_uri(108,3454
+libvlc_renderer_item_flags(114,3606
+libvlc_renderer_discoverer_new(120,3779
+libvlc_renderer_discoverer_release(158,4946
+libvlc_renderer_discoverer_start(170,5224
+libvlc_renderer_discoverer_stop(176,5346
+libvlc_renderer_discoverer_event_manager(186,5633
+libvlc_renderer_discoverer_list_release(192,5758
+libvlc_renderer_discoverer_list_get(208,6163
+
+../include/vlc/libvlc_events.h,6214
+#define LIBVLC_EVENTS_H 26,1238
+typedef struct libvlc_renderer_item_t libvlc_renderer_item_t;37,1372
+enum libvlc_event_e 47,1498
+    libvlc_MediaMetaChanged=51,1699
+    libvlc_MediaSubItemAdded,52,1730
+    libvlc_MediaDurationChanged,53,1760
+    libvlc_MediaParsedChanged,54,1793
+    libvlc_MediaFreed,55,1824
+    libvlc_MediaStateChanged,56,1847
+    libvlc_MediaSubItemTreeAdded,57,1877
+    libvlc_MediaPlayerMediaChanged=59,1912
+    libvlc_MediaPlayerMediaChanged=0x100,x10059,1912
+    libvlc_MediaPlayerNothingSpecial,60,1954
+    libvlc_MediaPlayerOpening,61,1992
+    libvlc_MediaPlayerBuffering,62,2023
+    libvlc_MediaPlayerPlaying,63,2056
+    libvlc_MediaPlayerPaused,64,2087
+    libvlc_MediaPlayerStopped,65,2117
+    libvlc_MediaPlayerForward,66,2148
+    libvlc_MediaPlayerBackward,67,2179
+    libvlc_MediaPlayerEndReached,68,2211
+    libvlc_MediaPlayerEncounteredError,69,2245
+    libvlc_MediaPlayerTimeChanged,70,2285
+    libvlc_MediaPlayerPositionChanged,71,2320
+    libvlc_MediaPlayerSeekableChanged,72,2359
+    libvlc_MediaPlayerPausableChanged,73,2398
+    libvlc_MediaPlayerTitleChanged,74,2437
+    libvlc_MediaPlayerSnapshotTaken,75,2473
+    libvlc_MediaPlayerLengthChanged,76,2510
+    libvlc_MediaPlayerVout,77,2547
+    libvlc_MediaPlayerScrambledChanged,78,2575
+    libvlc_MediaPlayerESAdded,79,2615
+    libvlc_MediaPlayerESDeleted,80,2646
+    libvlc_MediaPlayerESSelected,81,2679
+    libvlc_MediaPlayerCorked,82,2713
+    libvlc_MediaPlayerUncorked,83,2743
+    libvlc_MediaPlayerMuted,84,2775
+    libvlc_MediaPlayerUnmuted,85,2804
+    libvlc_MediaPlayerAudioVolume,86,2835
+    libvlc_MediaPlayerAudioDevice,87,2870
+    libvlc_MediaPlayerChapterChanged,88,2905
+    libvlc_MediaListItemAdded=90,2944
+    libvlc_MediaListItemAdded=0x200,x20090,2944
+    libvlc_MediaListWillAddItem,91,2981
+    libvlc_MediaListItemDeleted,92,3014
+    libvlc_MediaListWillDeleteItem,93,3047
+    libvlc_MediaListEndReached,94,3083
+    libvlc_MediaListViewItemAdded=96,3116
+    libvlc_MediaListViewItemAdded=0x300,x30096,3116
+    libvlc_MediaListViewWillAddItem,97,3157
+    libvlc_MediaListViewItemDeleted,98,3194
+    libvlc_MediaListViewWillDeleteItem,99,3231
+    libvlc_MediaListPlayerPlayed=101,3272
+    libvlc_MediaListPlayerPlayed=0x400,x400101,3272
+    libvlc_MediaListPlayerNextItemSet,102,3312
+    libvlc_MediaListPlayerStopped,103,3351
+    libvlc_MediaDiscovererStarted=109,3515
+    libvlc_MediaDiscovererStarted=0x500,x500109,3515
+    libvlc_MediaDiscovererEnded,114,3683
+    libvlc_RendererDiscovererItemAdded,116,3717
+    libvlc_RendererDiscovererItemDeleted,117,3757
+    libvlc_VlmMediaAdded=119,3800
+    libvlc_VlmMediaAdded=0x600,x600119,3800
+    libvlc_VlmMediaRemoved,120,3832
+    libvlc_VlmMediaChanged,121,3860
+    libvlc_VlmMediaInstanceStarted,122,3888
+    libvlc_VlmMediaInstanceStopped,123,3924
+    libvlc_VlmMediaInstanceStatusInit,124,3960
+    libvlc_VlmMediaInstanceStatusOpening,125,3999
+    libvlc_VlmMediaInstanceStatusPlaying,126,4041
+    libvlc_VlmMediaInstanceStatusPause,127,4083
+    libvlc_VlmMediaInstanceStatusEnd,128,4123
+    libvlc_VlmMediaInstanceStatusError129,4161
+typedef struct libvlc_event_t135,4230
+    int   type;137,4262
+    void *p_obj;p_obj138,4323
+            libvlc_meta_t meta_type;144,4446
+        } media_meta_changed;145,4483
+            libvlc_media_t * new_child;148,4538
+        } media_subitem_added;149,4578
+            int64_t new_duration;152,4634
+        } media_duration_changed;153,4668
+            int new_status;156,4727
+        } media_parsed_changed;157,4801
+            libvlc_media_t * md;160,4858
+        } media_freed;161,4891
+            int new_state;164,4939
+        } media_state_changed;165,4998
+            libvlc_media_t * item;168,5054
+        } media_subitemtree_added;169,5089
+            float new_cache;174,5179
+        } media_player_buffering;175,5208
+            int new_chapter;178,5267
+        } media_player_chapter_changed;179,5296
+            float new_position;182,5361
+        } media_player_position_changed;183,5393
+            libvlc_time_t new_time;186,5459
+        } media_player_time_changed;187,5495
+            int new_title;190,5557
+        } media_player_title_changed;191,5584
+            int new_seekable;194,5647
+        } media_player_seekable_changed;195,5677
+            int new_pausable;198,5743
+        } media_player_pausable_changed;199,5773
+            int new_scrambled;202,5839
+        } media_player_scrambled_changed;203,5870
+            int new_count;206,5937
+        } media_player_vout;207,5964
+            libvlc_media_t * item;212,6044
+            int index;213,6079
+        } media_list_item_added;214,6102
+            libvlc_media_t * item;217,6160
+            int index;218,6195
+        } media_list_will_add_item;219,6218
+            libvlc_media_t * item;222,6279
+            int index;223,6314
+        } media_list_item_deleted;224,6337
+            libvlc_media_t * item;227,6397
+            int index;228,6432
+        } media_list_will_delete_item;229,6455
+            libvlc_media_t * item;234,6552
+        } media_list_player_next_item_set;235,6587
+             char* psz_filename 240,6685
+        } media_player_snapshot_taken 241,6719
+            libvlc_time_t   new_length;246,6814
+        } media_player_length_changed;247,6854
+            const char * psz_media_name;252,6943
+            const char * psz_instance_name;253,6984
+        } vlm_media_event;254,7028
+            libvlc_media_t * new_media;259,7113
+        } media_player_media_changed;260,7153
+            libvlc_track_type_t i_type;264,7217
+            int                 i_id;265,7257
+        } media_player_es_changed;266,7295
+            float volume;270,7356
+        } media_player_audio_volume;271,7382
+            const char *device;device275,7445
+        } media_player_audio_device;276,7477
+            const libvlc_renderer_item_t *item;item280,7540
+        } renderer_discoverer_item_added;281,7588
+            const libvlc_renderer_item_t *item;item284,7655
+        } renderer_discoverer_item_deleted;285,7703
+    } u;286,7747
+} libvlc_event_t;287,7797
+
+media_player.c,4458
+static inline void lock(109,3898
+static inline void unlock(114,3992
+static inline void lock_input(119,4090
+static inline void unlock_input(124,4189
+static void input_item_preparsed_changed(129,4292
+static void media_attach_preparsed_event(143,4806
+static void media_detach_preparsed_event(150,5047
+static void release_input_thread(164,5442
+input_thread_t *libvlc_get_input_thread(libvlc_get_input_thread194,6391
+static void set_state(216,6886
+input_seekable_changed(241,7406
+input_pausable_changed(259,7951
+input_scrambled_changed(277,8496
+input_event_changed(295,9045
+static int track_type_from_name(418,13384
+static int input_es_changed(430,13725
+input_es_selected(479,14925
+static int snapshot_was_taken(502,15719
+static int corks_changed(516,16215
+static int audio_device_changed(533,16736
+static int mute_changed(546,17225
+static int volume_changed(563,17744
+libvlc_media_player_new(591,18924
+libvlc_media_player_new_from_media(756,25945
+static void libvlc_media_player_destroy(775,26505
+void libvlc_media_player_release(810,27871
+void libvlc_media_player_retain(828,28333
+void libvlc_media_player_set_media(842,28750
+libvlc_media_player_get_media(884,29956
+libvlc_media_player_event_manager(901,30379
+static void add_es_callbacks(906,30483
+static void del_es_callbacks(916,31041
+int libvlc_media_player_play(929,31791
+void libvlc_media_player_set_pause(990,33875
+void libvlc_media_player_pause(1019,34748
+int libvlc_media_player_is_playing(1029,35135
+void libvlc_media_player_stop(1038,35478
+int libvlc_media_player_set_renderer(1059,36093
+void libvlc_video_set_callbacks(1073,36608
+void libvlc_video_set_format_callbacks(1088,37160
+void libvlc_video_set_format(1096,37474
+void libvlc_media_player_set_nsobject(1108,37996
+void * libvlc_media_player_get_nsobject(1129,38724
+void libvlc_media_player_set_agl(1143,39110
+uint32_t libvlc_media_player_get_agl(1156,39606
+void libvlc_media_player_set_xwindow(1165,39878
+uint32_t libvlc_media_player_get_xwindow(1179,40427
+void libvlc_media_player_set_hwnd(1187,40719
+void *libvlc_media_player_get_hwnd(libvlc_media_player_get_hwnd1209,41525
+void libvlc_media_player_set_android_context(1223,41958
+int libvlc_media_player_set_evas_object(1241,42623
+void libvlc_audio_set_callbacks(1256,43037
+void libvlc_audio_set_volume_callback(1275,43871
+void libvlc_audio_set_format_callbacks(1283,44115
+void libvlc_audio_set_format(1293,44481
+libvlc_time_t libvlc_media_player_get_length(1307,45015
+libvlc_time_t libvlc_media_player_get_time(1323,45420
+void libvlc_media_player_set_time(1337,45792
+void libvlc_media_player_set_position(1350,46160
+float libvlc_media_player_get_position(1363,46524
+void libvlc_media_player_set_chapter(1378,46888
+int libvlc_media_player_get_chapter(1391,47247
+int libvlc_media_player_get_chapter_count(1406,47602
+int libvlc_media_player_get_chapter_count_for_title(1421,48023
+void libvlc_media_player_set_title(1440,48617
+int libvlc_media_player_get_title(1459,49179
+int libvlc_media_player_get_title_count(1474,49524
+int libvlc_media_player_get_full_title_descriptions(1489,49941
+void libvlc_title_descriptions_release(1539,51477
+int libvlc_media_player_get_full_chapter_descriptions(1553,51817
+void libvlc_chapter_descriptions_release(1624,53727
+void libvlc_media_player_next_chapter(1638,54083
+void libvlc_media_player_previous_chapter(1653,54527
+float libvlc_media_player_get_fps(1668,54975
+int libvlc_media_player_will_play(1692,55629
+int libvlc_media_player_set_rate(1705,55997
+float libvlc_media_player_get_rate(1717,56339
+libvlc_state_t libvlc_media_player_get_state(1722,56450
+int libvlc_media_player_is_seekable(1730,56623
+void libvlc_media_player_navigate(1744,56983
+        libvlc_get_track_description(1766,57614
+void libvlc_track_description_release(1824,59448
+void libvlc_track_description_list_release(1829,59578
+int libvlc_media_player_can_pause(1843,59900
+int libvlc_media_player_program_scrambled(1857,60262
+void libvlc_media_player_next_frame(1871,60664
+static const unsigned char position_subpicture_alignment[position_subpicture_alignment1885,61089
+void libvlc_media_player_set_video_title_display(1897,61777
+int libvlc_media_player_add_slave(1913,62356
+#define EQZ_BAND_VALUE_SIZE 1948,63537
+int libvlc_media_player_set_equalizer(1950,63569
+static const char roles[roles1985,64704
+int libvlc_media_player_set_role(1998,65159
+int libvlc_media_player_get_role(2006,65369
+
+playlist.c,64
+void libvlc_playlist_play(37,1368
+int libvlc_add_intf(44,1629
+
+../include/vlc/vlc.h,27
+#define VLC_VLC_H 29,1395
+
+../include/vlc/libvlc_media.h,6043
+#define VLC_LIBVLC_MEDIA_H 27,1314
+typedef struct libvlc_media_t libvlc_media_t;42,1651
+typedef enum libvlc_meta_t 45,1721
+    libvlc_meta_Title,46,1750
+    libvlc_meta_Artist,47,1773
+    libvlc_meta_Genre,48,1797
+    libvlc_meta_Copyright,49,1820
+    libvlc_meta_Album,50,1847
+    libvlc_meta_TrackNumber,51,1870
+    libvlc_meta_Description,52,1899
+    libvlc_meta_Rating,53,1928
+    libvlc_meta_Date,54,1952
+    libvlc_meta_Setting,55,1974
+    libvlc_meta_URL,56,1999
+    libvlc_meta_Language,57,2020
+    libvlc_meta_NowPlaying,58,2046
+    libvlc_meta_Publisher,59,2074
+    libvlc_meta_EncodedBy,60,2101
+    libvlc_meta_ArtworkURL,61,2128
+    libvlc_meta_TrackID,62,2156
+    libvlc_meta_TrackTotal,63,2181
+    libvlc_meta_Director,64,2209
+    libvlc_meta_Season,65,2235
+    libvlc_meta_Episode,66,2259
+    libvlc_meta_ShowName,67,2284
+    libvlc_meta_Actors,68,2310
+    libvlc_meta_AlbumArtist,69,2334
+    libvlc_meta_DiscNumber,70,2363
+    libvlc_meta_DiscTotal71,2391
+} libvlc_meta_t;73,2451
+typedef enum libvlc_state_t84,2795
+    libvlc_NothingSpecial=86,2825
+    libvlc_Opening,87,2854
+    libvlc_Buffering,88,2874
+    libvlc_Playing,91,3072
+    libvlc_Paused,92,3092
+    libvlc_Stopped,93,3111
+    libvlc_Ended,94,3131
+    libvlc_Error95,3149
+} libvlc_state_t;96,3166
+    libvlc_media_option_trusted 100,3192
+    libvlc_media_option_trusted = 0x2,x2100,3192
+    libvlc_media_option_unique 101,3231
+    libvlc_media_option_unique = 0x100x100101,3231
+typedef enum libvlc_track_type_t104,3274
+    libvlc_track_unknown 106,3309
+    libvlc_track_audio 107,3342
+    libvlc_track_video 108,3374
+    libvlc_track_text 109,3406
+} libvlc_track_type_t;110,3437
+typedef struct libvlc_media_stats_t112,3461
+    int         i_read_bytes;115,3515
+    float       f_input_bitrate;116,3545
+    int         i_demux_read_bytes;119,3595
+    float       f_demux_bitrate;120,3631
+    int         i_demux_corrupted;121,3664
+    int         i_demux_discontinuity;122,3699
+    int         i_decoded_video;125,3758
+    int         i_decoded_audio;126,3791
+    int         i_displayed_pictures;129,3848
+    int         i_lost_pictures;130,3886
+    int         i_played_abuffers;133,3943
+    int         i_lost_abuffers;134,3978
+    int         i_sent_packets;137,4036
+    int         i_sent_bytes;138,4068
+    float       f_send_bitrate;139,4098
+} libvlc_media_stats_t;140,4130
+typedef struct libvlc_media_track_info_t142,4155
+    uint32_t    i_codec;145,4221
+    int         i_id;146,4246
+    libvlc_track_type_t i_type;147,4268
+    int         i_profile;150,4326
+    int         i_level;151,4353
+            unsigned    i_channels;156,4441
+            unsigned    i_rate;157,4477
+        } audio;158,4509
+            unsigned    i_height;161,4576
+            unsigned    i_width;162,4610
+        } video;163,4643
+    } u;164,4660
+} libvlc_media_track_info_t;166,4670
+typedef struct libvlc_audio_track_t169,4701
+    unsigned    i_channels;171,4739
+    unsigned    i_rate;172,4767
+} libvlc_audio_track_t;173,4791
+typedef struct libvlc_video_track_t175,4816
+    unsigned    i_height;177,4854
+    unsigned    i_width;178,4880
+    unsigned    i_sar_num;179,4905
+    unsigned    i_sar_den;180,4932
+    unsigned    i_frame_rate_num;181,4959
+    unsigned    i_frame_rate_den;182,4993
+} libvlc_video_track_t;183,5027
+typedef struct libvlc_subtitle_track_t185,5052
+    char *psz_encoding;psz_encoding187,5093
+} libvlc_subtitle_track_t;188,5117
+typedef struct libvlc_media_track_t190,5145
+    uint32_t    i_codec;193,5206
+    uint32_t    i_original_fourcc;194,5231
+    int         i_id;195,5266
+    libvlc_track_type_t i_type;196,5288
+    int         i_profile;199,5346
+    int         i_level;200,5373
+        libvlc_audio_track_t *audio;audio203,5411
+        libvlc_video_track_t *video;video204,5448
+        libvlc_subtitle_track_t *subtitle;subtitle205,5485
+    unsigned int i_bitrate;208,5536
+    char *psz_language;psz_language209,5564
+    char *psz_description;psz_description210,5588
+} libvlc_media_track_t;212,5616
+typedef enum libvlc_media_type_t 219,5696
+    libvlc_media_type_unknown,220,5731
+    libvlc_media_type_file,221,5762
+    libvlc_media_type_directory,222,5790
+    libvlc_media_type_disc,223,5823
+    libvlc_media_type_stream,224,5851
+    libvlc_media_type_playlist,225,5881
+} libvlc_media_type_t;226,5913
+typedef enum libvlc_media_parse_flag_t233,6045
+    libvlc_media_parse_local 238,6142
+    libvlc_media_parse_local    = 0x00,x00238,6142
+    libvlc_media_parse_network 242,6245
+    libvlc_media_parse_network  = 0x01,x01242,6245
+    libvlc_media_fetch_local 246,6356
+    libvlc_media_fetch_local    = 0x02,x02246,6356
+    libvlc_media_fetch_network 250,6469
+    libvlc_media_fetch_network  = 0x04,x04250,6469
+    libvlc_media_do_interact 256,6731
+    libvlc_media_do_interact    = 0x08,x08256,6731
+} libvlc_media_parse_flag_t;257,6771
+typedef enum libvlc_media_parsed_status_t266,7005
+    libvlc_media_parsed_status_skipped 268,7049
+    libvlc_media_parsed_status_failed,269,7093
+    libvlc_media_parsed_status_timeout,270,7132
+    libvlc_media_parsed_status_done,271,7172
+} libvlc_media_parsed_status_t;272,7209
+typedef enum libvlc_media_slave_type_t277,7295
+    libvlc_media_slave_type_subtitle,279,7336
+    libvlc_media_slave_type_audio,280,7374
+} libvlc_media_slave_type_t;281,7409
+typedef struct libvlc_media_slave_t287,7510
+    char *                          psz_uri;289,7548
+    libvlc_media_slave_type_t       i_type;290,7593
+    unsigned int                    i_priority;291,7637
+} libvlc_media_slave_t;292,7685
+typedef int (*libvlc_media_open_cb)libvlc_media_open_cb312,8523
+typedef ssize_t (*libvlc_media_read_cb)libvlc_media_read_cb331,9354
+typedef int (*libvlc_media_seek_cb)libvlc_media_seek_cb342,9741
+typedef void (*libvlc_media_close_cb)libvlc_media_close_cb350,9983
+#define VLC_FORWARD_DECLARE_OBJECT(605,19180
+LIBVLC_API VLC_FORWARD_DECLARE_OBJECT(615,19527
+
+audio.c,2013
+static audio_output_t *GetAOut(GetAOut49,1728
+        libvlc_audio_output_list_get(63,2149
+void libvlc_audio_output_list_release(107,3441
+int libvlc_audio_output_set(124,3797
+libvlc_audio_output_device_enum(146,4403
+libvlc_audio_output_device_list_get(184,5253
+void libvlc_audio_output_device_list_release(215,6227
+int libvlc_audio_output_device_count(228,6508
+char *libvlc_audio_output_device_longname(libvlc_audio_output_device_longname235,6713
+char *libvlc_audio_output_device_id(libvlc_audio_output_device_id243,7005
+void libvlc_audio_output_device_set(254,7366
+char *libvlc_audio_output_device_get(libvlc_audio_output_device_get283,8116
+int libvlc_audio_output_get_device_type(296,8368
+void libvlc_audio_output_set_device_type(302,8500
+void libvlc_audio_toggle_mute(308,8669
+int libvlc_audio_get_mute(315,8842
+void libvlc_audio_set_mute(328,9089
+int libvlc_audio_get_volume(338,9316
+int libvlc_audio_set_volume(352,9617
+int libvlc_audio_get_track_count(374,10264
+        libvlc_audio_get_track_description(392,10884
+int libvlc_audio_get_track(400,11239
+int libvlc_audio_set_track(414,11749
+int libvlc_audio_get_channel(444,12737
+int libvlc_audio_set_channel(458,13205
+int64_t libvlc_audio_get_delay(478,13796
+int libvlc_audio_set_delay(493,14336
+unsigned libvlc_audio_equalizer_get_preset_count(512,14950
+const char *libvlc_audio_equalizer_get_preset_name(libvlc_audio_equalizer_get_preset_name520,15264
+unsigned libvlc_audio_equalizer_get_band_count(531,15681
+float libvlc_audio_equalizer_get_band_frequency(539,16002
+libvlc_equalizer_t *libvlc_audio_equalizer_new(libvlc_audio_equalizer_new550,16421
+libvlc_equalizer_t *libvlc_audio_equalizer_new_from_preset(libvlc_audio_equalizer_new_from_preset567,17033
+void libvlc_audio_equalizer_release(589,17774
+int libvlc_audio_equalizer_set_preamp(597,18111
+float libvlc_audio_equalizer_get_preamp(613,18648
+int libvlc_audio_equalizer_set_amp_at_index(621,19016
+float libvlc_audio_equalizer_get_amp_at_index(639,19609
+
+core.c,811
+libvlc_instance_t * libvlc_new(41,1457
+void libvlc_retain(80,2545
+void libvlc_release(90,2816
+void libvlc_set_exit_handler(113,3484
+static void libvlc_wait_wakeup(120,3704
+void libvlc_wait(125,3780
+void libvlc_set_user_agent 136,4042
+void libvlc_set_app_id(151,4458
+const char * libvlc_get_version(161,4822
+const char * libvlc_get_compiler(166,4893
+const char * libvlc_get_changeset(171,4964
+void libvlc_free(177,5082
+static libvlc_module_description_t *module_description_list_get(module_description_list_get182,5134
+void libvlc_module_description_list_release(230,6798
+libvlc_module_description_t *libvlc_audio_filter_list_get(libvlc_audio_filter_list_get247,7244
+libvlc_module_description_t *libvlc_video_filter_list_get(libvlc_video_filter_list_get252,7410
+int64_t libvlc_clock(257,7576
+
+media_list_internal.h,530
+#define _LIBVLC_MEDIA_LIST_INTERNAL_H 26,1308
+struct libvlc_media_list_t37,1476
+    libvlc_event_manager_t *    p_event_manager;39,1505
+    libvlc_instance_t *         p_libvlc_instance;40,1554
+    int                         i_refcount;41,1605
+    vlc_mutex_t                 object_lock;42,1649
+    vlc_mutex_t                 refcount_lock;43,1694
+    libvlc_media_t * p_md;44,1741
+    libvlc_media_t * p_internal_md;46,1861
+    vlc_array_t                items;47,1926
+    bool                  b_read_only;51,2055
+
+media_internal.h,373
+#define _LIBVLC_MEDIA_INTERNAL_H 26,1298
+struct libvlc_media_t34,1437
+    libvlc_event_manager_t * p_event_manager;36,1461
+    input_item_t      *p_input_item;p_input_item37,1507
+    int                i_refcount;38,1544
+    libvlc_instance_t *p_libvlc_instance;p_libvlc_instance39,1579
+    libvlc_state_t     state;40,1621
+    VLC_FORWARD_DECLARE_OBJECT(41,1651
+
+../include/vlc/libvlc_renderer_discoverer.h,452
+#define VLC_LIBVLC_RENDERER_DISCOVERER_H 22,1122
+typedef struct libvlc_renderer_discoverer_t libvlc_renderer_discoverer_t;38,1451
+typedef struct libvlc_rd_description_t45,1618
+    char *psz_name;psz_name47,1659
+    char *psz_longname;psz_longname48,1679
+} libvlc_rd_description_t;49,1703
+#define LIBVLC_RENDERER_CAN_AUDIO 52,1768
+#define LIBVLC_RENDERER_CAN_VIDEO 54,1846
+typedef struct libvlc_renderer_item_t libvlc_renderer_item_t;67,2181
+
+../include/vlc/libvlc_media_list.h,101
+#define LIBVLC_MEDIA_LIST_H 25,1193
+typedef struct libvlc_media_list_t libvlc_media_list_t;39,1477
+
+media_discoverer.c,995
+struct libvlc_media_discoverer_t42,1648
+    libvlc_event_manager_t * p_event_manager;44,1683
+    libvlc_instance_t *      p_libvlc_instance;45,1729
+    services_discovery_t *   p_sd;46,1777
+    libvlc_media_list_t *    p_mlist;47,1812
+    bool                     running;48,1850
+    vlc_dictionary_t         catname_to_submedialist;49,1888
+static void services_discovery_item_added(60,2199
+static void services_discovery_item_removed(110,4267
+static void services_discovery_removeall(137,5334
+libvlc_media_discoverer_new(159,6043
+libvlc_media_discoverer_start(218,8148
+libvlc_media_discoverer_stop(235,8667
+libvlc_media_discoverer_new_from_name(257,9419
+libvlc_media_discoverer_release(278,10020
+libvlc_media_discoverer_localized_name(321,11694
+libvlc_media_discoverer_media_list(330,12038
+libvlc_media_discoverer_event_manager(340,12397
+libvlc_media_discoverer_is_running(350,12692
+libvlc_media_discoverer_list_release(356,12803
+libvlc_media_discoverer_list_get(372,13216
+
+media_library.c,445
+struct libvlc_media_library_t35,1373
+    libvlc_event_manager_t * p_event_manager;37,1405
+    libvlc_instance_t *      p_libvlc_instance;38,1451
+    int                      i_refcount;39,1499
+    libvlc_media_list_t *    p_mlist;40,1540
+libvlc_media_library_new(56,1847
+void libvlc_media_library_release(86,2597
+void libvlc_media_library_retain(101,3056
+int libvlc_media_library_load(111,3371
+libvlc_media_library_media_list(142,4289
+
+media_list_path.h,826
+#define _LIBVLC_MEDIA_LIST_PATH_H 26,1277
+typedef int * libvlc_media_list_path_t;28,1314
+static inline void libvlc_media_list_path_dump(33,1591
+static inline libvlc_media_list_path_t libvlc_media_list_path_empty(49,2066
+static inline libvlc_media_list_path_t libvlc_media_list_path_with_root_index(59,2449
+static inline int libvlc_media_list_path_depth(70,2859
+static inline void libvlc_media_list_path_append(80,3216
+static inline libvlc_media_list_path_t libvlc_media_list_path_copy_by_appending(91,3717
+static inline libvlc_media_list_path_t libvlc_media_list_path_copy(105,4318
+get_path_rec(118,4861
+static inline libvlc_media_list_path_t libvlc_media_list_path_of_item(149,6143
+libvlc_media_list_item_at_path(162,6685
+libvlc_media_list_parentlist_at_path(194,7741
+libvlc_media_list_sublist_at_path(229,8886
+
+renderer_discoverer_internal.h,56
+#define _LIBVLC_RENDERER_DISCOVERER_INTERNAL_H 22,1130
+
+../include/vlc/libvlc.h,1130
+#define VLC_LIBVLC_H 36,1520
+# define LIBVLC_API 39,1589
+# define LIBVLC_API 41,1675
+# define LIBVLC_API43,1740
+#   define LIBVLC_DEPRECATED48,1854
+# define LIBVLC_DEPRECATED 51,1972
+# define LIBVLC_DEPRECATED53,2033
+typedef struct libvlc_instance_t libvlc_instance_t;77,2686
+typedef int64_t libvlc_time_t;79,2739
+typedef struct libvlc_event_manager_t libvlc_event_manager_t;298,10315
+typedef int libvlc_event_type_t;305,10437
+typedef void ( *libvlc_callback_t libvlc_callback_t311,10565
+enum libvlc_log_level361,12430
+    LIBVLC_DEBUG=363,12454
+    LIBVLC_NOTICE=364,12498
+    LIBVLC_WARNING=365,12560
+    LIBVLC_ERROR=366,12624
+typedef struct vlc_log_t libvlc_log_t;369,12672
+typedef void (*libvlc_log_cb)libvlc_log_cb425,15256
+typedef struct libvlc_module_description_t473,16865
+    char *psz_name;psz_name475,16910
+    char *psz_shortname;psz_shortname476,16930
+    char *psz_longname;psz_longname477,16955
+    char *psz_help;psz_help478,16979
+    struct libvlc_module_description_t *p_next;p_next479,16999
+} libvlc_module_description_t;480,17047
+static inline int64_t libvlc_delay(542,18901
+
+../include/vlc/libvlc_media_discoverer.h,652
+#define VLC_LIBVLC_MEDIA_DISCOVERER_H 27,1336
+typedef enum libvlc_media_discoverer_category_t 37,1504
+    libvlc_media_discoverer_devices,39,1601
+    libvlc_media_discoverer_lan,41,1690
+    libvlc_media_discoverer_podcasts,43,1743
+    libvlc_media_discoverer_localdirs,45,1853
+} libvlc_media_discoverer_category_t;46,1892
+typedef struct libvlc_media_discoverer_description_t 52,2014
+    char *psz_name;psz_name53,2069
+    char *psz_longname;psz_longname54,2089
+    libvlc_media_discoverer_category_t i_cat;55,2113
+} libvlc_media_discoverer_description_t;56,2159
+typedef struct libvlc_media_discoverer_t libvlc_media_discoverer_t;70,2694
+
+../include/vlc/libvlc_media_player.h,5498
+#define VLC_LIBVLC_MEDIA_PLAYER_H 27,1341
+typedef struct libvlc_media_player_t libvlc_media_player_t;43,1659
+typedef struct libvlc_track_description_t49,1855
+    int   i_id;51,1899
+    char *psz_name;psz_name52,1915
+    struct libvlc_track_description_t *p_next;p_next53,1935
+} libvlc_track_description_t;55,1983
+    libvlc_title_menu 62,2055
+    libvlc_title_menu          = 0x01,x0162,2055
+    libvlc_title_interactive 63,2094
+    libvlc_title_interactive   = 0x02x0263,2094
+typedef struct libvlc_title_description_t66,2136
+    int64_t i_duration;68,2180
+    char *psz_name;psz_name69,2237
+    unsigned i_flags;70,2276
+} libvlc_title_description_t;71,2389
+typedef struct libvlc_chapter_description_t76,2456
+    int64_t i_time_offset;78,2502
+    int64_t i_duration;79,2580
+    char *psz_name;psz_name80,2652
+} libvlc_chapter_description_t;81,2693
+typedef struct libvlc_audio_output_t87,2828
+    char *psz_name;psz_name89,2867
+    char *psz_description;psz_description90,2887
+    struct libvlc_audio_output_t *p_next;p_next91,2914
+} libvlc_audio_output_t;93,2957
+typedef struct libvlc_audio_output_device_t98,3031
+    struct libvlc_audio_output_device_t *p_next;p_next100,3077
+    char *psz_device;psz_device101,3153
+    char *psz_description;psz_description102,3208
+} libvlc_audio_output_device_t;104,3334
+typedef enum libvlc_video_marquee_option_t 109,3402
+    libvlc_marquee_Enable 110,3447
+    libvlc_marquee_Text,111,3478
+    libvlc_marquee_Color,112,3543
+    libvlc_marquee_Opacity,113,3569
+    libvlc_marquee_Position,114,3597
+    libvlc_marquee_Refresh,115,3626
+    libvlc_marquee_Size,116,3654
+    libvlc_marquee_Timeout,117,3679
+    libvlc_marquee_X,118,3707
+    libvlc_marquee_Y119,3729
+} libvlc_video_marquee_option_t;120,3750
+typedef enum libvlc_navigate_mode_t125,3811
+    libvlc_navigate_activate 127,3849
+    libvlc_navigate_up,128,3883
+    libvlc_navigate_down,129,3907
+    libvlc_navigate_left,130,3933
+    libvlc_navigate_right,131,3959
+    libvlc_navigate_popup132,3986
+} libvlc_navigate_mode_t;133,4012
+typedef enum libvlc_position_t 138,4116
+    libvlc_position_disable=139,4149
+    libvlc_position_center,140,4181
+    libvlc_position_left,141,4209
+    libvlc_position_right,142,4235
+    libvlc_position_top,143,4262
+    libvlc_position_top_left,144,4287
+    libvlc_position_top_right,145,4317
+    libvlc_position_bottom,146,4348
+    libvlc_position_bottom_left,147,4376
+    libvlc_position_bottom_right148,4409
+} libvlc_position_t;149,4442
+typedef struct libvlc_equalizer_t libvlc_equalizer_t;156,4559
+typedef void *(*libvlc_video_lock_cb)libvlc_video_lock_cb295,9065
+typedef void (*libvlc_video_unlock_cb)libvlc_video_unlock_cb313,9863
+typedef void (*libvlc_video_display_cb)libvlc_video_display_cb326,10363
+typedef unsigned (*libvlc_video_format_cb)libvlc_video_format_cb354,11821
+typedef void (*libvlc_video_cleanup_cb)libvlc_video_cleanup_cb365,12317
+typedef void (*libvlc_audio_play_cb)libvlc_audio_play_cb614,22467
+typedef void (*libvlc_audio_pause_cb)libvlc_audio_pause_cb626,22940
+typedef void (*libvlc_audio_resume_cb)libvlc_audio_resume_cb638,23382
+typedef void (*libvlc_audio_flush_cb)libvlc_audio_flush_cb649,23752
+typedef void (*libvlc_audio_drain_cb)libvlc_audio_drain_cb660,24179
+typedef void (*libvlc_audio_set_volume_cb)libvlc_audio_set_volume_cb668,24446
+typedef int (*libvlc_audio_setup_cb)libvlc_audio_setup_cb724,26823
+typedef void (*libvlc_audio_cleanup_cb)libvlc_audio_cleanup_cb733,27173
+enum libvlc_video_logo_option_t 1429,49740
+    libvlc_logo_enable,1430,49774
+    libvlc_logo_file,1431,49798
+    libvlc_logo_x,1432,49879
+    libvlc_logo_y,1433,49898
+    libvlc_logo_delay,1434,49917
+    libvlc_logo_repeat,1435,49940
+    libvlc_logo_opacity,1436,49964
+    libvlc_logo_position1437,49989
+enum libvlc_video_adjust_option_t 1475,51323
+    libvlc_adjust_Enable 1476,51359
+    libvlc_adjust_Contrast,1477,51389
+    libvlc_adjust_Brightness,1478,51417
+    libvlc_adjust_Hue,1479,51447
+    libvlc_adjust_Saturation,1480,51470
+    libvlc_adjust_Gamma1481,51500
+typedef enum libvlc_audio_output_device_types_t 1539,53352
+    libvlc_AudioOutputDevice_Error 1540,53402
+    libvlc_AudioOutputDevice_Mono 1541,53444
+    libvlc_AudioOutputDevice_Stereo 1542,53486
+    libvlc_AudioOutputDevice_2F2R 1543,53528
+    libvlc_AudioOutputDevice_3F2R 1544,53570
+    libvlc_AudioOutputDevice_5_1 1545,53612
+    libvlc_AudioOutputDevice_6_1 1546,53654
+    libvlc_AudioOutputDevice_7_1 1547,53696
+    libvlc_AudioOutputDevice_SPDIF 1548,53738
+} libvlc_audio_output_device_types_t;1549,53779
+typedef enum libvlc_audio_output_channel_t 1554,53844
+    libvlc_AudioChannel_Error 1555,53889
+    libvlc_AudioChannel_Stereo 1556,53927
+    libvlc_AudioChannel_RStereo 1557,53965
+    libvlc_AudioChannel_Left 1558,54003
+    libvlc_AudioChannel_Right 1559,54041
+    libvlc_AudioChannel_Dolbys 1560,54079
+} libvlc_audio_output_channel_t;1561,54116
+typedef enum libvlc_media_player_role 2009,70051
+    libvlc_role_None 2010,70091
+    libvlc_role_Music,2011,70155
+    libvlc_role_Video,2012,70214
+    libvlc_role_Communication,2013,70260
+    libvlc_role_Game,2014,70331
+    liblvc_role_Notification,2015,70372
+    libvlc_role_Animation,2016,70436
+    libvlc_role_Production,2017,70509
+    libvlc_role_Accessibility,2018,70571
+    libvlc_role_Test 2019,70624
+#define libvlc_role_Last 2020,70660
+} libvlc_media_player_role_t;2021,70702
+
+../include/vlc/libvlc_media_list_player.h,321
+#define LIBVLC_MEDIA_LIST_PLAYER_H 25,1207
+typedef struct libvlc_media_list_player_t libvlc_media_list_player_t;43,1731
+typedef enum libvlc_playback_mode_t48,1851
+    libvlc_playback_mode_default,50,1889
+    libvlc_playback_mode_loop,51,1923
+    libvlc_playback_mode_repeat52,1954
+} libvlc_playback_mode_t;53,1986
+
+log.c,724
+void libvlc_log_get_context(37,1383
+void libvlc_log_get_object(50,1765
+static void libvlc_logf 64,2217
+void libvlc_log_unset 80,2705
+void libvlc_log_set 85,2807
+static void libvlc_log_file 94,3109
+void libvlc_log_set_file 106,3413
+unsigned libvlc_get_log_verbosity(112,3573
+void libvlc_set_log_verbosity(118,3689
+libvlc_log_t *libvlc_log_open(libvlc_log_open124,3814
+void libvlc_log_close(130,3946
+unsigned libvlc_log_count(135,4013
+void libvlc_log_clear(141,4105
+libvlc_log_iterator_t *libvlc_log_get_iterator(libvlc_log_get_iterator146,4173
+void libvlc_log_iterator_free(151,4301
+int libvlc_log_iterator_has_next(156,4389
+libvlc_log_message_t *libvlc_log_iterator_next(libvlc_log_iterator_next162,4499
+
+media_list_player.c,2333
+struct libvlc_media_list_player_t58,2225
+    libvlc_event_manager_t *    p_event_manager;60,2261
+    int                         i_refcount;61,2310
+    int                         seek_offset;62,2354
+    vlc_mutex_t                 object_lock;64,2443
+    vlc_mutex_t                 mp_callback_lock;66,2560
+    vlc_cond_t                  seek_pending;67,2610
+    libvlc_media_list_path_t    current_playing_item_path;68,2656
+    libvlc_media_t *            p_current_playing_item;69,2715
+    libvlc_media_list_t *       p_mlist;70,2771
+    libvlc_media_player_t *     p_mi;71,2812
+    libvlc_playback_mode_t      e_playback_mode;72,2850
+    vlc_thread_t                thread;74,2900
+static inline void vlc_assert_locked(78,2989
+static inline void lock(99,3511
+static inline void unlock(108,3764
+static inline void assert_locked(114,3922
+static inline libvlc_event_manager_t * mlist_em(119,4045
+static inline libvlc_event_manager_t * mplayer_em(125,4220
+get_next_path(139,4798
+find_last_item(217,7579
+get_previous_path(248,8790
+static void *playlist_thread(playlist_thread326,11228
+media_player_reached_end(354,12014
+mlist_item_deleted(373,12862
+install_playlist_observer(384,13212
+uninstall_playlist_observer(394,13609
+install_media_player_observer(405,14043
+uninstall_media_player_observer(416,14464
+set_current_playing_item(438,15455
+libvlc_media_list_player_new(474,16477
+void libvlc_media_list_player_release(523,17965
+void libvlc_media_list_player_retain(567,19119
+libvlc_media_list_player_event_manager(581,19502
+void libvlc_media_list_player_set_media_player(589,19806
+libvlc_media_player_t * libvlc_media_list_player_get_media_player(609,20431
+void libvlc_media_list_player_set_media_list(618,20793
+void libvlc_media_list_player_play(639,21386
+void libvlc_media_list_player_pause(656,21896
+libvlc_media_list_player_is_playing(667,22240
+libvlc_media_list_player_get_state(677,22648
+int libvlc_media_list_player_play_item_at_index(685,22970
+int libvlc_media_list_player_play_item(709,23839
+static void stop(731,24497
+void libvlc_media_list_player_stop(752,25196
+static int set_relative_playlist_position_and_play(766,25717
+int libvlc_media_list_player_next(837,27765
+int libvlc_media_list_player_previous(848,28145
+void libvlc_media_list_player_set_playback_mode(859,28539
+
+vlm.c,1776
+static int VlmEvent(38,1444
+static void libvlc_vlm_release_internal(104,3574
+static int libvlc_vlm_init(123,4315
+void libvlc_vlm_release(151,5280
+#define VLM_RET(156,5389
+libvlc_vlm_get_media_instance(163,5571
+static char* recurse_answer(194,6594
+const char* libvlc_vlm_show_media(322,11278
+int libvlc_vlm_add_broadcast(374,12672
+int libvlc_vlm_add_vod(409,13722
+int libvlc_vlm_del_media(440,14629
+static vlm_media_t *get_media(get_media456,14994
+#define VLM_CHANGE(471,15406
+int libvlc_vlm_set_enabled(486,16028
+#define VLM_CHANGE_CODE 489,16155
+#undef VLM_CHANGE_CODE491,16273
+int libvlc_vlm_set_loop(494,16299
+#define VLM_CHANGE_CODE 497,16417
+#undef VLM_CHANGE_CODE499,16553
+int libvlc_vlm_set_mux(502,16579
+#define VLM_CHANGE_CODE 505,16704
+#undef VLM_CHANGE_CODE511,17040
+int libvlc_vlm_set_output(514,17066
+#define VLM_CHANGE_CODE 517,17200
+#undef VLM_CHANGE_CODE520,17403
+int libvlc_vlm_set_input(523,17429
+#define VLM_CHANGE_CODE 526,17560
+#undef VLM_CHANGE_CODE531,17909
+int libvlc_vlm_add_input(534,17935
+#define VLM_CHANGE_CODE 537,18066
+#undef VLM_CHANGE_CODE540,18267
+int libvlc_vlm_change_media(543,18293
+#define VLM_CHANGE_CODE 549,18617
+#undef VLM_CHANGE_CODE565,19421
+int libvlc_vlm_play_media(568,19447
+int libvlc_vlm_stop_media(585,19868
+int libvlc_vlm_pause_media(602,20275
+int libvlc_vlm_seek_media(619,20686
+float libvlc_vlm_get_media_instance_position(637,21178
+int libvlc_vlm_get_media_instance_time(653,21650
+int libvlc_vlm_get_media_instance_length(668,22057
+int libvlc_vlm_get_media_instance_rate(684,22512
+int libvlc_vlm_get_media_instance_title(700,22925
+int libvlc_vlm_get_media_instance_chapter(711,23277
+int libvlc_vlm_get_media_instance_seekable(724,23718
+libvlc_vlm_get_event_manager(738,24152
+
+dialog.c,416
+vlc_to_libvlc_dialog_question_type(36,1299
+display_error_cb(48,1686
+display_login_cb(57,1959
+display_question_cb(70,2489
+display_progress_cb(87,3274
+cancel_cb(101,3890
+update_progress_cb(109,4122
+libvlc_dialog_set_callbacks(119,4502
+libvlc_dialog_set_context(152,5835
+libvlc_dialog_get_context(158,5979
+libvlc_dialog_post_login(164,6099
+libvlc_dialog_post_action(173,6433
+libvlc_dialog_dismiss(180,6624
+
+../include/vlc/libvlc_dialog.h,712
+#define LIBVLC_DIALOG_H 22,1090
+typedef struct libvlc_dialog_id libvlc_dialog_id;30,1181
+typedef enum libvlc_dialog_question_type40,1346
+    LIBVLC_DIALOG_QUESTION_NORMAL,42,1389
+    LIBVLC_DIALOG_QUESTION_WARNING,43,1424
+    LIBVLC_DIALOG_QUESTION_CRITICAL,44,1460
+} libvlc_dialog_question_type;45,1497
+typedef struct libvlc_dialog_cbs50,1575
+    void (*pf_display_error)pf_display_error59,1830
+    void (*pf_display_login)pf_display_login79,2656
+    void (*pf_display_question)pf_display_question104,3751
+    void (*pf_display_progress)pf_display_progress129,4907
+    void (*pf_cancel)pf_cancel143,5460
+    void (*pf_update_progress)pf_update_progress153,5821
+} libvlc_dialog_cbs;155,5962
+
+media_player_internal.h,618
+#define _LIBVLC_MEDIA_PLAYER_INTERNAL_H 26,1312
+struct libvlc_media_player_t38,1536
+    int                i_refcount;42,1591
+    vlc_mutex_t        object_lock;43,1626
+        input_thread_t   *p_thread;p_thread47,1680
+        input_resource_t *p_resource;p_resource48,1716
+        vlc_mutex_t       lock;49,1754
+    } input;50,1786
+    struct libvlc_instance_t * p_libvlc_instance;52,1800
+    libvlc_media_t * p_md;53,1872
+    libvlc_event_manager_t * p_event_manager;54,1930
+    libvlc_state_t state;55,1976
+struct libvlc_equalizer_t69,2283
+    float f_preamp;71,2311
+    float f_amp[f_amp72,2331

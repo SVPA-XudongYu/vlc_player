@@ -1,0 +1,79 @@
+   15  vlc --no-video --aout=wavout  ./int_mt300_hd720_davido_how_long.mp4
+   17  vlc --no-video --aout=wavout  ./int_mt300_hd720_davido_how_long.mp4
+   20  vlc --no-video --aout=wavout  ./int_mt300_hd720_davido_how_long.mp4
+   24  vlc --no-video --aout=wavout  ./int_mt300_hd720_davido_how_long.mp4
+   26  vlc --no-video --aout=wavout  ./int_mt300_hd720_davido_how_long.mp4
+   29  vlc --no-video --aout=wavout  ./int_mt300_hd720_davido_how_long.mp4
+   31  vlc --no-video --aout=any  ./int_mt300_hd720_davido_how_long.mp4
+   32  vlc --no-video --aout=any  --waveout-audio-device="Analog" ./int_mt300_hd720_davido_how_long.mp4
+   33  vlc --no-video --aout=any  --waveout-audio-device="HDMI" ./int_mt300_hd720_davido_how_long.mp4
+   35  vlc --no-video --aout=any  --waveout-audio-device="bcm2835 ALSA" ./int_mt300_hd720_davido_how_long.mp4
+   36  vlc --no-video --aout=any  --waveout-audio-device="bcm2835 ALSA" ./int_mt300_hd720_davido_how_long.mp4
+   37  vlc --no-video --aout=any  --waveout-audio-device="bcm2835 ALSA" ./int_mt300_hd720_davido_how_long.mp4
+   38  vlc --no-video --aout=any  --waveout-audio-device="plghw:0,0" ./int_mt300_hd720_davido_how_long.mp4
+   39  vlc --no-video --aout=any  --waveout-audio-device="TV" ./int_mt300_hd720_davido_how_long.mp4
+   40  vlc -H |less
+   41  vlc -H |less
+   42  vlc -h |less
+   43  vlc -H |less
+   44  vlc -h |less
+   45  vlc --no-video --aout=waveout  --waveout-audio-device="TV" ./int_mt300_hd720_davido_how_long.mp4
+   46  vlc --no-video --aout=waveout   ./int_mt300_hd720_davido_how_long.mp4
+   47  vlc --no-video    ./int_mt300_hd720_davido_how_long.mp4
+   48  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,1 ./int_mt300_hd720_davido_how_long.mp4
+   49  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+   50  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   52  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   56  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   57  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   58  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   61  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   62  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 ./int_mt300_hd720_davido_how_long.mp4
+   63  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   65  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   67  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   70  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   72  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   78  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   79  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 ./int_mt300_hd720_davido_how_long.mp4
+   81  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 ./int_mt300_hd720_davido_how_long.mp4
+  115  history  |grep vlc
+  116  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 ./int_mt300_hd720_davido_how_long.mp4
+  117  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  118  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  119  vlc --no-video --alsa-audio-device=hw:0,0 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  120  vlc --no-video --alsa-audio-device=hw:0,1 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  125  vlc --no-video --alsa-audio-device=hw:0,1 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  128  vlc --no-video --alsa-audio-device=hw:0,1 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  130  vlc --no-video --alsa-audio-device=hw:0,1 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  136  vlc --no-video --alsa-audio-device=hw:0,1 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  139  scp pi@43.130.199.55:/home/pi/SRE/vlc/install_dir/local.tar .
+  148  ps auxw |grep vlc
+  157  /usr/local/bin/vlc --rt-priority --prefetch-buffer-size 4096 --prefetch-read-size 4096000 --no-osd -d -f -R -I telnet --telnet-password=secret --telnet-port=9999 /opt/sony/data/content/videos/audio_hbt_loop.mp4
+  164  /usr/local/bin/vlc --rt-priority --prefetch-buffer-size 4096 --prefetch-read-size 4096000 --no-osd -d -f -R -I telnet --telnet-password=secret --telnet-port=9999 --noaudio /opt/sony/data/content/videos/audio_hbt_loop.mp4
+  166  vlc -H |grep audio
+  167  vlc -H |grep noaudio
+  168  vlc -h |grep noaudio
+  169  vlc -h |grep audio |grep no
+  170  vlc -h |grep audio |grep no
+  171  /usr/local/bin/vlc --rt-priority --prefetch-buffer-size 4096 --prefetch-read-size 4096000 --no-osd -d -f -R -I telnet --telnet-password=secret --telnet-port=9999 --no-audio /opt/sony/data/content/videos/audio_hbt_loop.mp4
+  202  ps auxw |grep vlc
+  220  vlc --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+  224  vlc --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+  227  ps auxw |grep vlc
+  415  scp pi@43.130.199.100:/home/pi/SRE/HOME-SRE2-VIXS_Player/hbt_vlc/install_dir/local.tar .
+  425  vlc --no-video --aout=wavout  content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  426  vlc -H |tee /tmp/h.txt
+  433  ps auxw |grep vlc
+  435  scp pi@43.130.199.100:/home/pi/SRE/HOME-SRE2-VIXS_Player/hbt_vlc/install_dir/local.tar .
+  464  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  471  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  472  vlc  --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  477  md5sum /usr/local/bin/vlc
+  478  ls -l /usr/local/bin/vlc
+  484  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  486  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  499  which vlc
+  500  ls -l /usr/local/bin/vlc
+  513  history |grep vlc
+  514  history |grep vlc > /opt/sony/data/vlc_play.txt

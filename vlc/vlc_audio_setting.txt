@@ -1,0 +1,91 @@
+    9  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,1 ./int_mt300_hd720_davido_how_long.mp4
+   10  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+   11  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   12  amixer cset numid=3 1
+   13  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   15  amixer controls
+   16  amixer cset numid=3 0
+   17  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   18  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   19  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   20  amixer cset numid=3 0
+   21  amixer cset numid=3 0
+   22  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   23  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 ./int_mt300_hd720_davido_how_long.mp4
+   24  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   25  amixer cset numid=3 0
+   26  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   27  amixer cset numid=3 1
+   28  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   29  amixer cset numid=3 0
+   30  amixer cset numid=3 0
+   31  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   32  amixer cset numid=3 2
+   33  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   39  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+   40  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 ./int_mt300_hd720_davido_how_long.mp4
+   41  amixer cset numid=3 1
+   42  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 ./int_mt300_hd720_davido_how_long.mp4
+   48  aplay -l
+   49  amixer 
+   50  amixer --help
+   51  amixer controls
+   52  amixer cset numid=3 1
+   53  amixer cset numid=4 2
+   68  aplay -l
+   77  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 ./int_mt300_hd720_davido_how_long.mp4
+   78  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,1 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+   79  vlc --no-video --aout=alsa --alsa-audio-device=hw:0,0 /opt/sony/data/content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+   85  amixer cset numid=3 0
+   87  amixer controls
+   88  amixer cset numid=4 1
+   90  amixer cset numid=4 0
+   92  amixer controls
+   93  amixer cset numid=4 0
+   94  amixer cset numid=5 1
+   95  amixer cset numid=5 0
+   96  amixer cset numid=1 1
+  106  aplay -L
+  134  amixer -h
+  135  amixer cget
+  136  amixer cget numid=1
+  137  amixer cget numid=0
+  138  amixer cget numid=2
+  139  amixer cget numid=3
+  140  amixer cget numid=1
+  141  amixer cget numid=2
+  142  amixer cget 
+  143  amixer cget device=local
+  144  amixer cget device=hdmi
+  145  amixer cget index=0
+  146  amixer cget index=1
+  147  amixer cget index=2
+  148  amixer cget numid=2
+  149  aplay -l
+  150  amixer cset numid=3 1
+  151  amixer cset numid=2 1
+  152  amixer cset numid=2 0
+  153  amixer cset numid=1 0
+  154  amixer cset numid=1 1
+  155  alsamixer
+  156  amixer controls
+  157  amixer controls
+  158  aplay -l
+  160  amixer cset numid=3 1
+  161  amixer cset numid=3 0
+  181  vlc --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+  185  vlc --aout=alsa --alsa-audio-device=hw:0,0 ./int_mt300_hd720_davido_how_long.mp4
+  192  amixer cset numid=3 2
+  193  amixer cset numid=3 1
+  386  vlc --no-video --aout=wavout  content/04102014-1315/int_mt300_hd720_davido_how_long.mp4 
+  425  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  432  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  433  vlc  --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  445  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  447  vlc --no-video --aout=alsa --alsa-audio-device=hw:1,0 ./int_mt300_hd720_davido_how_long.mp4
+  502  history |grep aout
+  503  history |grep amixer
+  504  history |grep -e amixer -e aout
+  505  history |grep -e amixer -e aout > /home/pi/vlc_audio_setting.txt
+  506  history |grep -e amixer -e aout > /home/finn/vlc_audio_setting.txt
+  508  history |grep -e amixer -e aout -e aplay > /home/finn/vlc_audio_setting.txt

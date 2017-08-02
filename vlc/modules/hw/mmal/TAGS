@@ -1,0 +1,152 @@
+
+mmal_picture.h,230
+#define VLC_MMAL_MMAL_PICTURE_H_25,1208
+#define NUM_ACTUAL_OPAQUE_BUFFERS 31,1370
+struct picture_sys_t 33,1408
+    vlc_object_t *owner;owner34,1431
+    MMAL_BUFFER_HEADER_T *buffer;buffer36,1457
+    bool displayed;37,1491
+
+vout.c,3094
+#define MAX_BUFFERS_IN_TRANSIT 46,1701
+#define VC_TV_MAX_MODE_IDS 47,1734
+#define MMAL_LAYER_NAME 49,1766
+#define MMAL_LAYER_TEXT 50,1803
+#define MMAL_LAYER_LONGTEXT 51,1879
+#define MMAL_ADJUST_REFRESHRATE_NAME 53,2040
+#define MMAL_ADJUST_REFRESHRATE_TEXT 54,2103
+#define MMAL_ADJUST_REFRESHRATE_LONGTEXT 55,2185
+#define MMAL_NATIVE_INTERLACED 57,2272
+#define MMAL_NATIVE_INTERLACE_TEXT 58,2328
+#define MMAL_NATIVE_INTERLACE_LONGTEXT 59,2398
+#define PHASE_OFFSET_TARGET 63,2608
+#define PHASE_CHECK_INTERVAL 64,2651
+vlc_module_begin(69,2754
+struct dmx_region_t 82,3346
+    struct dmx_region_t *next;next83,3368
+    picture_t *picture;picture84,3399
+    VC_RECT_T bmp_rect;85,3423
+    VC_RECT_T src_rect;86,3447
+    VC_RECT_T dst_rect;87,3471
+    VC_DISPMANX_ALPHA_T alpha;88,3495
+    DISPMANX_ELEMENT_HANDLE_T element;89,3526
+    DISPMANX_RESOURCE_HANDLE_T resource;90,3565
+    int32_t pos_x;91,3606
+    int32_t pos_y;92,3625
+struct vout_display_sys_t 95,3648
+    vlc_cond_t buffer_cond;96,3676
+    vlc_mutex_t buffer_mutex;97,3704
+    vlc_mutex_t manage_mutex;98,3734
+    plane_t planes[planes100,3765
+    picture_t **pictures;pictures101,3844
+    picture_pool_t *picture_pool;picture_pool102,3933
+    MMAL_COMPONENT_T *component;component104,3968
+    MMAL_PORT_T *input;input105,4001
+    MMAL_POOL_T *pool;pool106,4025
+    struct dmx_region_t *dmx_region;dmx_region107,4113
+    int i_planes;108,4150
+    uint32_t buffer_size;110,4232
+    int buffers_in_transit;111,4292
+    unsigned num_buffers;112,4379
+    DISPMANX_DISPLAY_HANDLE_T dmx_handle;114,4453
+    DISPMANX_ELEMENT_HANDLE_T bkg_element;115,4495
+    DISPMANX_RESOURCE_HANDLE_T bkg_resource;116,4538
+    unsigned display_width;117,4583
+    unsigned display_height;118,4611
+    int i_frame_rate_base;120,4641
+    int i_frame_rate;121,4729
+    int next_phase_check;123,4752
+    int phase_offset;124,4818
+    int layer;125,4898
+    bool need_configure_display;127,4973
+    bool adjust_refresh_rate;128,5068
+    bool native_interlaced;129,5098
+    bool b_top_field_first;130,5126
+    bool b_progressive;131,5221
+    bool opaque;132,5245
+static const vlc_fourcc_t subpicture_chromas[subpicture_chromas135,5322
+static int Open(177,7207
+static void Close(319,12495
+static inline uint32_t align(371,13986
+static int configure_display(379,14143
+static picture_pool_t *vd_pool(vd_pool441,16409
+static void vd_prepare(539,19775
+static void vd_display(553,20221
+static int vd_control(608,22163
+static void vd_manage(655,23693
+static void control_port_cb(678,24278
+static void input_port_cb(691,24671
+static int query_resolution(706,25132
+static void tvservice_cb(730,25892
+static int set_latency_target(744,26287
+static void adjust_refresh_rate(770,27111
+static void display_subpicture(830,29750
+static void close_dmx(887,31917
+static struct dmx_region_t *dmx_region_new(dmx_region_new909,32525
+static void dmx_region_update(949,34388
+static void dmx_region_delete(958,34816
+static void maintain_phase_sync(966,35071
+static void show_background(1014,36832
+
+codec.c,1271
+#define NUM_EXTRA_BUFFERS 45,1663
+#define NUM_DECODER_BUFFER_HEADERS 46,1692
+#define MIN_NUM_BUFFERS_IN_TRANSIT 48,1731
+#define MMAL_OPAQUE_NAME 50,1769
+#define MMAL_OPAQUE_TEXT 51,1808
+#define MMAL_OPAQUE_LONGTEXT 52,1905
+vlc_module_begin(57,2155
+struct decoder_sys_t 66,2496
+    bool opaque;67,2519
+    MMAL_COMPONENT_T *component;component68,2536
+    MMAL_PORT_T *input;input69,2569
+    MMAL_POOL_T *input_pool;input_pool70,2593
+    MMAL_PORT_T *output;output71,2622
+    MMAL_POOL_T *output_pool;output_pool72,2647
+    MMAL_ES_FORMAT_T *output_format;output_format73,2713
+    MMAL_QUEUE_T *decoded_pictures;decoded_pictures74,2750
+    vlc_mutex_t mutex;75,2786
+    vlc_sem_t sem;76,2809
+    bool b_top_field_first;78,2829
+    bool b_progressive;79,2857
+    int output_in_transit;82,2903
+    int input_in_transit;83,2930
+    atomic_bool started;84,2956
+static int OpenDecoder(101,3527
+static void CloseDecoder(252,8954
+static int change_output_format(308,10424
+static int send_output_buffer(424,14987
+static void fill_output_port(504,17275
+static void flush_decoder(540,18611
+static picture_t *decode(decode596,20609
+static void control_port_cb(707,23487
+static void input_port_cb(721,23888
+static void output_port_cb(737,24368
+
+mmal_picture.c,31
+int mmal_picture_lock(30,1295
+
+deinterlace.c,884
+#define MIN_NUM_BUFFERS_IN_TRANSIT 42,1597
+vlc_module_begin(47,1708
+struct filter_sys_t 57,2023
+    MMAL_COMPONENT_T *component;component58,2045
+    MMAL_PORT_T *input;input59,2078
+    MMAL_PORT_T *output;output60,2102
+    MMAL_QUEUE_T *filtered_pictures;filtered_pictures62,2128
+    vlc_mutex_t mutex;63,2165
+    vlc_mutex_t buffer_cond_mutex;64,2188
+    vlc_cond_t buffer_cond;65,2223
+    atomic_bool started;67,2252
+    int output_in_transit;70,2299
+    int input_in_transit;71,2326
+#define MMAL_COMPONENT_DEFAULT_DEINTERLACE 80,2694
+static int Open(82,2756
+static void Close(246,8935
+static int send_output_buffer(285,9955
+static void fill_output_port(331,11234
+static picture_t *deinterlace(deinterlace356,12140
+static void flush(414,13913
+static void control_port_cb(447,15057
+static void input_port_cb(461,15462
+static void output_port_cb(480,16066

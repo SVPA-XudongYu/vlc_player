@@ -1,0 +1,73 @@
+
+vlc.c,224
+# define pthread_t 53,1726
+# define pthread_self(54,1754
+static char *FromSystem(FromSystem56,1789
+static bool signal_ignored 90,2546
+static void vlc_kill 100,2792
+static void exit_timeout 112,2990
+int main(121,3305
+
+winvlc.c,383
+#define UNICODE32,1371
+#  define  _WIN32_IE 40,1478
+#define PSAPI_VERSION 46,1588
+#define HeapEnableTerminationOnCorruption 48,1631
+static const wchar_t *crashdump_path;crashdump_path51,1813
+static char *FromWide FromWide53,1852
+int WINAPI WinMain(64,2134
+# define PROCESS_DEP_ENABLE 91,3244
+static void check_crashdump(207,6787
+LONG WINAPI vlc_exception_filter(274,9255
+
+override.c,834
+#define MAX_ERRORS 26,1158
+# undef HAVE_BACKTRACE45,1568
+static bool override 48,1599
+static void vlc_reset_override 50,1630
+void vlc_enable_override 55,1695
+static void vlogbug 61,1806
+static void logbug 85,2404
+static void *getsym getsym95,2620
+#define LOG(107,2867
+#define CALL(117,3103
+int putenv 128,3593
+int setenv 138,3738
+int unsetenv 148,3974
+    pthread_mutex_t lock;169,4506
+    unsigned int seed;170,4532
+} prng 171,4555
+void srand 173,4600
+int rand 181,4766
+static bool blocked_signal 197,4992
+void (*signal signal212,5236
+int sigaction 230,5748
+char *setlocale setlocale255,6468
+char *strerror strerror268,6825
+static pthread_mutex_t xlib_lock 284,7156
+int (*XSetErrorHandler XSetErrorHandler286,7219
+int (*XSetIOErrorHandler XSetIOErrorHandler302,7634
+void vlc_enable_override 318,8017
+
+rootwrap.c,536
+#define _XPG4_2 24,1069
+# undef AF_INET645,1591
+# define AF_LOCAL 48,1632
+# define MSG_NOSIGNAL 51,1717
+# define CMSG_ALIGN(55,1814
+# define CMSG_SPACE(58,1920
+# define CMSG_LEN(61,2024
+static inline int is_allowed_port 64,2100
+static inline int send_err 71,2240
+static int send_fd 79,2423
+static void rootprocess 111,3194
+        struct sockaddr         sa;115,3245
+        struct sockaddr_storage ss;116,3281
+        struct sockaddr_in      sin;117,3317
+        struct sockaddr_in6     sin6;119,3370
+int main 188,5112
+
+cachegen.c,74
+static void version 36,1272
+static void usage 41,1366
+int main 49,1537
